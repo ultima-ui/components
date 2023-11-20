@@ -1,0 +1,26 @@
+<ult-sidebar class="h-[500px] border-t border-b border-s">
+  <ult-sidebar-nav>
+    <ult-sidebar-item>
+      <ult-icon name="ph:house" ultSidebarItemIcon></ult-icon>
+      <ult-sidebar-item-text>Home</ult-sidebar-item-text>
+    </ult-sidebar-item>
+    <ult-sidebar-item>
+      <ult-icon name="ph:code" ultSidebarItemIcon></ult-icon>
+      <ult-sidebar-item-text>Code</ult-sidebar-item-text>
+    </ult-sidebar-item>
+  </ult-sidebar-nav>
+  <ult-sidebar-aside>
+    <ult-panel *ultSidebarAsideContent>
+      <ult-panel-header class="border-b flex items-center px-4">Home Header</ult-panel-header>
+      <ult-panel-body class="p-4">
+        <div class="h-[1000px]">Home Body</div>
+      </ult-panel-body>
+    </ult-panel>
+    <ult-panel *ultSidebarAsideContent>
+      <ult-panel-header class="border-b flex items-center px-4">Code Header</ult-panel-header>
+      <ult-panel-body class="p-4">
+        <div class="h-[1000px]">Code Body</div>
+      </ult-panel-body>
+    </ult-panel>
+  </ult-sidebar-aside>
+</ult-sidebar>

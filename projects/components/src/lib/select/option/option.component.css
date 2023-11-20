@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  flex: none;
+  font-size: var(--ult-option-font-size);
+  align-items: center;
+  position: relative;
+  border-radius: var(--ult-option-border-radius);
+  background: var(--ult-option-bg);
+  color: var(--ult-option-color);
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  gap: var(--ult-option-gap);
+  min-width: 0;
+  overflow: hidden;
+  min-height: var(--ult-option-height);
+  padding: var(--ult-option-padding);
+}
+
+:host(:not(.is-selected):hover) {
+  background: var(--ult-option-hover-bg);
+  color: var(--ult-option-hover-color);
+}
+
+:host(.is-selected) {
+  background: var(--ult-option-selected-bg);
+  color: var(--ult-option-selected-color);
+}
+
+:host .content {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:host .check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ult-option-check-icon-color);
+}
+
+:host .check:empty {
+  display: none;
+}
+
+:host:has(.check:not(:empty)) {
+  padding-inline-end: var(--ult-option-has-check-padding-end);
+}

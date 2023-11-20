@@ -1,0 +1,11 @@
+<div>
+  <ult-date-picker [(selected)]="selectedDate" class="border rounded-xl">
+    <ult-icon name="ph:caret-left" size="20" ultDatePickerPrevious></ult-icon>
+    <ult-icon name="ph:caret-right" size="20" ultDatePickerNext></ult-icon>
+  </ult-date-picker>
+  <div class="mt-2">
+    <div>
+      Selected Original Date: <span class="font-medium">{{ selectedDate || '-' }}</span>
+    </div>
+  </div>
+</div>

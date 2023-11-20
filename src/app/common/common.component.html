@@ -1,0 +1,10 @@
+<div class="px-20 pt-14 pb-12">
+  <ult-route-breadcrumbs>
+    <a *ultBreadcrumbItemDef="let item" ultBreadcrumbItem [routerLink]="item.link">{{ item.name }}</a>
+    <ult-breadcrumb-separator *ultBreadcrumbSeparatorDef>/</ult-breadcrumb-separator>
+    <ult-breadcrumb-active-item *ultBreadcrumbActiveItemDef="let item">{{ item.name }}</ult-breadcrumb-active-item>
+  </ult-route-breadcrumbs>
+</div>
+<div class="px-20 pb-14">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,37 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Badge</h1>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importUrl"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <div class="flex items-center gap-6">
+          <ult-badge class="bg-positive-500 text-white">1</ult-badge>
+          <ult-badge class="bg-negative-500 text-white">10</ult-badge>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Colors</h2>
+    <playground>
+      <playground-content>
+        <div class="flex items-center gap-6">
+          <ult-badge class="bg-negative-500 text-white">22</ult-badge>
+          <ult-badge class="bg-blue-500 text-white">3+</ult-badge>
+          <ult-badge class="bg-pink-500 text-white">344+</ult-badge>
+          <ult-badge class="bg-white border text-gray-500">12345</ult-badge>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>
+
+

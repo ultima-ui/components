@@ -1,0 +1,31 @@
+:root {
+  --ult-color-picker-bg: theme('colors.white');
+  --ult-color-picker-border-radius: theme('borderRadius.md');
+  --ult-color-picker-margin-offset: theme('margin.2');
+  --ult-color-picker-border: 0 solid theme('colors.neutral.200');
+  --ult-color-picker-padding: theme('padding.0');
+  --ult-color-picker-gap: theme('gap.0');
+
+  --ult-color-picker-thumbnail-bg: transparent;
+  --ult-color-picker-thumbnail-size: theme('width.8');
+  --ult-color-picker-thumbnail-border-radius: theme('borderRadius.full');
+  --ult-color-picker-thumbnail-border: 1px solid theme('colors.neutral.200');
+
+  --ult-color-picker-saturation-width: 15rem;
+  --ult-color-picker-saturation-height: 8.75rem;
+  --ult-color-picker-saturation-pointer-size: theme('width.7');
+  --ult-color-picker-saturation-pointer-shadow: theme('boxShadow.md');
+  --ult-color-picker-saturation-pointer-border: 2px solid theme('colors.white');
+
+  --ult-color-picker-hue-width: var(--ult-color-picker-saturation-width);
+  --ult-color-picker-hue-height: theme('height.7');
+  --ult-color-picker-hue-pointer-size: theme('width.7');
+  --ult-color-picker-hue-pointer-shadow: theme('boxShadow.md');
+  --ult-color-picker-hue-pointer-border: 2px solid theme('colors.white');
+
+  --ult-color-picker-alpha-width: var(--ult-color-picker-saturation-width);
+  --ult-color-picker-alpha-height: theme('height.7');
+  --ult-color-picker-alpha-pointer-size: theme('width.7');
+  --ult-color-picker-alpha-pointer-shadow: theme('boxShadow.md');
+  --ult-color-picker-alpha-pointer-border: 2px solid theme('colors.white');
+}

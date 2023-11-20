@@ -1,0 +1,123 @@
+:host {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: var(--ult-input-font-size);
+  min-width: 0;
+  background: var(--ult-input-bg);
+  color: var(--ult-input-color);
+  border-radius: var(--ult-input-border-radius);
+  height: var(--ult-input-height);
+  flex: none;
+  border: var(--ult-input-border-width) solid var(--ult-input-border-color);
+  gap: var(--ult-input-gap);
+  padding: var(--ult-input-padding);
+}
+
+:host ::ng-deep input {
+  min-width: 0;
+}
+
+:host(:focus) {
+  outline: none;
+}
+
+:host(::placeholder),
+:host ::ng-deep input::placeholder {
+  color: var(--ult-input-placeholder-color);
+}
+
+:host(:not(:focus-within):hover) {
+  border-color: var(--ult-input-hover-border-color);
+}
+
+:host(:focus-within),
+:host(.is-focused) {
+  border-color: var(--ult-input-focused-border-color);
+}
+
+:host(.is-rounded-full) {
+  --ult-input-border-radius: 624.9375rem;
+}
+
+:host(.is-invalid),
+:host(.is-invalid:hover) {
+  border-color: var(--ult-input-invalid-border-color);
+}
+
+:host(.is-disabled) {
+  background: var(--ult-input-disabled-bg);
+  pointer-events: none;
+  user-select: none;
+}
+
+:host ::ng-deep input {
+  height: 100%;
+  flex-grow: 1;
+  border-radius: inherit;
+  border: none;
+  padding: 0;
+  outline: none;
+  background: transparent;
+}
+
+:host ::ng-deep input:focus {
+  outline: none;
+}
+
+:host(textarea) {
+  height: auto;
+  resize: none;
+  padding: var(--ult-textarea-padding);
+}
+
+:host(::-webkit-scrollbar-track) {
+  border-radius: 6.1875rem;
+}
+
+:host-context(.is-composite) {
+  width: auto;
+}
+
+:host-context(.is-composite):not(:last-child) {
+  margin-inline-end: calc(var(--ult-input-border-width) * -1);
+}
+
+:host-context(.is-composite):first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+:host-context(.is-composite):not(:first-child):not(:last-child) {
+  position: relative;
+  border-radius: 0;
+}
+
+:host-context(.is-composite):last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+:host-context(.is-composite):hover {
+  z-index: 1;
+}
+
+:host-context(.is-composite):focus-within {
+  z-index: 2;
+}
+
+:host .prefix,
+:host .suffix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+}
+
+:host .prefix:empty,
+:host .suffix:empty {
+  display: none;
+}

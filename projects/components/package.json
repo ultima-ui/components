@@ -1,0 +1,36 @@
+{
+  "name": "@ultima-ui/components",
+  "version": "0.0.246",
+  "keywords": [
+    "angular",
+    "angular ui",
+    "angular components",
+    "tailwindcss",
+    "nodejs",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/cdk": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "tailwindcss": "^3.3.3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.9",
+    "iconify-icon": "^1.0.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "exports": {
+    "./preset": "./preset.js",
+    "./styles/": "./styles/"
+  }
+}

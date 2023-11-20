@@ -1,0 +1,22 @@
+:root {
+  --ult-upload-area-bg: theme('colors.white');
+  --ult-upload-area-padding: theme('padding.6');
+  --ult-upload-area-border: theme('width.px') dashed theme('colors.neutral.200');
+  --ult-upload-area-hover-border: theme('width.px') solid theme('colors.primary.500');
+  --ult-upload-area-dragenter-border: theme('width.px') solid theme('colors.primary.500');
+  --ult-upload-area-border-radius: theme('borderRadius.xl');
+  --ult-file-list-gap: theme('gap.3');
+  --ult-file-padding: theme('padding.4') 0;
+  --ult-file-controls-gap: theme('gap[1.5]');
+  --ult-file-progress-margin: theme('margin.2') 0 0 0;
+  --ult-file-progress-bg: theme('colors.neutral.100');
+  --ult-file-progress-height: theme('height.1');
+  --ult-file-progress-border-radius: theme('borderRadius.lg');
+  --ult-file-progress-bar-bg: theme('colors.primary.500');
+  --ult-control-color: theme('colors.neutral.400');
+  --ult-control-hover-color: theme('colors.neutral.700');
+  --ult-control-font-size: theme('fontSize.xl');
+  --ult-file-name-font-size: theme('fontSize.md');
+  --ult-file-info-font-size: theme('fontSize.tiny');
+  --ult-file-info-color: theme('colors.neutral.400');
+}

@@ -1,0 +1,24 @@
+.chip-primary {
+  --ult-chip-bg: theme('colors.primary.500');
+  --ult-chip-color: theme('colors.white');
+}
+
+.chip-negative {
+  --ult-chip-bg: theme('colors.negative.500');
+  --ult-chip-color: theme('colors.white');
+}
+
+.chip-positive {
+  --ult-chip-bg: theme('colors.positive.500');
+  --ult-chip-color: theme('colors.white');
+}
+
+.chip-informative {
+  --ult-chip-bg: theme('colors.informative.500');
+  --ult-chip-color: theme('colors.white');
+}
+
+.chip-notice {
+  --ult-chip-bg: theme('colors.notice.500');
+  --ult-chip-color: theme('colors.white');
+}

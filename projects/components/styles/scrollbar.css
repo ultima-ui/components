@@ -1,0 +1,13 @@
+@tailwind components;
+
+body *:not(.ult-native-scroll)::-webkit-scrollbar {
+  @apply bg-none w-[8px] h-[8px];
+}
+
+body *:not(.ult-native-scroll)::-webkit-scrollbar-track {
+  @apply bg-neutral-100;
+}
+
+body *:not(.ult-native-scroll)::-webkit-scrollbar-thumb {
+  @apply rounded-sm bg-neutral-200 hover:bg-neutral-300;
+}

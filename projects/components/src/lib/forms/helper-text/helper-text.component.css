@@ -1,0 +1,7 @@
+:host {
+  display: block;
+  color: var(--ult-helper-text-color);
+  font-size: var(--ult-helper-text-font-size);
+  line-height: var(--ult-helper-text-line-height);
+  margin-top: var(--ult-helper-text-margin-top);
+}

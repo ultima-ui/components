@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  position: relative;
+  box-shadow: var(--ult-tooltip-shadow);
+  padding: var(--ult-tooltip-padding);
+  border-radius: var(--ult-tooltip-border-radius);
+  background: var(--ult-tooltip-bg);
+  color: var(--ult-tooltip-color);
+  font-size: var(--ult-tooltip-font-size);
+  animation: .15s ult-tooltip-animation;
+}
+
+:host-context(.ult-tooltip-above) {
+  margin-bottom: var(--ult-tooltip-offset);
+  transform-origin: bottom;
+}
+
+:host-context(.ult-tooltip-below) {
+  margin-top: var(--ult-tooltip-offset);
+  transform-origin: top;
+}
+
+:host-context(.ult-tooltip-before) {
+  margin-inline-end: var(--ult-tooltip-offset);
+  transform-origin: right;
+}
+
+:host-context(.ult-tooltip-after) {
+  margin-inline-start: var(--ult-tooltip-offset);
+  transform-origin: left;
+}
+
+@keyframes ult-tooltip-animation {
+  0% {
+    transform: scale(.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

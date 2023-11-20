@@ -1,0 +1,23 @@
+<nav>
+  <div class="first" [class.is-disabled]="currentPage === 1" *ngIf="showFirstLastButtons">
+    <ng-content select="[ultPaginatorFirst]"></ng-content>
+  </div>
+  <div class="prev" [class.is-disabled]="!api.hasPreviousPage()">
+    <ng-content select="[ultPaginatorPrevious]"></ng-content>
+  </div>
+  <div *ngIf="showPagesRange" class="pages-range">
+    <ng-container *ngFor="let page of pages">
+      <button *ngIf="page !== -1"
+              [class.is-current]="page === currentPage"
+              (click)="setPage(page)"
+              (keyup.enter)="setPage(page)" class="page">{{ page }}</button>
+      <span *ngIf="page === -1" class="more">...</span>
+    </ng-container>
+  </div>
+  <div class="next" [class.is-disabled]="!api.hasNextPage()">
+    <ng-content select="[ultPaginatorNext]"></ng-content>
+  </div>
+  <div class="last" *ngIf="showFirstLastButtons" [class.is-disabled]="currentPage === totalPages">
+    <ng-content select="[ultPaginatorLast]"></ng-content>
+  </div>
+</nav>

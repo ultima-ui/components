@@ -1,0 +1,43 @@
+[avatar-variant="default-gradient"] {
+  @apply from-neutral-300 bg-gradient-to-r;
+}
+
+[avatar-variant="primary"] {
+  @apply bg-primary-500 text-white;
+}
+
+[avatar-variant="primary-gradient"] {
+  @apply bg-primary-400 from-primary-500 bg-gradient-to-r text-white;
+}
+
+[avatar-variant="negative"] {
+  @apply bg-negative-500 text-white;
+}
+
+[avatar-variant="negative-gradient"] {
+  @apply bg-negative-400 from-negative-500 bg-gradient-to-r text-white;
+}
+
+[avatar-variant="positive"] {
+  @apply bg-positive-500 text-white;
+}
+
+[avatar-variant="positive-gradient"] {
+  @apply bg-positive-400 from-positive-500 bg-gradient-to-r text-white;
+}
+
+[avatar-variant="pink"] {
+  @apply bg-pink-500 text-white;
+}
+
+[avatar-variant="pink-gradient"] {
+  @apply bg-pink-400 from-pink-500 bg-gradient-to-r text-white;
+}
+
+[avatar-variant="purple"] {
+  @apply bg-purple-500 text-white;
+}
+
+[avatar-variant="purple-gradient"] {
+  @apply bg-purple-400 from-purple-500 bg-gradient-to-r text-white;
+}

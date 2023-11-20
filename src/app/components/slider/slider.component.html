@@ -1,0 +1,8 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-8">
+    <ult-slider min="0" max="100" [value]="value" (changed)="value = $event"></ult-slider>
+    <div>{{ value }}</div>
+  </div>
+</div>
+
+<!--<input type="range" min="0" max="100" value="22">-->

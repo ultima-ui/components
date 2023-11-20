@@ -1,0 +1,399 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div>
+      <h1 class="text-2xl font-bold mt-0">Menu</h1>
+    </div>
+    <div>
+      <div class="mb-4">Import module:</div>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="basicMenu">Click me</button>
+        <ng-template #basicMenu>
+          <ult-menu>
+            <ult-menu-item>Refresh</ult-menu-item>
+            <ult-menu-item>Settings</ult-menu-item>
+            <ult-menu-item>Help</ult-menu-item>
+            <ult-menu-item>Sign out</ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Icons</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="iconsMenu">Click me</button>
+        <ng-template #iconsMenu>
+          <ult-menu>
+            <ult-menu-item>
+              <ult-icon name="ph:arrows-counter-clockwise" size="20" ultMenuItemIcon></ult-icon>
+              Refresh
+            </ult-menu-item>
+            <ult-menu-item>
+              <ult-icon name="ph:gear" size="20" ultMenuItemIcon></ult-icon>
+              Settings
+            </ult-menu-item>
+            <ult-menu-item>
+              <ult-icon name="ph:question" size="20" ultMenuItemIcon></ult-icon>
+              Help
+            </ult-menu-item>
+            <ult-menu-item>
+              <ult-icon name="ph:sign-out" size="20" ultMenuItemIcon></ult-icon>
+              Sign out
+            </ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Separator</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="separatorMenu">Click me</button>
+        <ng-template #separatorMenu>
+          <ult-menu>
+            <ult-menu-item>Refresh</ult-menu-item>
+            <ult-menu-item>Settings</ult-menu-item>
+            <ult-menu-separator></ult-menu-separator>
+            <ult-menu-item>Help</ult-menu-item>
+            <ult-menu-item>Sign out</ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Heading</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="headingMenu">Click me</button>
+        <ng-template #headingMenu>
+          <ult-menu>
+            <ult-menu-heading>Options</ult-menu-heading>
+            <ult-menu-item>Refresh</ult-menu-item>
+            <ult-menu-item>Settings</ult-menu-item>
+            <ult-menu-item>Help</ult-menu-item>
+            <ult-menu-item>Sign out</ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Disabled</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="disabledMenu">Click me</button>
+        <ng-template #disabledMenu>
+          <ult-menu>
+            <ult-menu-item [disabled]="true">Refresh</ult-menu-item>
+            <ult-menu-item>Settings</ult-menu-item>
+            <ult-menu-item [disabled]="true">Help</ult-menu-item>
+            <ult-menu-item>Sign out</ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Radio</h2>
+    <playground>
+      <playground-content>
+        <div>
+          <div class="flex gap-20">
+            <div>
+              <div class="font-bold text-tiny mb-3">Default:</div>
+              <div>
+                <button ultButton [ultMenuTriggerFor]="groupRadioMenu">Click me</button>
+                <ng-template #groupRadioMenu>
+                  <ult-menu>
+                    <ult-menu-item [selected]="radioValue.isSelected('refresh')"
+                                   (triggered)="radioValue.select('refresh')">Refresh</ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('settings')"
+                                   (triggered)="radioValue.select('settings')">Settings</ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('help')"
+                                   (triggered)="radioValue.select('help')">Help</ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('signout')"
+                                   (triggered)="radioValue.select('signout')">Sign out</ult-menu-item>
+                  </ult-menu>
+                </ng-template>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-tiny mb-3">Check Icon:</div>
+              <div>
+                <button ultButton [ultMenuTriggerFor]="groupRadioIconsMenu">Click me</button>
+                <ng-template #groupRadioIconsMenu>
+                  <ult-menu>
+                    <ult-menu-item [selected]="radioValue.isSelected('refresh')"
+                                   (triggered)="radioValue.select('refresh')">
+                      Refresh
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="radioValue.isSelected('refresh')"></ult-icon>
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('settings')"
+                                   (triggered)="radioValue.select('settings')">
+                      Settings
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="radioValue.isSelected('settings')"></ult-icon>
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('help')"
+                                   (triggered)="radioValue.select('help')">
+                      Help
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="radioValue.isSelected('help')"></ult-icon>
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('signout')"
+                                   (triggered)="radioValue.select('signout')">
+                      Sign out
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="radioValue.isSelected('signout')"></ult-icon>
+                    </ult-menu-item>
+                  </ult-menu>
+                </ng-template>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-tiny mb-3">Radio control:</div>
+              <div>
+                <button ultButton [ultMenuTriggerFor]="groupRadioControlMenu">Click me</button>
+                <ng-template #groupRadioControlMenu>
+                  <ult-menu>
+                    <ult-menu-item [selected]="radioValue.isSelected('refresh')"
+                                   (triggered)="radioValue.select('refresh')">
+                      <ult-radio name="controls" value="refresh" [ngModel]="radioValue.selected[0]"></ult-radio>
+                      Refresh
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('settings')"
+                                   (triggered)="radioValue.select('settings')">
+                      <ult-radio name="controls" value="settings" [ngModel]="radioValue.selected[0]"></ult-radio>
+                      Settings
+                    </ult-menu-item>
+                    <ult-menu-item value="help" [selected]="radioValue.isSelected('help')"
+                                   (triggered)="radioValue.select('help')">
+                      <ult-radio name="controls" value="help" [ngModel]="radioValue.selected[0]"></ult-radio>
+                      Help
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="radioValue.isSelected('signout')"
+                                   (triggered)="radioValue.select('signout')">
+                      <ult-radio name="controls" value="signout" [ngModel]="radioValue.selected[0]"></ult-radio>
+                      Sign out
+                    </ult-menu-item>
+                  </ult-menu>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10">Value: {{ radioValue.selected[0] || '' }}</div>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Checkbox</h2>
+    <playground>
+      <playground-content>
+        <div>
+          <div class="flex gap-20">
+            <div>
+              <div>
+                <div class="font-bold text-tiny mb-3">Default:</div>
+                <button ultButton [ultMenuTriggerFor]="groupCheckboxMenu">Click me</button>
+                <ng-template #groupCheckboxMenu>
+                  <ult-menu>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('refresh')"
+                                   (triggered)="checkboxValue.toggle('refresh')">Refresh</ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('settings')"
+                                   (triggered)="checkboxValue.toggle('settings')">Settings</ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('help')"
+                                   (triggered)="checkboxValue.toggle('help')">Help</ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('signout')"
+                                   (triggered)="checkboxValue.toggle('signout')">Sign out</ult-menu-item>
+                  </ult-menu>
+                </ng-template>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-tiny mb-3">Check Icon:</div>
+              <div>
+                <button ultButton [ultMenuTriggerFor]="groupCheckboxIconsMenu">Click me</button>
+                <ng-template #groupCheckboxIconsMenu>
+                  <ult-menu>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('refresh')"
+                                   (triggered)="checkboxValue.toggle('refresh')">
+                      Refresh
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="checkboxValue.isSelected('refresh')"></ult-icon>
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('settings')"
+                                   (triggered)="checkboxValue.toggle('settings')">
+                      Settings
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="checkboxValue.isSelected('settings')"></ult-icon>
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('help')"
+                                   (triggered)="checkboxValue.toggle('help')">
+                      Help
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="checkboxValue.isSelected('help')"></ult-icon>
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('signout')"
+                                   (triggered)="checkboxValue.toggle('signout')">
+                      Sign out
+                      <ult-icon name="ph:check" size="20" ultMenuItemCheckIcon
+                                *ngIf="checkboxValue.isSelected('signout')"></ult-icon>
+                    </ult-menu-item>
+                  </ult-menu>
+                </ng-template>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-tiny mb-3">Checkbox control:</div>
+              <div>
+                <button ultButton [ultMenuTriggerFor]="groupCheckboxControlMenu">Click me</button>
+                <ng-template #groupCheckboxControlMenu>
+                  <ult-menu>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('refresh')"
+                                   (triggered)="checkboxValue.toggle('refresh')"
+                                   [keepOpen]="true">
+                      <ult-checkbox [ngModel]="checkboxValue.isSelected('refresh')"></ult-checkbox>
+                      Refresh
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('settings')"
+                                   (triggered)="checkboxValue.toggle('settings')"
+                                   [keepOpen]="true">
+                      <ult-checkbox [ngModel]="checkboxValue.isSelected('settings')"></ult-checkbox>
+                      Settings
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('help')"
+                                   (triggered)="checkboxValue.toggle('help')"
+                                   [keepOpen]="true">
+                      <ult-checkbox [ngModel]="checkboxValue.isSelected('help')"></ult-checkbox>
+                      Help
+                    </ult-menu-item>
+                    <ult-menu-item [selected]="checkboxValue.isSelected('signout')"
+                                   (triggered)="checkboxValue.toggle('signout')"
+                                   [keepOpen]="true">
+                      <ult-checkbox [ngModel]="checkboxValue.isSelected('signout')"></ult-checkbox>
+                      Sign out
+                    </ult-menu-item>
+                  </ult-menu>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10">Value: {{ checkboxValue.selected | json }}</div>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Custom Item</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="customHeightMenu">Click me</button>
+        <ng-template #customHeightMenu>
+          <ult-menu class="w-[200px]">
+            <ult-menu-item>
+              <div class="flex items-center gap-2 py-2">
+                <ult-avatar [roundedFull]="true" src="https://randomuser.me/api/portraits/men/1.jpg"></ult-avatar>
+                <div>
+                  <span>Justin G. Evans</span>
+                  <div class="text-xs text-neutral-400 mt-1">&#64;justingevans</div>
+                </div>
+              </div>
+            </ult-menu-item>
+            <ult-menu-separator></ult-menu-separator>
+            <ult-menu-item>Settings</ult-menu-item>
+            <ult-menu-item>Help</ult-menu-item>
+            <ult-menu-item>Sign out</ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Nested Menu</h2>
+    <playground>
+      <playground-content>
+        <button ult-button [ultMenuTriggerFor]="nestedMenu">Click me</button>
+        <ng-template #nestedMenu>
+          <ult-menu>
+            <ult-menu-item>Refresh</ult-menu-item>
+            <ult-menu-item [ultMenuTriggerFor]="settingsNestedMenu">
+              Account
+              <ult-icon name="ph:caret-right" size="16" ultMenuTriggerIcon></ult-icon>
+            </ult-menu-item>
+            <ult-menu-item>Help</ult-menu-item>
+            <ult-menu-item>Sign out</ult-menu-item>
+          </ult-menu>
+          <ng-template #settingsNestedMenu>
+            <ult-menu>
+              <ult-menu-item>View Profile</ult-menu-item>
+              <ult-menu-item>Edit Profile</ult-menu-item>
+              <ult-menu-item>Notifications</ult-menu-item>
+            </ult-menu>
+          </ng-template>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Keep open after item has clicked</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="keepOpenMenu">Click me</button>
+        <ng-template #keepOpenMenu>
+          <ult-menu>
+            <ult-menu-item [keepOpen]="true">Refresh</ult-menu-item>
+            <ult-menu-item [keepOpen]="true">Settings</ult-menu-item>
+            <ult-menu-item [keepOpen]="true">Help</ult-menu-item>
+            <ult-menu-item [keepOpen]="true">Sign out</ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Position</h2>
+    <playground>
+      <playground-content>
+        <button ultButton [ultMenuTriggerFor]="positionMenu" [position]="position">Click me</button>
+        <ng-template #positionMenu>
+          <ult-menu>
+            <ult-menu-item>Refresh</ult-menu-item>
+            <ult-menu-item>Settings</ult-menu-item>
+            <ult-menu-item>Help</ult-menu-item>
+            <ult-menu-item>Sign out</ult-menu-item>
+          </ult-menu>
+        </ng-template>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-label>Position:</ult-label>
+          <div class="space-y-5">
+            <ult-radio [(ngModel)]="position" value="above-start" name="position">Above Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="above-center" name="position">Above Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="above-end" name="position">Above End</ult-radio>
+            <ult-radio [(ngModel)]="position" value="below-start" name="position">Below Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="below-center" name="position">Below Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="below-end" name="position">Below End</ult-radio>
+            <ult-radio [(ngModel)]="position" value="before-start" name="position">Before Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="before-center" name="position">Before Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="before-end" name="position">Before End</ult-radio>
+            <ult-radio [(ngModel)]="position" value="after-start" name="position">After Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="after-center" name="position">After Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="after-end" name="position">After End</ult-radio>
+          </div>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

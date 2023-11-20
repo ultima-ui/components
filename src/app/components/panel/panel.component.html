@@ -1,0 +1,42 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Panel</h1>
+    </div>
+
+    <div>
+      <div class="mb-4">Import module:</div>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px] h-[500px]">
+          <ult-panel class="border">
+            <ult-panel-header class="bg-gray-100 flex items-center px-6">Header</ult-panel-header>
+            <ult-panel-body class="p-6">Body</ult-panel-body>
+            <ult-panel-footer class="bg-gray-50 flex items-center px-6">Footer</ult-panel-footer>
+          </ult-panel>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Scroll</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px] h-[500px]">
+          <ult-panel class="border">
+            <ult-panel-header class="bg-gray-100 flex items-center px-6">Header</ult-panel-header>
+            <ult-panel-body>
+              <div class="h-[1000px]">Long Body</div>
+            </ult-panel-body>
+            <ult-panel-footer class="bg-gray-50 flex items-center px-6">Footer</ult-panel-footer>
+          </ult-panel>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

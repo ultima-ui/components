@@ -1,0 +1,97 @@
+:root {
+  --ult-button-padding: 0 theme('spacing.4');
+  --ult-button-border-color: theme('colors.transparent');
+  --ult-button-font-weight: theme('fontWeight.medium');
+  --ult-button-border-radius: theme('borderRadius.md');
+  --ult-button-font-size: theme('fontSize.sm');
+  --ult-button-height: theme('spacing.control');
+  --ult-button-content-gap: theme('spacing.2');
+  --ult-button-spinner-animation: theme('animation.spin');
+  --ult-button-spinner-size: theme('width.6');
+  --ult-button-border-width: 0;
+  --ult-button-prefix-padding: theme('spacing[2.5]');
+  --ult-button-icon-size: theme('fontSize.2xl');
+  --ult-button-color: theme('colors.white');
+  --ult-button-hover-color: theme('colors.white');
+  --ult-button-active-color: theme('colors.white');
+  --ult-button-icon-scale: .65;
+}
+
+/** BUTTON SIZES */
+
+[button-size="sm"] {
+  --ult-button-height: theme('spacing.control-sm');
+  --ult-button-font-size: theme('fontSize.tiny');
+  --ult-button-padding: theme('spacing.3');
+  --ult-button-prefix-padding: theme('spacing.2');
+  --ult-button-icon-size: theme('fontSize.xl');
+  --ult-button-content-gap: theme('spacing[1.5]');
+}
+
+[button-size="lg"] {
+  --ult-button-height: theme('spacing.control-lg');
+  --ult-button-font-size: theme('fontSize.md');
+  --ult-button-padding: theme('spacing.5');
+  --ult-button-prefix-padding: theme('spacing.3');
+  --ult-button-icon-size: theme('fontSize.3xl');
+  --ult-button-content-gap: theme('spacing[2.5]');
+}
+
+/** BUTTON VARIANTS */
+
+[button-variant="primary"] {
+  --ult-button-bg: theme('colors.primary.500');
+  --ult-button-hover-bg: theme('colors.primary.600');
+  --ult-button-active-bg: theme('colors.primary.700');
+  --ult-button-color: theme('colors.white');
+}
+
+[button-variant="secondary"] {
+  --ult-button-bg: theme('colors.neutral.200');
+  --ult-button-hover-bg: theme('colors.neutral.300');
+  --ult-button-active-bg: theme('colors.neutral.400');
+  --ult-button-color: theme('colors.neutral.700');
+  --ult-button-hover-color: theme('colors.neutral.800');
+  --ult-button-active-color: theme('colors.neutral.800');
+}
+
+[button-variant="tertiary"] {
+  --ult-button-bg: theme('colors.transparent');
+  --ult-button-hover-bg: theme('colors.neutral.200');
+  --ult-button-active-bg: theme('colors.neutral.300');
+  --ult-button-color: theme('colors.neutral.500');
+  --ult-button-hover-color: theme('colors.neutral.700');
+  --ult-button-active-color: theme('colors.neutral.700');
+}
+
+[button-variant="negative"] {
+  --ult-button-bg: theme('colors.negative.500');
+  --ult-button-hover-bg: theme('colors.negative.600');
+  --ult-button-active-bg: theme('colors.negative.700');
+  --ult-button-color: theme('colors.white');
+}
+
+[button-variant="positive"] {
+  --ult-button-bg: theme('colors.positive.500');
+  --ult-button-hover-bg: theme('colors.positive.600');
+  --ult-button-active-bg: theme('colors.positive.700');
+  --ult-button-color: theme('colors.white');
+}
+
+[button-variant="link"] {
+  --ult-button-bg: theme('colors.transparent');
+  --ult-button-color: theme('colors.primary.600');
+  --ult-button-hover-color: theme('colors.primary.700');
+  --ult-button-active-color: theme('colors.primary.800');
+}
+
+[button-variant="accent"] {
+  --ult-button-border-width: 1px;
+  --ult-button-border-color: theme('colors.neutral.200');
+  --ult-button-bg: theme('colors.transparent');
+  --ult-button-hover-bg: theme('colors.neutral.200');
+  --ult-button-active-bg: theme('colors.neutral.300');
+  --ult-button-color: theme('colors.neutral.600');
+  --ult-button-hover-color: theme('colors.neutral.700');
+  --ult-button-active-color: theme('colors.neutral.800');
+}

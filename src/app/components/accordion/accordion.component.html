@@ -1,0 +1,178 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h2 class="text-2xl font-bold">Accordion</h2>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h3>Basic</h3>
+    <playground>
+      <playground-content>
+        <ult-accordion class="w-full" [multiple]="multiple">
+          <ult-accordion-item>
+            <ult-accordion-item-header>Item 1</ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item>
+            <ult-accordion-item-header>Item 2</ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item>
+            <ult-accordion-item-header>Item 3</ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+        </ult-accordion>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-label>Multiple</ult-label>
+          <ult-switch [(ngModel)]="multiple">
+            <ng-container *ngIf="multiple">Yes</ng-container>
+            <ng-container *ngIf="!multiple">No</ng-container>
+          </ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Disabled</h3>
+    <playground>
+      <playground-content>
+        <ult-accordion class="w-full">
+          <ult-accordion-item>
+            <ult-accordion-item-header>Item 1</ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item [disabled]="true">
+            <ult-accordion-item-header>Item 2</ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item>
+            <ult-accordion-item-header>Item 3</ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+        </ult-accordion>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Toggle Icon</h3>
+    <playground>
+      <playground-content>
+        <ult-accordion class="w-full">
+          <ult-accordion-item>
+            <ult-accordion-item-header>
+              Item 1
+              <ult-icon name="ph:caret-down" size="16" ultAccordionItemToggleIcon></ult-icon>
+            </ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item>
+            <ult-accordion-item-header>
+              Item 2
+              <ult-icon name="ph:caret-down" size="16" ultAccordionItemToggleIcon></ult-icon>
+            </ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item>
+            <ult-accordion-item-header>
+              Item 3
+              <ng-template ultAccordionItemToggleIcon>
+                <ult-icon name="ph:caret-down" size="16"></ult-icon>
+              </ng-template>
+            </ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+        </ult-accordion>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Custom Toggle Label</h3>
+    <playground>
+      <playground-content>
+        <ult-accordion class="w-full">
+          <ult-accordion-item #accordionItem="ultAccordionItem">
+            <ult-accordion-item-header class="justify-between">
+              Item 1
+              <div class="text-xs text-neutral-400">
+                Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+              </div>
+            </ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item #accordionItem2="ultAccordionItem">
+            <ult-accordion-item-header class="justify-between">
+              Item 2
+              <div class="text-xs text-neutral-400">
+                Click to {{ accordionItem2.expanded ? 'close' : 'open' }}
+              </div>
+            </ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+          <ult-accordion-item #accordionItem3="ultAccordionItem">
+            <ult-accordion-item-header class="justify-between">
+              Item 3
+              <div class="text-xs text-neutral-400">
+                Click to {{ accordionItem3.expanded ? 'close' : 'open' }}
+              </div>
+            </ult-accordion-item-header>
+            <ult-accordion-item-body>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
+              excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
+              veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+            </ult-accordion-item-body>
+          </ult-accordion-item>
+        </ult-accordion>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

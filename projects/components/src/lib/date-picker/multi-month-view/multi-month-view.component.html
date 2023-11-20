@@ -1,0 +1,10 @@
+<div class="grid grid-cols-2 h-full columns">
+  <div class="multi-month col-span-1"
+       [class.is-today]="index === _today.getMonth()"
+       [class.is-active]="index === activeDate.getMonth()"
+       (click)="select(index)"
+       *ngFor="let monthName of _months; let index = index">
+    <div>{{ monthName }}</div>
+    <div class="ms-auto text-neutral-400/80">{{ index + 1 }}</div>
+  </div>
+</div>

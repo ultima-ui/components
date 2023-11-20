@@ -1,0 +1,9 @@
+:host {
+  border-top-left-radius: var(--ult-dialog-border-radius);
+  border-top-right-radius: var(--ult-dialog-border-radius);
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: var(--ult-dialog-header-height);
+  padding: var(--ult-dialog-header-padding);
+}

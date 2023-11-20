@@ -1,0 +1,11 @@
+<div class="flex items-center">
+  <input type="checkbox" [disabled]="disabled" (focusin)="_focused = true" (focusout)="_focused = false">
+  <div class="control">
+    <div class="indicator" *ngIf="!indeterminate || (indeterminate && checked)"
+         [innerHTML]="checkIconCode | safeHtml"></div>
+    <div class="indicator is-indeterminate" *ngIf="indeterminate && !checked"
+         [innerHTML]="intermediateIconCode | safeHtml"></div>
+  </div>
+  <div class="label"><ng-content></ng-content></div>
+</div>
+<ng-content select="ult-checkbox-content"></ng-content>

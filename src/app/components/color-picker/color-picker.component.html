@@ -1,0 +1,38 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-8">
+    <div class="space-y-8">
+      <h1 class="text-2xl font-bold mt-0">Color Picker</h1>
+      <div>
+        <div class="mb-4">Import module:</div>
+        <code-block [code]="importModule"></code-block>
+      </div>
+
+      <h2>Basic</h2>
+      <playground>
+        <playground-content>
+          <ult-color-picker [(color)]="basicColor"></ult-color-picker>
+        </playground-content>
+        <playground-properties>
+          Selected color: <strong>{{ basicColor }}</strong>
+        </playground-properties>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Popover</h2>
+      <playground>
+        <playground-content>
+          <button ult-color-picker-thumbnail [color]="popoverColor" [ultColorPickerTriggerFor]="colorPicker"></button>
+          <ng-template #colorPicker>
+            <ult-color-picker [(color)]="popoverColor"></ult-color-picker>
+          </ng-template>
+        </playground-content>
+        <playground-properties>
+          Selected color: <strong>{{ popoverColor }}</strong>
+        </playground-properties>
+        <playground-controls></playground-controls>
+      </playground>
+    </div>
+  </div>
+</div>
+
+

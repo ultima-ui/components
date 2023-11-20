@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ult-select-options-gap);
+  overflow-y: auto;
+  box-shadow: var(--ult-select-options-shadow);
+  border: var(--ult-select-options-border-width) solid var(--ult-select-options-border-color);
+  border-radius: var(--ult-select-options-border-radius);
+  background: var(--ult-select-options-bg);
+  max-height: var(--ult-select-options-max-height);
+  width: 100%;
+  padding: var(--ult-select-options-padding);
+  margin: var(--ult-select-options-margin-y) 0;
+  animation: .15s ult-select-options-animation;
+}
+
+@keyframes ult-select-options-animation {
+  0% {
+    transform: scale(.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

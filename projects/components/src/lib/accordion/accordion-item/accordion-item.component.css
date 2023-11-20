@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  background-color: var(--ult-accordion-item-bg);
+  border-radius: var(--ult-accordion-item-border-radius);
+  border: var(--ult-accordion-item-border-width) solid var(--ult-accordion-item-border-color);
+}
+
+:host(.is-expanded) ::ng-deep .ult-accordion-item-body {
+  display: block;
+}
+
+:host(.is-expanded) ::ng-deep .ult-accordion-item-header {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: var(--ult-accordion-item-expanded-header-bg);
+}
+
+:host(.is-disabled) {
+  pointer-events: none;
+  opacity: var(--ult-disabled-opacity);
+}

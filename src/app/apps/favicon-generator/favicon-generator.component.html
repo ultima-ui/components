@@ -1,0 +1,99 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-3">
+    <div class="space-y-10">
+      <div #container class="w-[200px] h-[200px]"></div>
+      <img #preview class="w-[32px] h-[32px]">
+    </div>
+  </div>
+  <div class="col-span-6">
+    <div class="space-y-8">
+      <div>
+        <div class="font-bold text-xs mb-2">Text</div>
+        <div class="rounded-lg border p-6 space-y-6">
+          <div class="grid grid-cols-2 gap-6">
+            <ult-form-field class="col-span-1">
+              <ult-label>Text</ult-label>
+              <input ultInput size="lg" [(ngModel)]="text" (ngModelChange)="changeText()">
+            </ult-form-field>
+            <ult-form-field class="col-span-1">
+              <ult-label>Color</ult-label>
+              <ult-input size="lg">
+                <input [(ngModel)]="color">
+                <button ultInputSuffix ult-color-picker-thumbnail class="w-8 h-8 -me-0.5"
+                        [color]="color" [ultColorPickerTriggerFor]="colorPopover"></button>
+              </ult-input>
+            </ult-form-field>
+          </div>
+          <ult-form-field class="col-span-1">
+            <ult-label>Font size ({{ fontSize }}px)</ult-label>
+            <div>
+              <ult-slider min="10" max="40" class="mt-2"
+                          [(ngModel)]="fontSize" (ngModelChange)="changeFontSize()"></ult-slider>
+            </div>
+          </ult-form-field>
+          <div class="grid grid-cols-2 gap-6">
+            <ult-form-field class="col-span-1">
+              <ult-label>Font Weight</ult-label>
+              <ult-select [(ngModel)]="fontWeight" (ngModelChange)="fontWeightChange()">
+                <ult-option value="100">Thin</ult-option>
+                <ult-option value="300">Light</ult-option>
+                <ult-option value="400">Normal</ult-option>
+                <ult-option value="500">Medium</ult-option>
+                <ult-option value="700">Bold</ult-option>
+                <ult-option value="900">Extra Bold</ult-option>
+              </ult-select>
+            </ult-form-field>
+            <ult-form-field class="col-span-1">
+              <ult-label>Font Family</ult-label>
+              <ult-select [(ngModel)]="fontFamily" (ngModelChange)="fontFamilyChange()">
+                <ult-option value="Golos Text">Golos Text</ult-option>
+                <ult-option value="Roboto">Roboto</ult-option>
+                <ult-option value="Noto Sans">Noto Sans</ult-option>
+              </ult-select>
+            </ult-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="font-bold text-xs mb-2">Border</div>
+        <div class="rounded-lg border p-6">
+          <div class="grid grid-cols-2 gap-6">
+            <ult-form-field class="col-span-1">
+              <ult-label>Border radius ({{ borderRadius }}px)</ult-label>
+              <ult-slider min="0" max="16" class="mt-2"
+                          [(ngModel)]="borderRadius" (ngModelChange)="changeBorderRadius()"></ult-slider>
+            </ult-form-field>
+            <ult-form-field class="col-span-1">
+              <ult-label>Border width ({{ borderWidth }}px)</ult-label>
+              <ult-slider min="0" max="28" class="mt-2"
+                          [(ngModel)]="borderWidth" (ngModelChange)="changeBorderWidth()"></ult-slider>
+            </ult-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="font-bold text-xs mb-2">Background</div>
+        <div class="rounded-lg border p-6">
+          <div class="grid grid-cols-2 gap-6">
+            <ult-form-field class="col-span-1">
+              <ult-label>Background Color</ult-label>
+              <ult-input size="lg">
+                <input [(ngModel)]="backgroundColor">
+                <button ultInputSuffix ult-color-picker-thumbnail class="w-8 h-8 -me-0.5"
+                        [color]="backgroundColor" [ultColorPickerTriggerFor]="backgroundPopover"></button>
+              </ult-input>
+            </ult-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #colorPopover>
+  <ult-color-picker [color]="color" (colorChange)="colorChanged($event)"></ult-color-picker>
+</ng-template>
+<ng-template #backgroundPopover>
+  <ult-color-picker [color]="backgroundColor" (colorChange)="backgroundColorChanged($event)"></ult-color-picker>
+</ng-template>

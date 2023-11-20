@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  user-select: none;
+  cursor: pointer;
+}
+
+:host .container {
+  display: flex;
+  align-items: center;
+  gap: var(--ult-switch-gap);
+}
+
+:host .control {
+  position: relative;
+  background: var(--ult-switch-control-bg);
+  border-radius: var(--ult-switch-control-border-radius);
+  width: var(--ult-switch-control-width);
+  padding: var(--ult-switch-control-padding);
+  display: flex;
+  align-items: center;
+}
+
+:host .indicator {
+  width: var(--ult-switch-indicator-size);
+  height: var(--ult-switch-indicator-size);
+  flex: none;
+  position: relative;
+  background: var(--ult-switch-indicator-bg);
+  border-radius: 62.4375rem;
+  box-shadow: var(--ult-switch-indicator-shadow);
+  transition: var(--ult-transition-transform);
+}
+
+:host(.is-disabled) {
+  pointer-events: none;
+  opacity: var(--ult-disabled-opacity);
+}
+
+:host(.is-checked) .control {
+  background: var(--ult-switch-checked-control-bg);
+}
+
+:host(.is-checked) .indicator {
+  transform: translateX(100%);
+}
+
+:host .label {
+  font-size: var(--ult-switch-label-font-size);
+  color: var(--ult-switch-label-color);
+}
+
+:host .label:empty {
+  display: none;
+}
+
+:host(.is-focused) {
+  outline: var(--ult-outline-size) solid var(--ult-outline-color);
+  outline-offset: var(--ult-outline-offset);
+}

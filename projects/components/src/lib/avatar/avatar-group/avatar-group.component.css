@@ -1,0 +1,16 @@
+:host {
+  flex: none;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+:host ::ng-deep * + * {
+  margin-left: calc(var(--ult-avatar-group-item-offset) * -1);
+}
+
+:host ::ng-deep .ult-avatar,
+:host ::ng-deep .ult-avatar-counter {
+  border: var(--ult-avatar-group-item-border);
+  z-index: 0;
+}

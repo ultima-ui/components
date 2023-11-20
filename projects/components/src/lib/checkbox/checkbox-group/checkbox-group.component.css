@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: var(--ult-checkbox-group-vgap);
+  flex-direction: column;
+  padding: var(--ult-checkbox-group-padding);
+}
+
+:host(.is-inline) {
+  flex-direction: row;
+  gap: var(--ult-checkbox-group-hgap);
+}

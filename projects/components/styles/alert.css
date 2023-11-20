@@ -1,0 +1,60 @@
+:root {
+  --ult-alert-bg-color: transparent;
+  --ult-alert-color: transparent;
+  --ult-alert-icon-color: theme('colors.white');
+  --ult-alert-border-color: transparent;
+  --ult-alert-border-radius: theme('borderRadius.xl');
+  --ult-alert-padding: theme('padding.4') theme('padding.4');
+  --ult-alert-gap: theme('gap[3.5]');
+  --ult-alert-border-width: 1px;
+  --ult-alert-font-size: theme('fontSize.md');
+  --ult-alert-thumbnail-bg: theme('colors.white');
+  --ult-alert-thumbnail-border-radius: theme('borderRadius.lg');
+  --ult-alert-thumbnail-size: theme('spacing.10');
+  --ult-alert-close-font-size: theme('fontSize.2xl');
+  --ult-alert-close-color: theme('colors.neutral.500');
+  --ult-alert-close-hover-color: theme('colors.neutral.900');
+  --ult-alert-close-top: 0.8125rem;
+}
+
+[alert-variant="primary"] {
+  --ult-alert-bg-color: theme('colors.primary.100');
+  --ult-alert-color: theme('colors.primary.800');
+  --ult-alert-thumbnail-bg:  theme('colors.primary.500');
+  --ult-alert-border-color: theme('colors.primary.400');
+}
+
+[alert-variant="secondary"] {
+  --ult-alert-bg-color: theme('colors.secondary.100');
+  --ult-alert-color: theme('colors.secondary.800');
+  --ult-alert-thumbnail-bg: theme('colors.secondary.400');
+  --ult-alert-border-color: theme('colors.secondary.400');
+}
+
+[alert-variant="informative"] {
+  --ult-alert-bg-color: theme('colors.informative.100');
+  --ult-alert-color: theme('colors.informative.800');
+  --ult-alert-thumbnail-bg: theme('colors.informative.500');
+  --ult-alert-border-color: theme('colors.informative.400');
+}
+
+[alert-variant="positive"] {
+  --ult-alert-bg-color: theme('colors.positive.100');
+  --ult-alert-color: theme('colors.positive.800');
+  --ult-alert-thumbnail-bg: theme('colors.positive.500');
+  --ult-alert-border-color: theme('colors.positive.400');
+}
+
+[alert-variant="negative"] {
+  --ult-alert-bg-color: theme('colors.negative.100');
+  --ult-alert-color: theme('colors.negative.800');
+  --ult-alert-thumbnail-bg: theme('colors.negative.500');
+  --ult-alert-border-color: theme('colors.negative.400');
+}
+
+[alert-variant="notice"] {
+  --ult-alert-bg-color: theme('colors.notice.100');
+  --ult-alert-color: theme('colors.notice.800');
+  --ult-alert-thumbnail-bg: theme('colors.notice.500');
+  --ult-alert-border-color: theme('colors.notice.400');
+}

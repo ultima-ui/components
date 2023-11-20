@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  background-color: var(--ult-accordion-item-header-bg);
+  height: var(--ult-accordion-item-header-height);
+  padding: var(--ult-accordion-item-header-padding);
+  font-size: var(--ult-accordion-item-header-font-size);
+  border-radius: var(--ult-accordion-item-header-border-radius);
+  flex: none;
+  cursor: pointer;
+  position: relative;
+}
+
+:host(:hover) {
+  background-color: var(--ult-accordion-item-header-hover-bg);
+}
+
+:host:has(.toggle:not(:empty)) {
+  padding: var(--ult-accordion-item-header-has-toggle-padding);
+}
+
+:host .toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--ult-transition-transform);
+}
+
+:host .toggle:empty {
+  display: none;
+}
+
+:host .toggle {
+  margin-inline-start: auto;
+  color: var(--ult-accordion-item-toggle-icon-color);
+  inset-inline-end: var(--ult-accordion-item-toggle-icon-position-end);
+}
+
+:host-context(.ult-accordion-item.is-expanded) .toggle {
+  transform: rotate(var(--ult-accordion-item-toggle-icon-rotate-deg));
+}

@@ -1,0 +1,57 @@
+:host {
+  overflow-y: auto;
+  display: block;
+  background: var(--ult-menu-bg);
+  min-width: var(--ult-menu-min-width);
+  box-shadow: var(--ult-menu-shadow);
+  border-radius: var(--ult-menu-border-radius);
+  padding: var(--ult-menu-padding);
+  border: var(--ult-menu-border-width) solid var(--ult-menu-border-color);
+  animation: 0.15s ult-menu-animation;
+}
+
+:host-context(.ult-menu-above) {
+  transform-origin: bottom;
+}
+
+:host-context(.ult-menu-below) {
+  transform-origin: top;
+}
+
+:host-context(.ult-menu-before) {
+  transform-origin: right;
+}
+
+:host-context(.ult-menu-after) {
+  transform-origin: left;
+}
+
+:host-context(.ult-menu-above),
+:host-context(.ult-menu-below) {
+  margin: var(--ult-menu-position-offset) 0;
+}
+
+:host-context(.ult-menu-before),
+:host-context(.ult-menu-after) {
+  margin: 0 var(--ult-menu-position-offset);
+}
+
+:host(.is-nested) {
+  margin-inline-start: -0.125rem;
+}
+
+:host ::ng-deep .ult-menu-item + ult-menu-item {
+  margin-top: var(--ult-menu-space-y);
+}
+
+@keyframes ult-menu-animation {
+  0% {
+    transform: scale(.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

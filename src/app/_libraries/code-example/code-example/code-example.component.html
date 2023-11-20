@@ -1,0 +1,22 @@
+<div class="relative">
+  <ult-tabs #tabs activeTabId="example">
+    <ult-tab id="example">Example</ult-tab>
+    <ult-tab id="source">Source</ult-tab>
+  </ult-tabs>
+  <ng-container *ngIf="tabs.api.isActive('source')">
+    <div class="absolute top-3.5 right-5 flex items-center text-xs gap-3 text-neutral-500 cursor-pointer">
+      <div *ngFor="let codeExample of state.codeExamples() | async"
+           [ngClass]="{ 'font-bold': state.getCurrentView() == codeExample.id, 'text-neutral-900': state.getCurrentView() == codeExample.id }"
+           class="hover:text-neutral-900 uppercase"
+           (click)="state.setCodeView(codeExample.id)">{{ codeExample.name }}</div>
+    </div>
+  </ng-container>
+</div>
+<div class="grow overflow-auto">
+  <ng-container *ngIf="tabs.api.isActive('example')">
+    <ng-content select="app-example"></ng-content>
+  </ng-container>
+  <ng-container *ngIf="tabs.api.isActive('source')">
+    <ng-content select="app-source"></ng-content>
+  </ng-container>
+</div>

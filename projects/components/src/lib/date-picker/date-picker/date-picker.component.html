@@ -1,0 +1,31 @@
+<div class="header flex items-center flex-none justify-between">
+  <div class="flex items-center labels" (click)="toggleLabels()"
+       [class.is-active]="startView === 'multi-year' || startView === 'multi-month'">
+    <div class="font-bold cursor-pointer label month-label" *ngIf="startView !== 'multi-year'">{{ _monthLabel }}</div>
+    <div class="cursor-pointer label year-label">
+      <ng-container *ngIf="startView !== 'multi-year'">{{ _yearLabel }}</ng-container>
+      <ng-container *ngIf="startView === 'multi-year'">{{ _yearPeriodLabel }}</ng-container>
+    </div>
+  </div>
+  <div class="controls">
+    <button class="control" (click)="previous()">
+      <ng-content select="[ultDatePickerPrevious]"></ng-content>
+    </button>
+    <button class="today" (click)="today()">{{ todayLabel }}</button>
+    <button class="control" (click)="next()">
+      <ng-content select="[ultDatePickerNext]"></ng-content>
+    </button>
+  </div>
+</div>
+<ng-container [ngSwitch]="startView">
+  <ult-month-view [activeDate]="_activeDate" [selected]="selected"
+                  [firstDayOfWeek]="firstDayOfWeek" *ngSwitchCase="'month'"
+                  (selectedChange)="_emitSelectedEvent($event)"></ult-month-view>
+  <ult-multi-year-view [activeDate]="_activeDate" *ngSwitchCase="'multi-year'"
+                       [minDate]="minDate" [maxDate]="maxDate"
+                       (yearPeriodChanged)="yearPeriodChanged($event)"
+                       (yearSelected)="_yearSelected($event)"></ult-multi-year-view>
+  <ult-multi-month-view [activeDate]="_activeDate"
+                        (monthSelected)="_monthSelected($event)"
+                        *ngSwitchCase="'multi-month'"></ult-multi-month-view>
+</ng-container>

@@ -1,0 +1,174 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Radio</h1>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="formGroup">
+          <ult-radio-group [inline]="isInline">
+            <ult-radio formControlName="value" value="value1">Radio 1</ult-radio>
+            <ult-radio formControlName="value" value="value2">Radio 2</ult-radio>
+            <ult-radio formControlName="value" value="value3">Radio 3</ult-radio>
+          </ult-radio-group>
+        </form>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-switch [(ngModel)]="isInline">Inline</ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Field</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="fieldFormGroup">
+          <ult-form-field>
+            <ult-label>Select Value</ult-label>
+            <ult-radio-group>
+              <ult-radio formControlName="value" value="value1">Radio 1</ult-radio>
+              <ult-radio formControlName="value" value="value2">Radio 2</ult-radio>
+              <ult-radio formControlName="value" value="value3">Radio 3</ult-radio>
+            </ult-radio-group>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Field Required</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="fieldRequiredFormGroup">
+          <ult-form-field>
+            <ult-label [required]="true">Select Value</ult-label>
+            <ult-radio-group>
+              <ult-radio formControlName="value" value="value1">Radio 1</ult-radio>
+              <ult-radio formControlName="value" value="value2">Radio 2</ult-radio>
+              <ult-radio formControlName="value" value="value3">Radio 3</ult-radio>
+            </ult-radio-group>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Field Helper Text</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="fieldHelperTextFormGroup">
+          <ult-form-field>
+            <ult-label>Select Value</ult-label>
+            <ult-radio-group>
+              <ult-radio formControlName="value" value="value1">Radio 1</ult-radio>
+              <ult-radio formControlName="value" value="value2">Radio 2</ult-radio>
+              <ult-radio formControlName="value" value="value3">Radio 3</ult-radio>
+            </ult-radio-group>
+            <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</ult-helper-text>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Field Invalid</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="fieldInvalidFormGroup" class="space-y-8">
+          <ult-form-field>
+            <ult-label [required]="true">Select Value</ult-label>
+            <ult-radio-group>
+              <ult-radio formControlName="value" value="value1">Radio 1</ult-radio>
+              <ult-radio formControlName="value" value="value2">Radio 2</ult-radio>
+              <ult-radio formControlName="value" value="value3">Radio 3</ult-radio>
+            </ult-radio-group>
+            <ult-errors>
+              <ult-error>This field is required</ult-error>
+            </ult-errors>
+          </ult-form-field>
+          <div>
+            <p>Invalid with helper text:</p>
+            <ult-form-field>
+              <ult-label [required]="true">Select Value</ult-label>
+              <ult-radio-group>
+                <ult-radio formControlName="value" value="value1">Radio 1</ult-radio>
+                <ult-radio formControlName="value" value="value2">Radio 2</ult-radio>
+                <ult-radio formControlName="value" value="value3">Radio 3</ult-radio>
+              </ult-radio-group>
+              <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</ult-helper-text>
+              <ult-errors>
+                <ult-error>This field is required</ult-error>
+              </ult-errors>
+            </ult-form-field>
+          </div>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Content</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="fieldHelperTextFormGroup">
+          <ult-form-field>
+            <ult-label>Select Value</ult-label>
+            <ult-radio-group>
+              <ult-radio formControlName="value" value="value1">
+                Radio 1
+                <ult-radio-content>asasfasasfasf</ult-radio-content>
+              </ult-radio>
+              <ult-radio formControlName="value" value="value2">
+                Radio 2
+                <ult-radio-content>asasfasasfasf</ult-radio-content>
+              </ult-radio>
+              <ult-radio formControlName="value" value="value3">
+                Radio 3
+                <ult-radio-content>asasfasasfasf</ult-radio-content>
+              </ult-radio>
+            </ult-radio-group>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Blocks</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="blocksGroup" class="w-full">
+          <ult-form-field>
+            <div class="space-y-5 mt-2">
+              <ult-radio formControlName="access" value="anyone" [block]="true" class="border rounded-xl p-4 hover:border-gray-300 w-full">
+                <div class="ms-1">
+                  <div>Anyone can signup</div>
+                  <div class="text-xs text-gray-400 mt-1">All visitors will be able to register and sign in</div>
+                </div>
+              </ult-radio>
+              <ult-radio formControlName="access" value="invited-people" [block]="true" class="border rounded-xl p-4 hover:border-gray-300 w-full">
+                <div class="ms-1">
+                  <div>Only people I invite</div>
+                  <div class="text-xs text-gray-400 mt-1">People can sign in from your site but won't be able to register</div>
+                </div>
+              </ult-radio>
+              <ult-radio formControlName="access" value="nobody" [block]="true" class="border rounded-xl p-4 hover:border-gray-300 w-full">
+                <div class="ms-1">
+                  <div>Nobody</div>
+                  <div class="text-xs text-gray-400 mt-1">Disable all member features, including newsletters</div>
+                </div>
+              </ult-radio>
+            </div>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

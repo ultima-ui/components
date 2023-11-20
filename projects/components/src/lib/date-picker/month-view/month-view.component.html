@@ -1,0 +1,11 @@
+<div class="grid grid-cols-7 gap-0.5 day-of-week-names">
+  <div *ngFor="let dayName of _dayOfWeekNames" class="week-day-name">{{ dayName }}</div>
+</div>
+<div class="grid grid-cols-7 month-day-cells">
+  <div *ngFor="let dayInMonth of _daysInMonths" class="col-span-1 day-cell"
+       [class.is-not-active]="!dayInMonth.isActive">
+    <button class="day-number" (click)="select(dayInMonth)"
+            [class.is-today]="isEqual(dayInMonth.date, _today)"
+            [class.is-selected]="isEqual(selected, dayInMonth.date)">{{ dayInMonth.date.getDate() }}</button>
+  </div>
+</div>

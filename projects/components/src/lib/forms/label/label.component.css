@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  width: max-content;
+  color: var(--ult-label-color);
+  font-size: var(--ult-label-font-size);
+  line-height: var(--ult-label-line-height);
+  font-weight: var(--ult-label-font-weight);
+  user-select: none;
+}
+
+:host .required {
+  color: var(--ult-label-required-color);
+  margin-inline-start: var(--ult-label-required-margin-start);
+}
+
+:host-context(.ult-form-field:has(.is-disabled)) {
+  opacity: var(--ult-disabled-opacity);
+  pointer-events: none;
+}
+
+:host-context(:has(.ult-input:focus-within)) {
+  color: var(--ult-input-focused-label-color);
+}

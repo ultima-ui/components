@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: var(--ult-paginator-gap);
+  user-select: none;
+}
+
+:host nav {
+  display: flex;
+  align-items: center;
+}
+
+:host .more {
+  flex: none;
+  width: var(--ult-paginator-page-size);
+  height: var(--ult-paginator-page-size);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: var(--ult-paginator-page-font-size);
+}
+
+:host .page {
+  cursor: pointer;
+  flex: none;
+  width: var(--ult-paginator-page-size);
+  height: var(--ult-paginator-page-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ult-paginator-page-bg);
+  border-radius: var(--ult-paginator-page-border-radius);
+  font-size: var(--ult-paginator-page-font-size);
+}
+
+:host .page:not(.is-current):hover {
+  background: var(--ult-paginator-page-hover-bg);
+}
+
+:host .page.is-current {
+  background: var(--ult-paginator-page-active-bg);
+  color: var(--ult-paginator-page-active-color);
+}
+
+:host .first:empty,
+:host .last:empty,
+:host .prev:empty,
+:host .next:empty {
+  display: none;
+}
+
+:host .first.is-disabled,
+:host .last.is-disabled,
+:host .prev.is-disabled,
+:host .next.is-disabled {
+  opacity: var(--ult-disabled-opacity);
+  pointer-events: none;
+}
+
+:host .pages-range {
+  display: flex;
+  align-items: center;
+  margin: var(--ult-paginator-nav-margin);
+  gap: var(--ult-paginator-pages-range-gap);
+}

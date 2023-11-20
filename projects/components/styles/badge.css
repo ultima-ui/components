@@ -1,0 +1,6 @@
+:root {
+  --ult-badge-font-size: theme('fontSize.2xs');
+  --ult-badge-font-weight: theme('fontWeight.medium');
+  --ult-badge-height: theme('height.5');
+  --ult-badge-padding: 0 theme('padding[1.5]');
+}

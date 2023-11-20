@@ -1,0 +1,13 @@
+:root {
+  --ult-custom-radio-bg: theme('colors.transparent');
+  --ult-custom-radio-hover-bg: theme('colors.neutral.200');
+  --ult-custom-radio-active-bg: theme('colors.primary.500');
+  --ult-custom-radio-color: theme('colors.neutral.600');
+  --ult-custom-radio-active-color: theme('colors.white');
+  --ult-custom-radio-border-width: theme('borderWidth.DEFAULT');
+  --ult-custom-radio-border-wcolor: theme('colors.neutral.200');
+  --ult-custom-radio-border-radius: theme('borderRadius.full');
+  --ult-custom-radio-padding: 0 theme('padding[2.5]');
+  --ult-custom-radio-font-size: theme('fontSize.xs');
+  --ult-custom-radio-height: theme('height.7');
+}

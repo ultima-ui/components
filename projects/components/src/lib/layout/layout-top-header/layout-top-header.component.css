@@ -1,0 +1,9 @@
+:host {
+  position: fixed;
+  display: block;
+  height: var(--ult-layout-top-header-height);
+  top: var(--ult-layout-top-header-top);
+  left: 0;
+  right: 0;
+  z-index: 11;
+}

@@ -1,0 +1,48 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Breadcrumbs</h1>
+    </div>
+
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-breadcrumbs>
+          <ult-breadcrumb-item>Home</ult-breadcrumb-item>
+          <ult-breadcrumb-separator>/</ult-breadcrumb-separator>
+          <ult-breadcrumb-active-item>Library</ult-breadcrumb-active-item>
+        </ult-breadcrumbs>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Data Source</h3>
+    <playground>
+      <playground-content>
+        <ult-breadcrumbs [dataSource]="dataSource">
+          <a *ultBreadcrumbItemDef="let item" ultBreadcrumbItem [routerLink]="item.link">{{ item.name }}</a>
+          <ult-breadcrumb-separator *ultBreadcrumbSeparatorDef>/</ult-breadcrumb-separator>
+          <ult-breadcrumb-active-item *ultBreadcrumbActiveItemDef="let item">{{ item.name }}</ult-breadcrumb-active-item>
+        </ult-breadcrumbs>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Route</h3>
+    <playground>
+      <playground-content>
+        <ult-route-breadcrumbs>
+          <a *ultBreadcrumbItemDef="let item" ultBreadcrumbItem [routerLink]="item.link">{{ item.name }}</a>
+          <ult-breadcrumb-separator *ultBreadcrumbSeparatorDef>/</ult-breadcrumb-separator>
+          <ult-breadcrumb-active-item *ultBreadcrumbActiveItemDef="let item">{{ item.name }}</ult-breadcrumb-active-item>
+        </ult-route-breadcrumbs>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

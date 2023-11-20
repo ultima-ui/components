@@ -1,0 +1,54 @@
+:host {
+  user-select: none;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: var(--ult-tab-gap);
+  padding: var(--ult-tab-padding);
+  color: var(--ult-tab-color);
+  font-size: var(--ult-tab-font-size);
+  position: relative;
+  cursor: pointer;
+}
+
+:host:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  flex: none;
+  height: var(--ult-tab-hl-height);
+  border-radius: var(--ult-tab-hl-border-radius);
+}
+
+:host(.is-active) {
+  color: var(--ult-tab-active-color);
+}
+
+:host(.is-active:after) {
+  background: var(--ult-tab-hl-active-color);
+}
+
+:host(:not(.is-active)):hover {
+  color: var(--ult-tab-hover-color);
+}
+
+:host(:not(.is-active)):hover:after {
+  background: var(--ult-tab-hl-hover-color);
+}
+
+:host-context(.is-stretch) {
+  flex-grow: 1;
+}
+
+:host(.is-disabled) {
+  pointer-events: none;
+  opacity: var(--ult-disabled-opacity);
+}
+
+:host-context(.is-bordered:after) {
+  bottom: var(--ult-tabs-nav-border-height);
+}

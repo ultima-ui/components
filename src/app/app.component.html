@@ -1,0 +1,44 @@
+<ult-layout>
+  <ult-layout-topbar class="border-b bg-white px-7 flex items-center">
+    <span class="font-bold">ULTIMA<span class="text-primary-500">UI</span></span>
+  </ult-layout-topbar>
+  <ult-layout-top-header height="80px" *ngIf="hasIncidents">
+    <ult-incidents>
+      <ult-incidents-bar>
+        <ult-incidents-title>Maintenance work on the DNS</ult-incidents-title>
+        <ult-incidents-description>Description</ult-incidents-description>
+        <ult-icon name="ph:caret-down" size="18" ultIncidentsToggleIcon></ult-icon>
+      </ult-incidents-bar>
+      <ult-incidents-list>
+        <ult-incident *ngFor="let incident of incidents$ | async">
+          <ult-icon name="ph:info-fill" ultIncidentIcon></ult-icon>
+          <ult-icon name="ph:x" ultIncidentClose></ult-icon>
+          <ult-incident-title>{{ incident.title }}</ult-incident-title>
+          <ult-incident-details>{{ incident.details }}</ult-incident-details>
+        </ult-incident>
+      </ult-incidents-list>
+    </ult-incidents>
+  </ult-layout-top-header>
+  <ult-layout-sidebar class="border-r bg-white overflow-y-auto">
+    <div class="p-6">
+      <ult-navigation #navigation [activeItemId]="activeLinkId">
+        <ng-container *ngFor="let navItem of navItems">
+          <ult-navigation-heading *ngIf="navItem.type === 'heading'">{{ navItem.name }}</ult-navigation-heading>
+          <a ult-navigation-item *ngIf="navItem.type === 'link'" [routerLink]="navItem.link" [id]="navItem.link">
+            <!--            <ult-navigation-item-icon *ngIf="navItem?.iconName">-->
+            <!--              <ult-icon [name]="navItem.iconName"></ult-icon>-->
+            <!--            </ult-navigation-item-icon>-->
+            {{ navItem.name }}
+          </a>
+        </ng-container>
+      </ult-navigation>
+    </div>
+  </ult-layout-sidebar>
+  <!--  <ult-layout-header class="border-b bg-white px-7 flex items-center">Header</ult-layout-header>-->
+  <ult-layout-body>
+    <router-outlet></router-outlet>
+  </ult-layout-body>
+  <!--  <ult-layout-footer class="bg-white flex items-center px-7 border-t">-->
+  <!--    Footer-->
+  <!--  </ult-layout-footer>-->
+</ult-layout>

@@ -1,0 +1,13 @@
+:root {
+  --ult-popover-border: theme('width.px') solid theme('colors.neutral.200');
+  --ult-popover-shadow: theme('boxShadow.lg');
+  --ult-popover-border-radius: theme('borderRadius.lg');
+  --ult-popover-bg: theme('colors.white');
+  --ult-popover-margin-offset: theme('spacing[2.5]');
+}
+
+/*.ult-popover-arrow {*/
+/*  @apply w-0 h-0 box-border border-[6px] origin-top-left absolute content-[''] border-solid border-neutral-200;*/
+/*  @apply border-t-transparent border-r-transparent border-b-white border-l-white;*/
+/*  @apply shadow-[-0.0625rem_0.0625rem_0.0625rem_0_rgba(0,0,0,0.085)];*/
+/*}*/

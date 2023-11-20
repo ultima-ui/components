@@ -1,0 +1,146 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Select</h1>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <div class="w-8/12">
+          <ult-select [(ngModel)]="value" placeholder="Select Value">
+            <ult-option value="none">None asf asf asf asf asf asf asf asfasfafs</ult-option>
+            <ult-option value="1">Value 1</ult-option>
+            <ult-option value="2">Value 2</ult-option>
+            <ult-option value="3">Value 3</ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Selected Value: {{ value | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Check Icon</h2>
+    <playground>
+      <playground-content>
+        <div class="w-8/12">
+          <ult-select [(ngModel)]="value2" placeholder="Select Value">
+            <ng-template ultOptionCheckIcon>
+              <ult-icon name="ph:check" size="20"></ult-icon>
+            </ng-template>
+            <ult-option value="none">None asf asf asf asf asf asf asf asfasfafs</ult-option>
+            <ult-option value="1">Value 1</ult-option>
+            <ult-option value="2">Value 2</ult-option>
+            <ult-option value="3">Value 3</ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Selected Value: {{ value2 | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Multiple</h2>
+    <playground>
+      <playground-content>
+        <div class="w-8/12">
+          <ult-select [(ngModel)]="value3" multiple="true" placeholder="Select Value">
+            <ult-option value="none">None asf asf asf asf asf asf asf asfasfafs</ult-option>
+            <ult-option value="1">11111</ult-option>
+            <ult-option value="2">22222</ult-option>
+            <ult-option value="3">33333</ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Selected Value: {{ value3 | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Toggle Icon</h2>
+    <playground>
+      <playground-content>
+        <div class="w-8/12">
+          <ult-select [(ngModel)]="value4" placeholder="Select Value">
+            <ult-icon name="ph:caret-down" size="16" ultSelectToggleIcon></ult-icon>
+            <ult-option value="none">None asf asf asf asf asf asf asf asfasfafs</ult-option>
+            <ult-option value="1">Value 1</ult-option>
+            <ult-option value="2">Value 2</ult-option>
+            <ult-option value="3">Value 3</ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Selected Value: {{ value4 | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Clear</h2>
+    <playground>
+      <playground-content>
+        <div class="w-8/12">
+          <ult-select [(ngModel)]="value5" placeholder="Select Value">
+            <ult-icon name="ph:x" size="16" ultSelectClearIcon></ult-icon>
+            <ult-icon name="ph:caret-down" size="16" ultSelectToggleIcon></ult-icon>
+            <ult-option value="none">none</ult-option>
+            <ult-option value="1">11111</ult-option>
+            <ult-option value="2">22222</ult-option>
+            <ult-option value="3">33333</ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Selected Value: {{ value5 | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Sizes</h2>
+    <playground>
+      <playground-content>
+        <div class="w-8/12 space-y-8">
+          <ult-select [(ngModel)]="value6" [size]="size" placeholder="Select Value">
+            <ult-icon name="ph:x" size="16" ultSelectClearIcon></ult-icon>
+            <ult-icon name="ph:caret-down" size="16" ultSelectToggleIcon></ult-icon>
+            <ult-option value="none">none</ult-option>
+            <ult-option value="1">11111</ult-option>
+            <ult-option value="2">22222</ult-option>
+            <ult-option value="3">33333</ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-radio-group>
+            <ult-radio name="size" [(ngModel)]="size" value="sm">Small</ult-radio>
+            <ult-radio name="size" [(ngModel)]="size" value="default">Default</ult-radio>
+            <ult-radio name="size" [(ngModel)]="size" value="lg">Large</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+        <div class="mt-4 text-sm">Selected Value: {{ value6 | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Many Options</h2>
+    <playground>
+      <playground-content>
+        <div class="w-5/12">
+          <ult-select [ngModel]="71" placeholder="Select Value">
+            <ult-option [value]="option.id" *ngFor="let option of options">{{ option.name }}</ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

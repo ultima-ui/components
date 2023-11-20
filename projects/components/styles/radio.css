@@ -1,0 +1,19 @@
+:root {
+  --ult-radio-control-size: 1.1875rem; /* 19px */
+  --ult-radio-control-shadow: theme('boxShadow.sm');
+  --ult-radio-control-border-color: theme('colors.neutral.200');
+  --ult-radio-control-border-width: theme('width.px');
+  --ult-radio-hover-control-border-color: theme('colors.neutral.300');
+  --ult-radio-indicator-size: theme('width.2');
+  --ult-radio-indicator-bg: theme('colors.transparent');
+  --ult-radio-checked-control-bg: theme('colors.primary.500');
+  --ult-radio-checked-control-border-color: theme('colors.primary.500');
+  --ult-radio-checked-indicator-bg: theme('colors.white');
+  --ult-radio-label-font-size: theme('fontSize.sm');
+  --ult-radio-label-color: theme('colors.neutral.900');
+  --ult-radio-gap: theme('gap[2.5]');
+  --ult-radio-content-margin: theme('margin.2') 0 0 calc(var(--ult-radio-control-size) + var(--ult-radio-gap));
+  --ult-radio-group-vgap: theme('gap.5');
+  --ult-radio-group-hgap: theme('gap.8');
+  --ult-radio-group-padding: theme('padding.2') 0;
+}

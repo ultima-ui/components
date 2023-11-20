@@ -1,0 +1,9 @@
+:root {
+  --ult-tooltip-shadow: theme('boxShadow.lg');
+  --ult-tooltip-padding: theme('padding[1.5]') theme('padding[2.5]');
+  --ult-tooltip-border-radius: theme('borderRadius.lg');
+  --ult-tooltip-bg: theme('colors.neutral.800/75');
+  --ult-tooltip-color: theme('colors.white');
+  --ult-tooltip-font-size: theme('fontSize.2xs');
+  --ult-tooltip-offset: theme('spacing[1.5]');
+}

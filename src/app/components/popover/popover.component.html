@@ -1,0 +1,69 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Popover</h1>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <button ult-button [ultPopoverTriggerFor]="basicPopover">Click me!</button>
+        <ng-template #basicPopover>
+          <ult-popover>
+            <div class="text-sm p-4">Some text content</div>
+          </ult-popover>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Trigger hover</h2>
+    <playground>
+      <playground-content>
+        <button ult-button [ultPopoverTriggerFor]="triggerHoverPopover" trigger="hover">Hover Me!</button>
+        <ng-template #triggerHoverPopover>
+          <ult-popover>
+            <div class="text-sm p-4">Some text content</div>
+          </ult-popover>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Position</h2>
+    <playground>
+      <playground-content>
+        <button ult-button [ultPopoverTriggerFor]="customPositionPopover" [position]="position">Click Me!</button>
+        <ng-template #customPositionPopover>
+          <ult-popover>
+            <div class="text-sm p-4">Some text content</div>
+          </ult-popover>
+        </ng-template>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-label>Position:</ult-label>
+          <ult-radio-group>
+            <ult-radio [(ngModel)]="position" value="above-start" name="position">Above Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="above-center" name="position">Above Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="above-end" name="position">Above End</ult-radio>
+            <ult-radio [(ngModel)]="position" value="below-start" name="position">Below Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="below-center" name="position">Below Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="below-end" name="position">Below End</ult-radio>
+            <ult-radio [(ngModel)]="position" value="before-start" name="position">Before Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="before-center" name="position">Before Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="before-end" name="position">Before End</ult-radio>
+            <ult-radio [(ngModel)]="position" value="after-start" name="position">After Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="after-center" name="position">After Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="after-end" name="position">After End</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

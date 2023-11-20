@@ -1,0 +1,49 @@
+:root {
+  --ult-input-bg: theme('colors.white');
+  --ult-input-color: inherit;
+  --ult-input-border-radius: theme('borderRadius.md');
+  --ult-input-height: theme('height.control-default');
+  --ult-input-font-size: theme('fontSize.sm');
+  --ult-input-border-width: theme('width.px');
+  --ult-input-border-color: theme('colors.neutral.200');
+  --ult-input-hover-border-color: theme('colors.neutral.300');
+  --ult-input-focused-border-color: theme('colors.primary.500');
+  --ult-input-placeholder-color: theme('colors.neutral.400');
+  --ult-input-invalid-border-color: theme('colors.negative.300');
+  --ult-input-invalid-focused-border-color: theme('colors.negative.500');
+  --ult-input-gap: theme('gap.3');
+  --ult-input-padding: 0 theme('padding.3');
+  --ult-input-disabled-bg: theme('colors.neutral.50');
+
+  --ult-label-color: theme('colors.neutral.600');
+  --ult-label-font-size: theme('fontSize.xs');
+  --ult-label-line-height: theme('lineHeight.normal');
+  --ult-label-font-weight: theme('fontWeight.normal');
+  --ult-label-required-color: theme('colors.negative.500');
+  --ult-label-required-margin-start: theme('spacing[0.5]');
+  --ult-input-focused-label-color: theme('colors.neutral.900');
+
+  --ult-forms-error-font-size: theme('fontSize.xs');
+  --ult-forms-error-color: theme('colors.negative.500');
+  --ult-forms-errors-margin-top: theme('margin.1');
+  --ult-forms-errors-gap: theme('gap[0.5]');
+
+  --ult-helper-text-color: theme('colors.neutral.400');
+  --ult-helper-text-font-size: theme('fontSize.xs');
+  --ult-helper-text-line-height: theme('lineHeight.normal');
+  --ult-helper-text-margin-top: theme('margin.1');
+
+  --ult-form-field-header-margin-bottom: theme('margin.1');
+  --ult-form-field-footer-margin-top: theme('margin.1');
+
+  --ult-textarea-padding: theme('padding[2.5]') theme('padding.3');
+}
+
+/* Sizes */
+[ult-input-size="sm"] {
+  --ult-input-height: theme('height.control-sm');
+}
+
+[ult-input-size="lg"] {
+  --ult-input-height: theme('height.control-lg');
+}

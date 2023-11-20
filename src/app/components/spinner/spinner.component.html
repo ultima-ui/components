@@ -1,0 +1,35 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Spinner</h1>
+    </div>
+
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic:</h2>
+    <playground>
+      <playground-content>
+        <ult-spinner></ult-spinner>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Custom Sizes</h2>
+    <playground>
+      <playground-content>
+        <div class="flex items-center gap-6">
+          <ult-spinner size="lg"></ult-spinner>
+          <ult-spinner></ult-spinner>
+          <ult-spinner size="sm"></ult-spinner>
+          <ult-spinner size="xs"></ult-spinner>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>
+
+

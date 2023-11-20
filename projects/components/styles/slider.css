@@ -1,0 +1,14 @@
+:root {
+  --ult-slider-height: theme('height.5');
+  --ult-slider-border-radius: theme('borderRadius.full');
+  --ult-slider-track-height: theme('height.2');
+  --ult-slider-track-bg: theme('colors.neutral.100');
+  --ult-slider-thumb-border-radius: theme('borderRadius.full');
+  --ult-slider-thumb-size: theme('width.5');
+  --ult-slider-thumb-bg: theme('colors.primary.500');
+  --ult-slider-thumb-shadow: none;
+  --ult-slider-thumb-hover-shadow: theme('boxShadow.sm');
+  --ult-slider-thumb-active-scale: theme('scale.110');
+  --ult-slider-step-dot-size: 3px;
+  --ult-slider-step-dot-bg: theme('colors.neutral.400');
+}

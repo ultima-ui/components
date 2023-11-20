@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  padding: var(--ult-date-picker-month-view-padding);
+}
+
+.day-of-week-names {
+  margin: var(--ult-date-day-of-week-names-margin);
+}
+
+:host .week-day-name {
+  flex: none;
+  text-align: center;
+  font-size: var(--ult-date-picker-week-day-font-size);
+  color: var(--ult-date-picker-week-day-color);
+  text-transform: var(--ult-date-picker-week-day-text-transform);
+}
+
+:host .month-day-cells {
+  gap: var(--ult-date-month-day-cells-gap);
+}
+
+:host .day-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+:host .day-number {
+  font-size: var(--ult-date-day-number-font-size);
+  border-radius: var(--ult-date-day-number-border-radius);
+  width: var(--ult-date-day-cell-size);
+  height: var(--ult-date-day-cell-size);
+}
+
+:host .day-number:hover {
+  background: var(--ult-date-day-number-hover);
+}
+
+:host .day-cell.is-not-active {
+  color: var(--ult-date-picker-day-number-not-active-color);
+}
+
+:host .day-number.is-today {
+  background: var(--ult-date-day-number-today-bg);
+}
+
+:host .day-number.is-selected {
+  background: var(--ult-date-day-selected-bg);
+  color: var(--ult-date-day-selected-color);
+}

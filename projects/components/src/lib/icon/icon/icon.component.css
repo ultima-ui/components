@@ -1,0 +1,23 @@
+:host {
+  min-width: var(--ult-icon-min-size);
+  min-height: var(--ult-icon-min-size);
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+:host svg {
+  width: var(--ult-icon-svg-size);
+  height: var(--ult-icon-svg-size);
+  flex: none;
+}
+
+:host .placeholder {
+  width: var(--ult-icon-placeholder-size);
+  height: var(--ult-icon-placeholder-size);
+  flex: none;
+  border-radius: var(--ult-icon-placeholder-border-radius);
+  background: var(--ult-icon-placeholder-bg);
+}

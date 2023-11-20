@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+  width: var(--ult-spinner-size);
+  height: var(--ult-spinner-size);
+}
+
+:host .svg {
+  color: var(--ult-spinner-color);
+  fill: var(--ult-spinner-fill);
+}

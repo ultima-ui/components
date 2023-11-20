@@ -1,0 +1,82 @@
+:host {
+  font-size: var(--ult-menu-item-font-size);
+  color: var(--ult-menu-item-color);
+  display: flex;
+  align-items: center;
+  gap: var(--ult-menu-item-gap);
+  min-height: var(--ult-menu-item-height);
+  border-radius: var(--ult-menu-item-border-radius);
+  padding: var(--ult-menu-item-padding);
+  position: relative;
+  flex: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+}
+
+:host(:not(.is-selected):hover) {
+  background: var(--ult-menu-item-hover-bg);
+  color: var(--ult-menu-item-hover-color);
+}
+
+:host(.is-selected) {
+  background: var(--ult-menu-item-selected-bg);
+  color: var(--ult-menu-item-selected-color);
+}
+
+:host(.ult-menu-trigger-for--is-open) {
+  background: var(--ult-menu-item-hover-bg);
+}
+
+:host(.is-disabled) {
+  pointer-events: none;
+  opacity: var(--ult-disabled-opacity);
+}
+
+:host(.ult-menu-trigger-for) {
+  padding-inline-end: var(--ult-menu-item-has-trigger-padding-end);
+}
+
+:host .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host .icon:empty {
+  display: none;
+}
+
+:host:has(.icon:not(:empty)) {
+  padding-inline-start: var(--ult-menu-item-has-icon-padding-start);
+}
+
+:host .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: auto;
+}
+
+:host .check:empty {
+  display: none;
+}
+
+:host:has(.check:not(:empty)) {
+  padding-inline-end: var(--ult-menu-item-has-check-padding-end);
+}
+
+:host .trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: auto;
+}
+
+:host .trigger:empty {
+  display: none;
+}
+
+:host:has(.trigger:not(:empty)) {
+  padding-inline-end: var(--ult-menu-item-has-trigger-padding-end);
+}

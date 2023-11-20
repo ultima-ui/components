@@ -1,0 +1,17 @@
+:root {
+  --ult-spinner-size: theme('spacing.8');
+  --ult-spinner-color: theme('colors.neutral.200');
+  --ult-spinner-fill: theme('colors.primary.500');
+}
+
+[spinner-size="lg"] {
+  --ult-spinner-size: theme('spacing.10');
+}
+
+[spinner-size="sm"] {
+  --ult-spinner-size: theme('spacing.6');
+}
+
+[spinner-size="xs"] {
+  --ult-spinner-size: theme('spacing.4');
+}

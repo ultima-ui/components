@@ -1,0 +1,13 @@
+<div class="icon">
+  <ng-content select="[ultMenuItemIcon]"></ng-content>
+  <ng-container [ngTemplateOutlet]="iconRef.templateRef" *ngIf="iconRef"></ng-container>
+</div>
+<ng-content></ng-content>
+<div class="check">
+  <ng-content select="[ultMenuItemCheckIcon]"></ng-content>
+  <ng-container [ngTemplateOutlet]="checkIconRef.templateRef" *ngIf="checkIconRef"></ng-container>
+</div>
+<div class="trigger">
+  <ng-content select="[ultMenuTriggerIcon]"></ng-content>
+  <ng-container [ngTemplateOutlet]="triggerIconRef.templateRef" *ngIf="triggerIconRef"></ng-container>
+</div>

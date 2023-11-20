@@ -1,0 +1,33 @@
+:host {
+  background: var(--ult-incidents-list-bg);
+  top: calc(var(--ult-layout-top-header-top) + var(--ult-layout-top-header-height));
+  left: 0;
+  right: 0;
+  height: 0;
+  transition: transform .15s, opacity .15s;
+  position: fixed;
+  display: grid;
+  opacity: 0;
+  grid-gap: 25px;
+  grid-template-columns: auto minmax(1px, 1440px) auto;
+  grid-template-areas: ". content .";
+  transform-origin: top;
+  padding: var(--ult-incidents-list-padding);
+  overflow: hidden;
+  transform: scaleY(0);
+}
+
+:host-context(.ult-incidents.is-visible) {
+  height: 100%;
+  transform: scaleY(1);
+  opacity: 1;
+  overflow-y: auto;
+}
+
+:host .container {
+  display: grid;
+  height: min-content;
+  grid-area: content;
+  grid-row-gap: var(--ult-incidents-list-gap);
+  grid-auto-flow: row;
+}

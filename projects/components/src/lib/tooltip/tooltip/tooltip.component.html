@@ -1,0 +1,4 @@
+<ng-container *ngIf="!isDataTemplateRef">{{ _data }}</ng-container>
+<ng-container *ngIf="isDataTemplateRef">
+  <ng-container *ngTemplateOutlet="_data"></ng-container>
+</ng-container>

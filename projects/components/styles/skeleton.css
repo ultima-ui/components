@@ -1,0 +1,21 @@
+:root {
+  --ult-skeleton-gap: theme('gap.4');
+  --ult-skeleton-item-border-radius: theme('borderRadius.xl');
+  --ult-skeleton-item-animation: ult-skeleton-loading 1s linear infinite alternate;
+  --ult-skeleton-block-height: theme('height.20');
+  --ult-skeleton-line-height: theme('height.5');
+  --ult-skeleton-line-border-radius: theme('borderRadius.full');
+  --ult-skeleton-circle-size: theme('spacing.14');
+  --ult-skeleton-from-bg: theme('colors.neutral.100/80');
+  --ult-skeleton-from-to: theme('colors.neutral.200/70');
+}
+
+@keyframes ult-skeleton-loading {
+  0% {
+    background: var(--ult-skeleton-from-bg);
+  }
+
+  100% {
+    background: var(--ult-skeleton-from-to);
+  }
+}

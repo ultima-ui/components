@@ -1,0 +1,43 @@
+:host {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ult-chip-gap);
+  user-select: none;
+  min-width: 0;
+  font-size: var(--ult-chip-font-size);
+  font-weight: var(--ult-chip-font-weight);
+  height: var(--ult-chip-height);
+  padding: var(--ult-chip-padding);
+  border-radius: var(--ult-chip-border-radius);
+  text-decoration-line: none;
+  background: var(--ult-chip-bg);
+  color: var(--ult-chip-color);
+}
+
+:host(.is-clickable) {
+  cursor: pointer;
+}
+
+:host(.is-clickable:active) {
+  scale: .97;
+}
+
+:host .close {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host .close:empty {
+  display: none;
+}
+
+:host .close:hover {
+  opacity: var(--ult-chip-close-hover-opacity);
+}
+
+:host:has(.close:not(:empty)) {
+  padding: var(--ult-chip-has-close-icon-padding);
+}

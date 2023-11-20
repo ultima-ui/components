@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--ult-upload-area-bg);
+  padding: var(--ult-upload-area-padding);
+  border: var(--ult-upload-area-border);
+  border-radius: var(--ult-upload-area-border-radius);
+}
+
+:host(:not(.is-drag-enter):hover) {
+  border: var(--ult-upload-area-hover-border);
+}
+
+:host(.is-drag-enter) {
+  border: var(--ult-upload-area-dragenter-border);
+}

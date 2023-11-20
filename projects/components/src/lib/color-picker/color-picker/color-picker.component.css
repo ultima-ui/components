@@ -1,0 +1,51 @@
+:host {
+  display: inline-grid;
+  user-select: none;
+  position: relative;
+  flex: none;
+  gap: var(--ult-color-picker-gap);
+  background: var(--ult-color-picker-bg);
+  border-radius: var(--ult-color-picker-border-radius);
+  border: var(--ult-color-picker-border);
+  padding: var(--ult-color-picker-padding);
+}
+
+:host-context(.ult-color-picker-overlay-panel) {
+  animation: .15s ult-color-picker-animation;
+}
+
+:host(.is-disabled) {
+  pointer-events: none;
+}
+
+:host-context(.ult-color-picker-above) {
+  margin-bottom: var(--ult-color-picker-margin-offset);
+  transform-origin: bottom;
+}
+
+:host-context(.ult-color-picker-below) {
+  margin-top: var(--ult-color-picker-margin-offset);
+  transform-origin: top;
+}
+
+:host-context(.ult-color-picker-before) {
+  margin-inline-end: var(--ult-color-picker-margin-offset);
+  transform-origin: right;
+}
+
+:host-context(.ult-color-picker-after) {
+  margin-inline-start: var(--ult-color-picker-margin-offset);
+  transform-origin: left;
+}
+
+@keyframes ult-color-picker-animation {
+  0% {
+    transform: scale(.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

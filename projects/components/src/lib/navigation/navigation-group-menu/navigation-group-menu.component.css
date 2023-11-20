@@ -1,0 +1,55 @@
+:host {
+  padding-inline-start: var(--ult-navigation-group-menu-padding-start);
+  margin-top: var(--ult-navigation-item-space-y);
+  display: none;
+}
+
+:host(.is-active) {
+  display: block;
+}
+
+:host ::ng-deep .ult-navigation-item {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  white-space: nowrap;
+  position: relative;
+  flex: none;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--ult-navigation-nested-item-bg);
+  min-height: var(--ult-navigation-nested-item-height);
+  padding: var(--ult-navigation-nested-item-padding);
+  font-size: var(--ult-navigation-item-font-size);
+  font-weight: var(--ult-navigation-item-font-weight);
+  color: var(--ult-navigation-nested-item-color);
+  gap: var(--ult-navigation-item-gap);
+}
+
+:host ::ng-deep .ult-navigation-item:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: none;
+  transform: translateY(-50%);
+  inset-inline-start: var(--ult-navigation-nested-item-indicator-position-start);
+  width: var(--ult-navigation-nested-item-indicator-width);
+  height: var(--ult-navigation-nested-item-indicator-height);
+  background-color: var(--ult-navigation-nested-item-indicator-bg);
+}
+
+:host ::ng-deep .ult-navigation-item:hover {
+  background-color: var(--ult-navigation-nested-item-hover-bg);
+  color: var(--ult-navigation-nested-item-hover-color);
+}
+
+:host ::ng-deep .ult-navigation-item.is-active,
+:host ::ng-deep .ult-navigation-item.is-active:hover {
+  background-color: var(--ult-navigation-nested-item-active-bg);
+  color: var(--ult-navigation-nested-item-active-color);
+}
+
+:host ::ng-deep .ult-navigation-item:hover:before,
+:host ::ng-deep .ult-navigation-item.is-active:before {
+  display: block;
+}

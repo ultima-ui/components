@@ -1,0 +1,100 @@
+:host {
+  display: flex;
+  position: relative;
+  user-select: none;
+  align-items: center;
+  width: 100%;
+  flex: none;
+  height: var(--ult-slider-height);
+}
+
+:host(:focus-visible) {
+  outline: var(--ult-outline-size) solid var(--ult-outline-color);
+  outline-offset: var(--ult-outline-offset);
+}
+
+:host(.is-disabled) {
+  opacity: var(--ult-control-opacity);
+  pointer-events: none;
+}
+
+:host .track {
+  position: absolute;
+  border-radius: var(--ult-slider-border-radius);
+  width: 100%;
+  height: var(--ult-slider-track-height);
+  background: var(--ult-slider-track-bg);
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+:host .thumb {
+  position: absolute;
+  display: inline-block;
+  inset-inline-start: 0;
+  top: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--ult-slider-thumb-border-radius);
+  flex: none;
+  width: var(--ult-slider-thumb-size);
+  height: var(--ult-slider-thumb-size);
+  background: var(--ult-slider-thumb-bg);
+  box-shadow: var(--ult-slider-thumb-shadow);
+  z-index: 1;
+}
+
+:host .thumb:focus-within,
+:host .thumb:focus-visible {
+  outline: none;
+}
+
+:host(:hover) .thumb {
+  box-shadow: var(--ult-slider-thumb-hover-shadow);
+}
+
+:host(:active) .thumb {
+  scale: var(--ult-slider-thumb-active-scale);
+  box-shadow: var(--ult-slider-thumb-hover-shadow);
+}
+
+:host .steps {
+  position: absolute;
+  border-radius: var(--ult-slider-border-radius);
+  height: var(--ult-slider-track-height);
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  inset: 0;
+  z-index: 0;
+}
+
+:host .step {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  height: 100%;
+}
+
+:host .step:first-child {
+  border-start-start-radius: var(--ult-slider-thumb-border-radius);
+  border-end-start-radius: var(--ult-slider-thumb-border-radius);
+}
+
+:host .step:last-child {
+  border-start-end-radius: var(--ult-slider-thumb-border-radius);
+  border-end-end-radius: var(--ult-slider-thumb-border-radius);
+}
+
+.step-dot {
+  line-height: 0.0625rem;
+  width: var(--ult-slider-step-dot-size);
+  height: var(--ult-slider-step-dot-size);
+  flex: none;
+  background: var(--ult-slider-step-dot-bg);
+  border-radius: 50%;
+}

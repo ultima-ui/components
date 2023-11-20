@@ -1,0 +1,14 @@
+:root {
+  --ult-paginator-page-size: theme('width.control-default');
+  --ult-paginator-page-font-size: theme('fontSize.sm');
+  --ult-paginator-page-bg: theme('colors.neutral.100');
+  --ult-paginator-page-hover-bg: theme('colors.neutral.200');
+  --ult-paginator-page-active-bg: theme('colors.primary.500');
+  --ult-paginator-page-color: theme('colors.neutral.700');
+  --ult-paginator-page-active-color: theme('colors.white');
+  --ult-paginator-page-border-radius: theme('borderRadius.lg');
+  --ult-paginator-gap: theme('gap.10');
+  --ult-paginator-nav-margin: 0 theme('margin.4');
+  --ult-paginator-pages-range-gap: theme('gap.3');
+  --ult-paginator-report-font-size: theme('fontSize.sm');
+}

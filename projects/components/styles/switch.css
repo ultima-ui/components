@@ -1,0 +1,23 @@
+:root {
+  --ult-switch-gap: theme('gap[2.5]');
+  --ult-switch-control-bg: theme('colors.neutral.200');
+  --ult-switch-control-border-radius: theme('borderRadius.full');
+  --ult-switch-control-width: theme('width.9');
+  --ult-switch-control-padding: 0.125rem; /* 2px */
+  --ult-switch-checked-control-bg: theme('colors.primary.500');
+  --ult-switch-indicator-size: theme('width.4');
+  --ult-switch-indicator-bg: theme('colors.white');
+  --ult-switch-indicator-shadow: theme('boxShadow.sm');
+  --ult-switch-label-font-size: theme('fontSize.sm');
+  --ult-switch-label-color: inherit;
+  --ult-switch-content-margin: theme('margin.2') 0 0 calc(var(--ult-switch-control-width) + var(--ult-switch-gap));
+  --ult-switch-group-vgap: theme('gap.5');
+  --ult-switch-group-hgap: theme('gap.8');
+  --ult-switch-group-padding: theme('padding.2') 0;
+}
+
+[ult-switch-size="sm"] {
+  --ult-switch-control-width: theme('width.7');
+  --ult-switch-indicator-size: theme('width.3');
+  --ult-switch-label-font-size: theme('fontSize.tiny');
+}

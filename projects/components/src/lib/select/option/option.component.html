@@ -1,0 +1,7 @@
+<div #contentRef class="content">
+  <ng-content></ng-content>
+</div>
+<div class="check">
+  <ng-container [ngTemplateOutlet]="_checkIconRef.templateRef"
+                *ngIf="_checkIconRef && _isSelected"></ng-container>
+</div>

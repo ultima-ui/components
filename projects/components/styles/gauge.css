@@ -1,0 +1,12 @@
+:root {
+  --ult-gauge-value-color: theme('colors.neutral.700');
+  --ult-gauge-bg: theme('colors.neutral.300');
+  --ult-gauge-fill: theme('colors.primary.500');
+  --ult-gauge-size: theme('width.20');
+}
+
+@keyframes ult-gauge-fill {
+  from {
+    stroke-dashoffset: 332;
+  }
+}

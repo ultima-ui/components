@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: var(--ult-switch-group-vgap);
+  flex-direction: column;
+  padding: var(--ult-switch-group-padding);
+}
+
+:host(.is-inline) {
+  flex-direction: row;
+  gap: var(--ult-switch-group-hgap);
+}

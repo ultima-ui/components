@@ -1,0 +1,11 @@
+<input type="checkbox" class="sr-only"
+       [disabled]="disabled"
+       (focusin)="api.setFocused(true)"
+       (focusout)="api.setFocused(false)">
+<div class="container" (click)="toggle()">
+  <div class="control">
+    <div class="indicator"></div>
+  </div>
+  <span class="label"><ng-content></ng-content></span>
+</div>
+<ng-content select="ult-switch-content"></ng-content>

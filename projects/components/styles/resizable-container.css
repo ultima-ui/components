@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .ult-resizable-container {
+    @apply block relative flex items-stretch overflow-hidden;
+  }
+
+  .ult-resizable-container-content {
+    @apply grow h-full me-4;
+  }
+
+  .ult-resizable-container-handler {
+    @apply absolute select-none border-s inset-y-0 bg-slate-50 end-0 hidden cursor-ew-resize items-center px-1 sm:flex;
+  }
+
+  .ult-resizable-container-handler > div {
+    @apply flex-none h-8 w-1.5 rounded-full bg-slate-400/80 hover:bg-slate-500/80;
+  }
+}

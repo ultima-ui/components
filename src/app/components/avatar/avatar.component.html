@@ -1,0 +1,186 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold !mt-0">Avatar</h1>
+    </div>
+
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-avatar text="PS"></ult-avatar>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Clickable</h3>
+    <playground>
+      <playground-content>
+        <ult-avatar text="JK" [clickable]="true"></ult-avatar>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Custom Variants</h3>
+    <playground>
+      <playground-content>
+        <div class="space-y-8">
+          <div>
+            <div class="mb-3">Flat Colors:</div>
+            <div class="flex items-center gap-6">
+              <ult-avatar text="PS"></ult-avatar>
+              <ult-avatar text="PS" variant="primary"></ult-avatar>
+              <ult-avatar text="PS" variant="negative"></ult-avatar>
+              <ult-avatar text="PS" variant="positive"></ult-avatar>
+              <ult-avatar text="PS" variant="pink"></ult-avatar>
+              <ult-avatar text="PS" variant="purple"></ult-avatar>
+            </div>
+          </div>
+          <div>
+            <div class="mb-3">Gradient Colors:</div>
+            <div class="flex items-center gap-6">
+              <ult-avatar text="PS" variant="default-gradient"></ult-avatar>
+              <ult-avatar text="PS" variant="primary-gradient"></ult-avatar>
+              <ult-avatar text="PS" variant="negative-gradient"></ult-avatar>
+              <ult-avatar text="PS" variant="positive-gradient"></ult-avatar>
+              <ult-avatar text="PS" variant="pink-gradient"></ult-avatar>
+              <ult-avatar text="PS" variant="purple-gradient"></ult-avatar>
+            </div>
+          </div>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Sizes</h3>
+    <playground>
+      <playground-content>
+        <div class="gap-6 flex items-center">
+          <ult-avatar class="!w-32 !h-32" text="PS"></ult-avatar>
+          <ult-avatar class="!w-20 !h-20" text="PS"></ult-avatar>
+          <ult-avatar text="DM"></ult-avatar>
+          <ult-avatar class="!h-7 !w-7" text="AM"></ult-avatar>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Images</h3>
+    <playground>
+      <playground-content>
+        <div class="gap-6 flex items-center">
+          <ult-avatar class="!w-20 !h-20" src="https://randomuser.me/api/portraits/women/6.jpg"></ult-avatar>
+          <ult-avatar class="!w-14 !h-14" src="https://randomuser.me/api/portraits/women/5.jpg"></ult-avatar>
+          <ult-avatar src="https://randomuser.me/api/portraits/men/1.jpg"></ult-avatar>
+          <ult-avatar class="!h-7 !w-7" src="https://randomuser.me/api/portraits/women/2.jpg"></ult-avatar>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Presence Indicator</h3>
+    <playground>
+      <playground-content>
+        <div class="gap-6 flex items-center">
+          <ult-avatar presenceIndicator="online" class="!w-20 !h-20"
+                      src="https://randomuser.me/api/portraits/women/6.jpg"></ult-avatar>
+          <ult-avatar presenceIndicator="offline"
+                      src="https://randomuser.me/api/portraits/men/1.jpg"></ult-avatar>
+          <ult-avatar presenceIndicator="online"
+                      class="!h-12 !w-12" src="https://randomuser.me/api/portraits/women/2.jpg"></ult-avatar>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Avatar with ring</h3>
+    <playground>
+      <playground-content>
+        <div class="gap-6 flex items-center">
+          <ult-avatar class="!w-20 !h-20 ring ring-2 ring-positive-500 ring-offset-2"
+                      src="https://randomuser.me/api/portraits/women/6.jpg"></ult-avatar>
+          <ult-avatar class="ring ring-2 ring-negative-500 ring-offset-2"
+                      src="https://randomuser.me/api/portraits/men/1.jpg"></ult-avatar>
+          <ult-avatar class="!h-7 !w-7 ring ring-2 ring-informative-500 ring-offset-2"
+                      src="https://randomuser.me/api/portraits/women/2.jpg"></ult-avatar>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Group</h3>
+    <playground>
+      <playground-content>
+        <div class="flex items-center gap-6">
+          <ult-avatar-group>
+            <ult-avatar text="am" variant="default"></ult-avatar>
+            <ult-avatar text="ps" variant="primary"></ult-avatar>
+            <ult-avatar text="br" variant="negative"></ult-avatar>
+            <ult-avatar text="br" variant="positive"></ult-avatar>
+            <ult-avatar text="br" variant="pink"></ult-avatar>
+            <ult-avatar text="ps" variant="purple"></ult-avatar>
+          </ult-avatar-group>
+          <ult-avatar-group>
+            <ult-avatar text="am" variant="default-gradient"></ult-avatar>
+            <ult-avatar text="ps" variant="primary-gradient"></ult-avatar>
+            <ult-avatar text="br" variant="negative-gradient"></ult-avatar>
+            <ult-avatar text="br" variant="positive-gradient"></ult-avatar>
+            <ult-avatar text="br" variant="pink-gradient"></ult-avatar>
+            <ult-avatar text="ps" variant="purple-gradient"></ult-avatar>
+          </ult-avatar-group>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Group: Max</h3>
+    <playground>
+      <playground-content>
+        <div class="space-y-8">
+          <div>
+            <div class="mb-4">With counter (by default):</div>
+            <div class="flex items-center gap-6">
+              <ult-avatar-group [max]="max">
+                <ult-avatar src="https://randomuser.me/api/portraits/women/12.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/men/10.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/women/7.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/men/3.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/men/4.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/women/4.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/women/9.jpg"></ult-avatar>
+                <ult-avatar-counter *ultAvatarCounter="let quantity">
+                  +{{ quantity }}
+                </ult-avatar-counter>
+              </ult-avatar-group>
+            </div>
+          </div>
+          <div>
+            <div class="mb-4">Hidden counter:</div>
+            <div class="flex items-center gap-6">
+              <ult-avatar-group [max]="max" [showCounter]="false">
+                <ult-avatar src="https://randomuser.me/api/portraits/women/12.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/men/10.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/women/7.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/men/3.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/men/4.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/women/4.jpg"></ult-avatar>
+                <ult-avatar src="https://randomuser.me/api/portraits/women/9.jpg"></ult-avatar>
+                <ult-avatar-counter *ultAvatarCounter="let quantity">
+                  +{{ quantity }}
+                </ult-avatar-counter>
+              </ult-avatar-group>
+            </div>
+          </div>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <button ult-button variant="secondary" (click)="max = 5">Change max to 5</button>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

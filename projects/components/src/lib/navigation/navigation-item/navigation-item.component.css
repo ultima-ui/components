@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  white-space: nowrap;
+  position: relative;
+  flex: none;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--ult-navigation-item-bg);
+  min-height: var(--ult-navigation-item-height);
+  padding: var(--ult-navigation-item-padding);
+  font-size: var(--ult-navigation-item-font-size);
+  border-radius: var(--ult-navigation-item-border-radius);
+  font-weight: var(--ult-navigation-item-font-weight);
+  color: var(--ult-navigation-item-color);
+  gap: var(--ult-navigation-item-gap);
+}
+
+:host(:hover) {
+  background-color: var(--ult-navigation-item-hover-bg);
+  color: var(--ult-navigation-item-hover-color);
+}
+
+:host(.is-active),
+:host(.is-active:hover) {
+  background-color: var(--ult-navigation-item-active-bg);
+  color: var(--ult-navigation-item-active-color);
+}
+
+:host(:focus-visible) {
+  outline: var(--ult-outline-size) solid var(--ult-outline-color);
+  outline-offset: var(--ult-outline-offset);
+}
+
+:host .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ult-navigation-item-icon-color);
+}
+
+:host:not(.is-active):hover .icon {
+  color: var(--ult-navigation-item-hover-icon-color);
+}
+
+:host(.is-active) .icon {
+  color: var(--ult-navigation-item-active-icon-color);
+}
+
+:host .icon:empty {
+  display: none;
+}
+
+:host:has(.icon:not(:empty)) {
+  padding-inline-start: var(--ult-navigation-item-has-icon-padding-start);
+}

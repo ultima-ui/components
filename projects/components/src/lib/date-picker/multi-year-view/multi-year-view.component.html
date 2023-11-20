@@ -1,0 +1,7 @@
+<div class="grid grid-cols-4 h-full columns">
+  <div class="multi-year col-span-1"
+       [class.is-today]="year === _today.getFullYear()"
+       [class.is-active]="year === _activeYear"
+       (click)="select(year)"
+       *ngFor="let year of _years; let index = index">{{ year }}</div>
+</div>

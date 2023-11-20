@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: var(--ult-file-padding);
+}
+
+:host .name {
+  font-size: var(--ult-file-name-font-size);
+}
+
+:host .info {
+  font-size: var(--ult-file-info-font-size);
+  color: var(--ult-file-info-color);
+}
+
+:host .content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+:host .controls {
+  display: flex;
+  align-items: center;
+  gap: var(--ult-file-controls-gap);
+}
+
+:host .progress {
+  background: var(--ult-file-progress-bg);
+  height: var(--ult-file-progress-height);
+  flex: none;
+  border-radius: var(--ult-file-progress-border-radius);
+  margin: var(--ult-file-progress-margin);
+}
+
+:host .progress-bar {
+  background: var(--ult-file-progress-bar-bg);
+  border-radius: var(--ult-file-progress-border-radius);
+  height: 100%;
+}

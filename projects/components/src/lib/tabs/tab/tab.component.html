@@ -1,0 +1,9 @@
+<ng-container *ngIf="labelRef; else labelDefault">
+  <ng-container *ngTemplateOutlet="labelRef"></ng-container>
+</ng-container>
+<ng-template #labelDefault>
+  {{ label }}
+</ng-template>
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

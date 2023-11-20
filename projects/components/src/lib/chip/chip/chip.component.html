@@ -1,0 +1,5 @@
+<span class="overflow-ellipsis overflow-hidden whitespace-nowrap"><ng-content></ng-content></span>
+<div class="close">
+  <ng-content select="[ultChipCloseIcon]"></ng-content>
+  <ng-container [ngTemplateOutlet]="closeIconRef.templateRef" *ngIf="closeIconRef"></ng-container>
+</div>

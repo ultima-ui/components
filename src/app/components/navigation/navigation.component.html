@@ -1,0 +1,157 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <h2 class="text-2xl font-bold mt-0">Navigation</h2>
+
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <p>Basic:</p>
+    <playground>
+      <playground-content>
+        <div class="w-5/12">
+          <ult-navigation activeItemId="dashboard" class="border rounded-lg p-2">
+            <ult-navigation-item id="dashboard">
+              Dashboard
+            </ult-navigation-item>
+            <ult-navigation-item>
+              Projects
+            </ult-navigation-item>
+            <ult-navigation-item>Tasks</ult-navigation-item>
+            <ult-navigation-item>
+              <div class="overflow-hidden overflow-ellipsis">
+                Really long menu item text, really long menu item text
+              </div>
+            </ult-navigation-item>
+            <ult-navigation-item>Support</ult-navigation-item>
+          </ult-navigation>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Heading</h3>
+    <playground>
+      <playground-content>
+        <div class="w-5/12">
+          <ult-navigation activeItemId="dashboard" class="border rounded-lg px-2 pt-4 pb-2">
+            <ult-navigation-heading>Main</ult-navigation-heading>
+            <ult-navigation-item id="dashboard">
+              Dashboard
+            </ult-navigation-item>
+            <ult-navigation-item>
+              Projects
+            </ult-navigation-item>
+            <ult-navigation-heading>Customization</ult-navigation-heading>
+            <ult-navigation-item>Tasks</ult-navigation-item>
+            <ult-navigation-item>
+              <div class="overflow-hidden overflow-ellipsis">
+                Really long menu item text, really long menu item text
+              </div>
+            </ult-navigation-item>
+            <ult-navigation-item>Support</ult-navigation-item>
+          </ult-navigation>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Separator</h3>
+    <playground>
+      <playground-content>
+        <div class="w-5/12">
+          <ult-navigation activeItemId="dashboard" class="border rounded-lg p-2">
+            <ult-navigation-item id="dashboard">Dashboard</ult-navigation-item>
+            <ult-navigation-item>Projects</ult-navigation-item>
+            <ult-navigation-separator></ult-navigation-separator>
+            <ult-navigation-item>Tasks</ult-navigation-item>
+            <ult-navigation-item>Support</ult-navigation-item>
+          </ult-navigation>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Icons</h3>
+    <playground>
+      <playground-content>
+        <div class="w-6/12">
+          <ult-navigation activeItemId="dashboard" class="border rounded-lg p-2">
+            <ult-navigation-item id="dashboard">
+              <ng-template ultNavigationItemIcon>
+                <ult-icon name="ph:house"></ult-icon>
+              </ng-template>
+              Dashboard
+            </ult-navigation-item>
+            <ult-navigation-item>
+              <ult-icon name="ph:kanban" ultNavigationItemIcon></ult-icon>
+              Projects
+            </ult-navigation-item>
+            <ult-navigation-item>
+              <ult-icon name="ph:checks" ultNavigationItemIcon></ult-icon>
+              Tasks
+            </ult-navigation-item>
+            <ult-navigation-item>
+              <ult-icon name="ph:user" ultNavigationItemIcon></ult-icon>
+              <div class="overflow-hidden overflow-ellipsis">
+                Really long menu item text, really long menu item text
+              </div>
+            </ult-navigation-item>
+            <ult-navigation-item>
+              <ult-icon name="ph:question" ultNavigationItemIcon></ult-icon>
+              Support
+            </ult-navigation-item>
+          </ult-navigation>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Quantity</h3>
+    <playground>
+      <playground-content>
+        <div class="w-5/12">
+          <ult-navigation activeItemId="dashboard" class="border rounded-lg p-2">
+            <ult-navigation-item id="dashboard">Dashboard</ult-navigation-item>
+            <ult-navigation-item>
+              Projects
+              <ult-badge>133</ult-badge>
+            </ult-navigation-item>
+            <ult-navigation-item>
+              Tasks
+              <ult-badge class="text-white bg-purple-500">11+</ult-badge>
+            </ult-navigation-item>
+            <ult-navigation-item>Support</ult-navigation-item>
+          </ult-navigation>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Nested Menu</h3>
+    <playground>
+      <playground-content>
+        <div class="w-6/12">
+          <ult-navigation activeItemId="profile" class="border rounded-lg p-2 h-[500px]">
+            <ult-navigation-item>Dashboard</ult-navigation-item>
+            <ult-navigation-item>Projects</ult-navigation-item>
+            <div ult-navigation-item>Tasks</div>
+            <ult-navigation-group>
+              <ult-navigation-group-toggle for="settings">
+                Settings
+                <ult-icon name="ph:caret-down" size="16" ultNavigationGroupToggleIcon></ult-icon>
+              </ult-navigation-group-toggle>
+              <ult-navigation-group-menu id="settings">
+                <ult-navigation-item id="profile">Profile</ult-navigation-item>
+                <div ult-navigation-item>Security</div>
+              </ult-navigation-group-menu>
+            </ult-navigation-group>
+            <ult-navigation-item>Support</ult-navigation-item>
+          </ult-navigation>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

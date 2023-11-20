@@ -1,0 +1,96 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-12 space-y-8">
+    <div>
+      <h1 class="text-2xl font-bold mt-0">Paginator</h1>
+    </div>
+    <div>
+      <div class="mb-3">Import module:</div>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-paginator [visibleRangeLength]="visibleRangeLength"
+                       [currentPage]="currentPage"
+                       [length]="length">
+          <button ult-button iconOnly="true" variant="tertiary" ultPaginatorPrevious>
+            <ult-icon name="ph:caret-left" size="20" ultButtonIcon></ult-icon>
+          </button>
+          <button ult-button iconOnly="true" variant="tertiary" ultPaginatorNext>
+            <ult-icon name="ph:caret-right" size="20" ultButtonIcon></ult-icon>
+          </button>
+        </ult-paginator>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Full</h2>
+    <playground>
+      <playground-content>
+        <ult-paginator [visibleRangeLength]="visibleRangeLength"
+                       [currentPage]="currentPage"
+                       [showPagesRange]="true"
+                       [showFirstLastButtons]="true"
+                       [length]="1500">
+          <button ult-button iconOnly="true" variant="tertiary" ultPaginatorFirst>
+            <ult-icon name="ph:caret-double-left" size="20" ultButtonIcon></ult-icon>
+          </button>
+          <button ult-button variant="tertiary" ultPaginatorPrevious>
+            <ult-icon name="ph:caret-left" size="20" ultButtonPrefix></ult-icon>
+            Prev
+          </button>
+          <button ult-button variant="tertiary" ultPaginatorNext>
+            Next
+            <ult-icon name="ph:caret-right" size="20" ultButtonSuffix></ult-icon>
+          </button>
+          <button ult-button iconOnly="true" variant="tertiary" ultPaginatorLast>
+            <ult-icon name="ph:caret-double-right" size="20" ultButtonIcon></ult-icon>
+          </button>
+        </ult-paginator>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Report</h2>
+    <playground>
+      <playground-content>
+        <div class="w-full flex items-center justify-between">
+          <ult-pagination-report [currentPage]="currentPage"
+                                 [length]="length"
+                                 [type]="paginationReport"></ult-pagination-report>
+          <ult-paginator [visibleRangeLength]="visibleRangeLength"
+                         [(currentPage)]="currentPage"
+                         [showPagesRange]="true"
+                         [showFirstLastButtons]="true"
+                         [length]="length">
+            <button ult-button iconOnly="true" variant="tertiary" ultPaginatorFirst>
+              <ult-icon name="ph:caret-double-left" size="20" ultButtonIcon></ult-icon>
+            </button>
+            <button ult-button variant="tertiary" ultPaginatorPrevious>
+              <ult-icon name="ph:caret-left" size="20" ultButtonPrefix></ult-icon>
+              Prev
+            </button>
+            <button ult-button variant="tertiary" ultPaginatorNext>
+              Next
+              <ult-icon name="ph:caret-right" size="20" ultButtonSuffix></ult-icon>
+            </button>
+            <button ult-button iconOnly="true" variant="tertiary" ultPaginatorLast>
+              <ult-icon name="ph:caret-double-right" size="20" ultButtonIcon></ult-icon>
+            </button>
+          </ult-paginator>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-label>Report Type:</ult-label>
+          <ult-radio-group>
+            <ult-radio [(ngModel)]="paginationReport" value="range-of-pages">Range Of Pages</ult-radio>
+            <ult-radio [(ngModel)]="paginationReport" value="range-of-items">Range Of Items</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

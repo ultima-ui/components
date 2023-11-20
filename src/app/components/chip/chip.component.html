@@ -1,0 +1,93 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-8">
+    <div class="space-y-8">
+      <h1 class="text-2xl font-bold mt-0">Chip</h1>
+      <div>
+        <div class="mb-4">Import module:</div>
+        <code-block [code]="importModule"></code-block>
+      </div>
+
+      <h2>Basic</h2>
+      <playground>
+        <playground-content>
+          <ult-chip>Chip</ult-chip>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Clickable</h2>
+      <playground>
+        <playground-content>
+          <div class="flex items-center gap-6">
+            <button ult-chip [clickable]="true">Clickable Chip</button>
+          </div>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Colors</h2>
+      <playground>
+        <playground-content>
+          <div class="space-y-8">
+            <div class="flex items-center gap-6">
+              <ult-chip>Default</ult-chip>
+              <ult-chip class="chip-primary">Primary</ult-chip>
+              <ult-chip class="chip-negative">Negative</ult-chip>
+              <ult-chip class="chip-positive">Positive</ult-chip>
+              <ult-chip class="chip-informative">Informative</ult-chip>
+              <ult-chip class="chip-notice">Chip</ult-chip>
+            </div>
+          </div>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Close</h2>
+      <playground>
+        <playground-content>
+          <div class="flex items-center flex-wrap gap-6">
+            <ult-chip (closed)="closed('close data')">
+              Chip
+              <ult-icon name="ph:x" size="16" ultChipCloseIcon></ult-icon>
+            </ult-chip>
+            <ult-chip class="chip-primary">
+              Chip
+              <ult-icon name="ph:x" size="16" ultChipCloseIcon></ult-icon>
+            </ult-chip>
+            <ult-chip class="chip-negative">
+              Chip
+              <ult-icon name="ph:x" size="16" ultChipCloseIcon></ult-icon>
+            </ult-chip>
+            <ult-chip class="chip-positive">
+              Chip
+              <ult-icon name="ph:x" size="16" ultChipCloseIcon></ult-icon>
+            </ult-chip>
+            <ult-chip class="chip-informative">
+              Chip
+              <ult-icon name="ph:x" size="16" ultChipCloseIcon></ult-icon>
+            </ult-chip>
+            <ult-chip class="chip-notice">
+              Chip
+              <ng-template ultChipCloseIcon>
+                <ult-icon name="ph:x" size="16"></ult-icon>
+              </ng-template>
+            </ult-chip>
+          </div>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Sizes</h2>
+      <playground>
+        <playground-content>
+          <div class="flex items-center gap-6">
+            <ult-chip size="lg">Large Chip</ult-chip>
+            <ult-chip>Default Chip</ult-chip>
+            <ult-chip size="sm">Small Chip</ult-chip>
+          </div>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+    </div>
+  </div>
+</div>

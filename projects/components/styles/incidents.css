@@ -1,0 +1,26 @@
+:root {
+  --ult-incidents-bar-height: theme('height.24');
+  --ult-incidents-bar-bg: theme('colors.notice.500');
+  --ult-incidents-bar-color: theme('colors.neutral.700');
+  --ult-incidents-bar-box-shadow: theme('boxShadow.lg');
+  --ult-incidents-bar-hover-box-shadow: theme('boxShadow.xl');
+  --ult-incidents-list-bg: rgba(0, 0, 0, .32);
+  --ult-incidents-list-gap: theme('gap.5');
+  --ult-incidents-list-padding: theme('padding.7') 0;
+  --ult-incident-bg: theme('colors.white');
+  --ult-incident-color: theme('colors.neutral.700');
+  --ult-incident-border-radius: theme('borderRadius.md');
+  --ult-incident-padding: theme('padding.4') theme('padding.6');
+  --ult-incident-gap: theme('gap.6');
+  --ult-incident-border-start: theme('width.1') solid theme('colors.neutral.900');
+  --ult-incident-close-color: theme('colors.neutral.500');
+  --ult-incident-close-hover-color: theme('colors.neutral.900');
+  --ult-incident-title-font-size: theme('fontSize.md');
+  --ult-incident-title-font-weight: theme('fontWeight.medium');
+  --ult-incident-details-font-size: theme('fontSize.sm');
+  --ult-incident-details-color: theme('colors.neutral.500');
+  --ult-incidents-title-font-size: theme('fontSize.base');
+  --ult-incidents-title-font-weight: theme('fontWeight.medium');
+  --ult-incidents-description-font-size: theme('fontSize.sm');
+  --ult-incidents-description-opacity: theme('opacity.80');
+}

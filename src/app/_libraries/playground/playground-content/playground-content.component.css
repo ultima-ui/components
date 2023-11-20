@@ -1,0 +1,19 @@
+:host {
+  width: 100%;
+  display: flex;
+  min-height: 18.75rem;
+  padding: 1.875rem;
+}
+
+:host(.is-centered) {
+  align-items: center;
+  justify-content: center;
+}
+
+:host(.is-centered-x) {
+  justify-content: center;
+}
+
+:host(.is-centered-y) {
+  align-items: center;
+}

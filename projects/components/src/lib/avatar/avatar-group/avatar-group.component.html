@@ -1,0 +1,6 @@
+<ng-content></ng-content>
+
+@if (api.hasCounter() && showCounter) {
+  <ng-template [ngTemplateOutlet]="counterRef"
+               [ngTemplateOutletContext]="{ $implicit: api.counterQuantity() }"></ng-template>
+}

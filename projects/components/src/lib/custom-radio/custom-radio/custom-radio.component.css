@@ -1,0 +1,27 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--ult-custom-radio-border-width) solid var(--ult-custom-radio-border-wcolor);
+  border-radius: var(--ult-custom-radio-border-radius);
+  padding: var(--ult-custom-radio-padding);
+  background-color: var(--ult-custom-radio-bg);
+  color: var(--ult-custom-radio-color);
+  font-size: var(--ult-custom-radio-font-size);
+  height: var(--ult-custom-radio-height);
+  font-weight: 500;
+  cursor: pointer;
+  flex: none;
+  user-select: none;
+}
+
+:host(:hover) {
+  background-color: var(--ult-custom-radio-hover-bg);
+}
+
+:host(.is-checked),
+:host(.is-checked:hover) {
+  --ult-custom-radio-border-wcolor: var(--ult-custom-radio-active-bg);
+  background-color: var(--ult-custom-radio-active-bg);
+  color: var(--ult-custom-radio-active-color);
+}

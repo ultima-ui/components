@@ -1,0 +1,84 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Dialog</h1>
+    </div>
+    <div class="space-y-6">
+      <div class="mb-3">Import module:</div>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="openBasicDialog()">Open Dialog</button>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Form</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="openFormDialog()">Open Dialog</button>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Confirmation</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="openNegativeConfirmationDialog()">Open Dialog</button>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Template</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="openTemplateDialog(templateDialogTpl)">Open Dialog</button>
+        <ng-template #templateDialogTpl let-data>
+          <ult-dialog class="w-96">
+            <ult-dialog-header>
+              <div class="text-lg font-bold">Template Dialog</div>
+            </ult-dialog-header>
+            <ult-dialog-body>Some dialog content</ult-dialog-body>
+            <ult-dialog-footer class="bg-gray-100 justify-end gap-3">
+              <button ult-button variant="tertiary" (click)="templateDialogRef.close()" class="w-20">Cancel</button>
+              <button ult-button>Save & Continue</button>
+            </ult-dialog-footer>
+          </ult-dialog>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Scroll body</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="openScrollBodyDialog()">Open Dialog</button>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Dialog Trigger</h2>
+    <playground>
+      <playground-content>
+        <button ult-button #dialogTrigger="ultDialogTriggerFor"
+                [ultDialogTriggerFor]="triggerDialogTpl">Trigger Dialog</button>
+        <ng-template #triggerDialogTpl let-data>
+          <ult-dialog [style.--ult-dialog-width]="'400px'">
+            <ult-dialog-header>
+              <div class="text-lg font-bold">Triggered Dialog</div>
+            </ult-dialog-header>
+            <ult-dialog-body>Some dialog content</ult-dialog-body>
+            <ult-dialog-footer class="bg-gray-100 justify-end gap-3">
+              <button ult-button variant="tertiary" (click)="dialogTrigger.api.close()" class="w-20">Cancel</button>
+              <button ult-button>Save</button>
+            </ult-dialog-footer>
+          </ult-dialog>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

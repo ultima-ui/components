@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  user-select: none;
+  width: var(--ult-sidebar-item-width);
+  height: var(--ult-sidebar-item-height);
+  padding: var(--ult-sidebar-item-padding);
+  border-radius: var(--ult-sidebar-item-border-radius);
+  color: var(--ult-sidebar-item-color);
+  gap: var(--ult-sidebar-item-gap);
+}
+
+:host(:not(.is-active):hover) {
+  background: var(--ult-sidebar-item-hover-bg);
+  color: var(--ult-sidebar-item-hover-color);
+}
+
+:host(.is-active) {
+  background: var(--ult-sidebar-item-active-bg);
+  color: var(--ult-sidebar-item-active-color);
+}
+
+:host .icon {
+  line-height: 0;
+  display: inline-block;
+}
+
+:host .icon:empty {
+  display: none;
+}

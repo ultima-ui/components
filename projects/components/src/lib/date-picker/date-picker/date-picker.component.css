@@ -1,0 +1,78 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  width: var(--ult-date-picker-width);
+  height: var(--ult-date-picker-height);
+  overflow: hidden;
+}
+
+:host .header {
+  height: var(--ult-date-picker-header-height);
+  padding: var(--ult-date-picker-header-padding);
+  border-bottom: var(--ult-date-picker-header-border);
+}
+
+:host .labels {
+  flex: none;
+  gap: var(--ult-date-picker-labels-gap);
+}
+
+:host .controls {
+  display: flex;
+  align-items: center;
+  gap: var(--ult-date-picker-controls-gap);
+}
+
+:host .today,
+:host .control {
+  height: var(--ult-date-picker-control-size);
+  flex: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ult-date-picker-control-color);
+  background: var(--ult-date-picker-control-bg);
+  border-radius: var(--ult-date-picker-control-border-radius);
+}
+
+:host .control {
+  width: var(--ult-date-picker-control-size);
+}
+
+:host .today {
+  padding: var(--ult-date-picker-today-padding);
+  font-size: var(--ult-date-picker-today-font-size);
+}
+
+:host .today:hover,
+:host .control:hover {
+  background: var(--ult-date-picker-control-hover-bg);
+  color: var(--ult-date-picker-control-hover-color);
+}
+
+:host .today:active,
+:host .control:active {
+  background: var(--ult-date-picker-control-active-bg);
+}
+
+:host .label {
+  font-size: var(--ult-date-picker-label-font-size);
+}
+
+:host .year-label {
+  color: var(--ult-date-picker-year-label-color);
+}
+
+:host .month-label {
+  color: var(--ult-date-picker-month-label-color);
+}
+
+:host .labels:hover .label {
+  color: var(--ult-date-picker-label-hover-color);
+}
+
+:host .labels.is-active .label {
+  color: var(--ult-date-picker-label-active-color);
+}

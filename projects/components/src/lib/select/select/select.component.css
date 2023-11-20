@@ -1,0 +1,103 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+:host .trigger {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-size: var(--ult-select-trigger-font-size);
+  min-width: 0;
+  background: var(--ult-select-trigger-bg);
+  color: var(--ult-select-trigger-color);
+  border-radius: var(--ult-select-trigger-border-radius);
+  height: var(--ult-select-trigger-height);
+  flex: none;
+  border: var(--ult-select-trigger-border-width) solid var(--ult-select-trigger-border-color);
+  padding: var(--ult-select-trigger-padding);
+  width: 100%;
+}
+
+:host .trigger:not(.is-focused):hover {
+  border-color: var(--ult-select-trigger-hover-border-color);
+}
+
+:host .trigger.is-focused {
+  border-color: var(--ult-select-trigger-focused-border-color);
+}
+
+:host(.is-rounded-full) .trigger {
+  --ult-select-border-radius: 624.9375rem;
+}
+
+:host input {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  max-width: 0;
+  max-height: 0;
+  position: absolute;
+  inset-inline-start: 0;
+  z-index: -1;
+}
+
+:host(.is-disabled) {
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--ult-disabled-opacity);
+}
+
+:host .value,
+:host .placeholder {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:host .placeholder {
+  color: var(--ult-select-placeholder-color);
+}
+
+:host .toggle {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--ult-select-toggle-icon-color);
+  transition: var(--ult-transition-all);
+}
+
+:host(.is-opened) .toggle {
+  transform: rotate(-180deg);
+}
+
+:host .toggle:empty {
+  display: none;
+}
+
+:host:has(.toggle:not(:empty)) .trigger,
+:host:has(.clear:not(:empty)) .trigger {
+  padding-inline-end: var(--ult-select-trigger-has-toggle-or-clear-padding-end);
+}
+
+:host .clear {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ult-select-clear-icon-color);
+}
+
+:host .clear:hover {
+  color: var(--ult-select-clear-icon-hover-color);
+}
+
+:host(.is-empty) .clear {
+  display: none;
+}

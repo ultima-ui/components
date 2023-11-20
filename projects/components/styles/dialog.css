@@ -1,0 +1,22 @@
+:root {
+  --ult-dialog-max-height: calc(100vh * 0.75);
+  --ult-dialog-max-width: calc(100vw * 0.75);
+  --ult-dialog-bg: theme('colors.white');
+  --ult-dialog-border-radius: theme('borderRadius.lg');
+  --ult-dialog-shadow: theme('boxShadow.2xl');
+  --ult-dialog-width: 100%;
+  --ult-dialog-height: 100%;
+  --ult-dialog-header-height: theme('height.slot-xl');
+  --ult-dialog-header-padding: 0 theme('padding.7');
+  --ult-dialog-body-padding: theme('padding.8') theme('padding.7');
+  --ult-dialog-footer-height: theme('height.slot-xl');
+  --ult-dialog-footer-padding: 0 theme('padding.5');
+}
+
+.ult-dialog-overlay-backdrop {
+  @apply bg-gray-900/20 backdrop-blur-sm;
+}
+
+.cdk-dialog-container {
+  @apply outline-none;
+}

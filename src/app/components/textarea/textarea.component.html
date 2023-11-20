@@ -1,0 +1,107 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1>Textarea</h1>
+    </div>
+
+    <h2>Import</h2>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px]">
+          <ult-form-field>
+            <textarea ultInput [(ngModel)]="value" placeholder="Some Placeholder"></textarea>
+          </ult-form-field>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Readonly</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px]">
+          <ult-form-field>
+            <ult-label>Work</ult-label>
+            <textarea ultInput [readonly]="true" [(ngModel)]="readonlyValue" placeholder="Some Placeholder"></textarea>
+          </ult-form-field>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Disabled</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px]">
+          <ult-form-field>
+            <ult-label>Work</ult-label>
+            <textarea ultInput [disabled]="true" placeholder="Some Placeholder"></textarea>
+          </ult-form-field>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Required</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px]">
+          <ult-form-field>
+            <ult-label [required]="true">Work</ult-label>
+            <textarea ultInput placeholder="Some Placeholder"></textarea>
+          </ult-form-field>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Helper Text</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px]">
+          <ult-form-field>
+            <ult-label>Work</ult-label>
+            <textarea ultInput placeholder="Some Placeholder"></textarea>
+            <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry</ult-helper-text>
+          </ult-form-field>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Invalid</h2>
+    <playground>
+      <playground-content>
+        <div class="w-[400px] space-y-8">
+          <ult-form-field>
+            <ult-label [required]="true">Work</ult-label>
+            <textarea ultInput placeholder="Some Placeholder" [invalid]="true"></textarea>
+            <ult-errors>
+              <ult-error>This field is required</ult-error>
+            </ult-errors>
+          </ult-form-field>
+          <div>
+            <ult-form-field>
+              <ult-label [required]="true">Work</ult-label>
+              <textarea ultInput placeholder="Some Placeholder" [invalid]="true"></textarea>
+              <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry</ult-helper-text>
+              <ult-errors>
+                <ult-error>This field is required</ult-error>
+                <ult-error>Max length is 200 symbols</ult-error>
+              </ult-errors>
+            </ult-form-field>
+          </div>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+  <div class="col-span-4">
+  </div>
+</div>

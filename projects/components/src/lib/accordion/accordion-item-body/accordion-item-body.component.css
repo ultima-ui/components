@@ -1,0 +1,5 @@
+:host {
+  display: none;
+  border-top: var(--ult-accordion-item-border-width) solid var(--ult-accordion-item-border-color);
+  padding: var(--ult-accordion-item-body-padding);
+}

@@ -1,0 +1,56 @@
+:host {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-radius: var(--ult-alert-border-radius);
+  padding: var(--ult-alert-padding);
+  background-color: var(--ult-alert-bg-color);
+  color: var(--ult-alert-color);
+  gap: var(--ult-alert-gap);
+  font-size: var(--ult-alert-font-size);
+  border: var(--ult-alert-border-width) solid transparent;
+}
+
+:host(:has(.ult-alert-title)) {
+  align-items: stretch;
+}
+
+:host(.is-bordered) {
+  border-color: var(--ult-alert-border-color);
+}
+
+:host .thumbnail {
+  background-color: var(--ult-alert-thumbnail-bg);
+  color: var(--ult-alert-icon-color);
+  width: var(--ult-alert-thumbnail-size);
+  height: var(--ult-alert-thumbnail-size);
+  border-radius: var(--ult-alert-thumbnail-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+:host .thumbnail:empty {
+  display: none;
+}
+
+:host .content ::ng-deep .ult-alert-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: calc(var(--ult-alert-font-size) - 1px);
+}
+
+:host ::ng-deep .ult-alert-close {
+  position: absolute;
+  top: var(--ult-alert-close-top);
+  right: 0.625rem;
+  cursor: pointer;
+  color: var(--ult-alert-close-color);
+  font-size: var(--ult-alert-close-font-size);
+}
+
+:host ::ng-deep .ult-alert-close:hover {
+  color: var(--ult-alert-close-hover-color);
+}

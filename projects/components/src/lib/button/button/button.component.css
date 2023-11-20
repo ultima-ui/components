@@ -1,0 +1,88 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  position: relative;
+  background: var(--ult-button-bg);
+  color: var(--ult-button-color);
+  padding: var(--ult-button-padding);
+  font-weight: var(--ult-button-font-weight);
+  border-radius: var(--ult-button-border-radius);
+  font-size: var(--ult-button-font-size);
+  height: var(--ult-button-height);
+  user-select: none;
+  border: var(--ult-button-border-width) solid var(--ult-button-border-color);
+}
+
+:host(.is-icon-only) {
+  --ult-button-padding: 0;
+  width: var(--ult-button-height);
+}
+
+:host(:hover) {
+  background: var(--ult-button-hover-bg);
+  color: var(--ult-button-hover-color);
+}
+
+:host(:active),
+:host(.is-active) {
+  background: var(--ult-button-active-bg);
+  color: var(--ult-button-active-color);
+}
+
+:host(:active) {
+  scale: .97;
+}
+
+:host(.is-disabled) {
+  opacity: var(--ult-control-opacity);
+  pointer-events: none;
+}
+
+:host .content {
+  gap: var(--ult-button-content-gap);
+}
+
+:host(.is-loading) .content {
+  opacity: 0;
+}
+
+:host .loading {
+  border-radius: inherit;
+  background: inherit;
+  inset: 0;
+  gap: var(--ult-button-content-gap);
+}
+
+:host .spinner {
+  animation: var(--ult-button-spinner-animation);
+  width: var(--ult-button-spinner-size);
+  height: var(--ult-button-spinner-size);
+}
+
+:host .spinner-bg {
+  opacity: .25;
+}
+
+:host(:has(.prefix)) {
+  padding-inline-start: var(--ult-button-prefix-padding);
+}
+
+:host(:has(.suffix)) {
+  padding-inline-end: var(--ult-button-prefix-padding);
+}
+
+:host ::ng-deep img,
+:host ::ng-deep svg {
+  max-height: calc(var(--ult-button-height) * var(--ult-button-icon-scale));
+}
+
+:host ::ng-deep .icon {
+  font-size: var(--ult-button-icon-size);
+}
+
+:host(:focus-visible) {
+  outline: var(--ult-outline-size) solid var(--ult-outline-color);
+  outline-offset: var(--ult-outline-offset);
+}

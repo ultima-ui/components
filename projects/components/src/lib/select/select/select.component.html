@@ -1,0 +1,20 @@
+<input type="text" (focusin)="_focusIn()" (focusout)="_focusOut()">
+<div #trigger class="trigger min-w-0 space-x-0"
+     (mousedown)="_mousedown()" (click)="_toggleTrigger()"
+     [class.is-focused]="api.isOpen() || _focused">
+  <div class="grow overflow-hidden min-w-0 rounded-inherit">
+    <div class="value rounded-inherit">{{ _triggerValue }}</div>
+    <div class="placeholder grow rounded-inherit" *ngIf="!_triggerValue">{{ placeholder }}</div>
+  </div>
+  <div class="clear">
+    <ng-content select="[ultSelectClearIcon]"></ng-content>
+  </div>
+  <div class="toggle">
+    <ng-content select="[ultSelectToggleIcon]"></ng-content>
+  </div>
+</div>
+<ng-template #options>
+  <ult-options [options]="_options">
+    <ng-content select="ult-option,ult-optgroup"></ng-content>
+  </ult-options>
+</ng-template>

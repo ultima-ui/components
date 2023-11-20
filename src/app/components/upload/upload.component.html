@@ -1,0 +1,60 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Upload</h1>
+    </div>
+    <div class="space-y-6">
+      <div class="mb-3">Import module:</div>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-upload-trigger (selected)="upload($event)">
+          <button ult-button>Upload File</button>
+        </ult-upload-trigger>
+      </playground-content>
+      <playground-properties>
+        Selected files: {{ selectedFiles | json }}
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Upload Area</h2>
+    <playground>
+      <playground-content>
+        <ult-upload-area (selected)="uploadArea($event)">
+          Drop files here
+        </ult-upload-area>
+      </playground-content>
+      <playground-properties>
+        Selected files: {{ selectedAreaFiles | json }}
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>File List</h2>
+    <playground>
+      <playground-content centeredY="true">
+        <ult-file-list class="w-full divide-y border px-6 py-3 rounded-lg">
+          <ult-file *ngFor="let uploadFile of fileList"
+                    [size]="uploadFile.size"
+                    [state]="uploadFile.state"
+                    [errorMessage]="uploadFile.errorMessage"
+                    [remainingTime]="uploadFile.remainingTime"
+                    [name]="uploadFile.name"
+                    [progress]="uploadFile.progress">
+            <ult-file-control *ngIf="uploadFile.state === 'error'">
+              <ult-icon name="ph:arrows-counter-clockwise" size="20"></ult-icon>
+            </ult-file-control>
+            <ult-file-control>
+              <ult-icon name="ph:x" size="20"></ult-icon>
+            </ult-file-control>
+          </ult-file>
+        </ult-file-list>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

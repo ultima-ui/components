@@ -1,0 +1,35 @@
+:host {
+  display: grid;
+  align-items: center;
+  border-radius: var(--ult-incident-border-radius);
+  background: var(--ult-incident-bg);
+  grid-template-areas: "icon content close";
+  padding: var(--ult-incident-padding);
+  gap: var(--ult-incident-gap);
+  border-inline-start: var(--ult-incident-border-start);
+  grid-template-columns: [icon] var(--ult-incident-gap) [content] 1fr [action] var(--ult-incident-gap);
+  color: var(--ult-incident-color);
+}
+
+:host .content {
+  grid-area: content;
+  display: grid;
+  gap: var(--ult-incident-gap);
+  grid-template-areas: "data button";
+  grid-template-columns: [data] 1fr [button] var(--ult-incident-gap);
+}
+
+:host .data {
+  grid-area: data;
+}
+
+:host .icon,
+:host .close {
+  line-height: 0;
+  display: inline-block;
+  max-width: max-content;
+}
+
+:host .close {
+  cursor: pointer;
+}

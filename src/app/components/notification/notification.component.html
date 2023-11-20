@@ -1,0 +1,79 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div>
+      <h1 class="text-2xl font-bold mt-0">Notification</h1>
+    </div>
+    <div>
+      <div class="mb-3">Import module:</div>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="show(basic)">Show Notification</button>
+        <ng-template #basic let-api>
+          <ult-notification>
+            This task {{ api.id }} has been successfully deleted
+          </ult-notification>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>With Icon</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="show(withIcon)">Show Notification</button>
+        <ng-template #withIcon let-api>
+          <ult-notification>
+            <ult-icon name="ph:question-fill" ultNotificationIcon></ult-icon>
+            This task {{ api.id }} has been successfully deleted
+          </ult-notification>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Close</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="show(closeIcon)">Close Icon</button>
+        <ng-template #closeIcon let-api>
+          <ult-notification appearance="negative">
+            This task {{ api.id }} has been successfully deleted
+            <ult-icon name="ph:x" size="20" ultNotificationClose></ult-icon>
+          </ult-notification>
+        </ng-template>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Position</h2>
+    <playground>
+      <playground-content>
+        <button ult-button (click)="showByPosition(positionTpl)">Show Notification</button>
+        <ng-template #positionTpl let-api>
+          <ult-notification>
+            <ult-icon name="ph:question-fill" ultNotificationIcon></ult-icon>
+            This task {{ api.id }} has been successfully deleted
+          </ult-notification>
+        </ng-template>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-label>Position:</ult-label>
+          <ult-radio-group>
+            <ult-radio [(ngModel)]="position" value="top-start">Top Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="top-center">Top Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="top-end">Top End</ult-radio>
+            <ult-radio [(ngModel)]="position" value="bottom-start">Bottom Start</ult-radio>
+            <ult-radio [(ngModel)]="position" value="bottom-center">Bottom Center</ult-radio>
+            <ult-radio [(ngModel)]="position" value="bottom-end">Bottom End</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

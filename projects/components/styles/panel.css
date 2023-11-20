@@ -1,0 +1,4 @@
+:root {
+  --ult-panel-header-height: theme('height.slot-lg');
+  --ult-panel-footer-height: theme('height.slot-lg');
+}

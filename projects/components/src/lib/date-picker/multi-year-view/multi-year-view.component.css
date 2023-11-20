@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+:host .columns {
+  padding: var(--ult-date-picker-multi-columns-padding);
+  gap: var(--ult-date-picker-multi-columns-gap);
+}
+
+:host .multi-year {
+  text-align: center;
+  color: var(--ult-date-picker-multi-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ult-date-picker-multi-year-padding);
+  cursor: pointer;
+  font-size: var(--ult-date-picker-multi-font-size);
+  border-radius: var(--ult-date-picker-multi-border-radius);
+}
+
+:host .multi-year:hover {
+  background: var(--ult-date-picker-multi-hover-bg);
+  color: var(--ult-date-picker-multi-hover-color);
+}
+
+:host .multi-year.is-today {
+  border: var(--ult-date-picker-multi-today-border);
+}
+
+:host .multi-year.is-active {
+  font-weight: bold;
+  color: var(--ult-date-picker-multi-active-color);
+}

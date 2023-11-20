@@ -1,0 +1,5 @@
+:host {
+  font-size: var(--ult-breadcrumbs-item-font-size);
+  font-weight: var(--ult-breadcrumbs-item-font-weight);
+  color: var(--ult-breadcrumbs-active-item-color);
+}

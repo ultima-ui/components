@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  font-size: var(--ult-menu-heading-font-size);
+  font-weight: var(--ult-menu-heading-font-weight);
+  padding: var(--ult-menu-heading-padding);
+  text-transform: uppercase;
+  color: var(--ult-menu-heading-color);
+}

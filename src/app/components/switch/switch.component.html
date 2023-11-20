@@ -1,0 +1,141 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Switch</h1>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-switch [(ngModel)]="checked"></ult-switch>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Sizes</h2>
+    <playground>
+      <playground-content>
+        <ult-switch [size]="size"></ult-switch>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-radio-group>
+            <ult-radio name="size" [(ngModel)]="size" value="sm">Small</ult-radio>
+            <ult-radio name="size" [(ngModel)]="size" value="default">Default</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Inline</h2>
+    <playground>
+      <playground-content>
+        <ult-form-field>
+          <ult-label>Toggle Value</ult-label>
+          <ult-switch-group [inline]="isInline">
+            <ult-switch>Toggle 1</ult-switch>
+            <ult-switch>Toggle 2</ult-switch>
+            <ult-switch>Toggle 3</ult-switch>
+          </ult-switch-group>
+        </ult-form-field>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field>
+          <ult-switch [(ngModel)]="isInline">Inline</ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Field Required</h2>
+    <playground>
+      <playground-content>
+        <ult-form-field>
+          <ult-label [required]="true">Toggle Value</ult-label>
+          <ult-switch-group>
+            <ult-switch>Toggle 1</ult-switch>
+            <ult-switch>Toggle 2</ult-switch>
+            <ult-switch>Toggle 3</ult-switch>
+          </ult-switch-group>
+        </ult-form-field>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Content</h2>
+    <playground>
+      <playground-content>
+        <ult-form-field>
+          <ult-switch-group>
+            <ult-switch>
+              Switch 1
+              <ult-switch-content>asasfasasfasf</ult-switch-content>
+            </ult-switch>
+            <ult-switch>
+              Switch 2
+              <ult-switch-content>asasfasasfasf</ult-switch-content>
+            </ult-switch>
+            <ult-switch>
+              Switch 3
+              <ult-switch-content>asasfasasfasf</ult-switch-content>
+            </ult-switch>
+          </ult-switch-group>
+        </ult-form-field>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Field Helper Text</h2>
+    <playground>
+      <playground-content>
+        <ult-form-field>
+          <ult-label>Select Value</ult-label>
+          <ult-switch-group>
+            <ult-switch>Toggle 1</ult-switch>
+            <ult-switch>Toggle 2</ult-switch>
+            <ult-switch>Toggle 3</ult-switch>
+          </ult-switch-group>
+          <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry</ult-helper-text>
+        </ult-form-field>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Field Invalid</h2>
+    <playground>
+      <playground-content>
+        <div class="space-y-8">
+          <ult-form-field>
+            <ult-label [required]="true">Select Value</ult-label>
+            <ult-switch-group>
+              <ult-switch>Toggle 1</ult-switch>
+              <ult-switch>Toggle 2</ult-switch>
+              <ult-switch>Toggle 3</ult-switch>
+            </ult-switch-group>
+            <ult-errors>
+              <ult-error>This field is required</ult-error>
+            </ult-errors>
+          </ult-form-field>
+          <ult-form-field>
+            <ult-label [required]="true">Select Value</ult-label>
+            <ult-switch-group>
+              <ult-switch>Toggle 1</ult-switch>
+              <ult-switch>Toggle 2</ult-switch>
+              <ult-switch>Toggle 3</ult-switch>
+            </ult-switch-group>
+            <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry</ult-helper-text>
+            <ult-errors>
+              <ult-error>This field is required</ult-error>
+            </ult-errors>
+          </ult-form-field>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

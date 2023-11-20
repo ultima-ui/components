@@ -1,0 +1,4 @@
+:host {
+  display: block;
+  margin: var(--ult-switch-content-margin);
+}

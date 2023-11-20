@@ -1,0 +1,30 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h2 class="text-2xl font-bold">Monaco Editor</h2>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importExample"></code-block>
+    </div>
+<!--    <div class="space-y-6">-->
+<!--      <p>Add this code to <code inlineCode>assets</code> property in the <code inlineCode>angular.json</code> file:</p>-->
+<!--      <code-block [code]="copyLibraries" lang="json"></code-block>-->
+<!--    </div>-->
+    <h3>Basic</h3>
+    <playground class="overflow-hidden">
+      <playground-content [centered]="false" class="!p-0">
+        <ult-monaco-editor [value]="value" language="html" class="w-full h-full"></ult-monaco-editor>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Lazy Loading</h3>
+    <playground class="overflow-hidden">
+      <playground-content [centered]="false" class="!p-0">
+        <ult-monaco-editor [value]="value" language="html" class="w-full h-full" *ngIf="show"></ult-monaco-editor>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

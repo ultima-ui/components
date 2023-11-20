@@ -1,0 +1,14 @@
+html {
+  @apply antialiased leading-tight;
+}
+
+.link {
+  /* Relatively sized thickness and offset */
+  text-decoration-thickness: max(0.08em, 1px);
+  text-underline-offset: 0.15em;
+}
+
+p,
+pre {
+  @apply leading-relaxed;
+}

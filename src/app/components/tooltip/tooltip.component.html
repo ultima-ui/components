@@ -1,0 +1,27 @@
+<h1 class="text-xl font-bold mb-8">Tooltip</h1>
+<playground>
+  <playground-content>
+    <button ultButton ultTooltip="This is basic tooltip"
+            [position]="basicTooltip.position">Hover me!</button>
+  </playground-content>
+  <playground-properties>
+    <ult-form-field>
+      <ult-label>Position:</ult-label>
+      <ult-radio-group>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="above-start" name="basicPosition">Above Start</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="above-center" name="basicPosition">Above Center</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="above-end" name="basicPosition">Above End</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="below-start" name="basicPosition">Below Start</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="below-center" name="basicPosition">Below Center</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="below-end" name="basicPosition">Below End</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="before-start" name="basicPosition">Before Start</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="before-center" name="basicPosition">Before Center</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="before-end" name="basicPosition">Before End</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="after-start" name="basicPosition">After Start</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="after-center" name="basicPosition">After Center</ult-radio>
+        <ult-radio [(ngModel)]="basicTooltip.position" value="after-end" name="basicPosition">After End</ult-radio>
+      </ult-radio-group>
+    </ult-form-field>
+  </playground-properties>
+  <playground-controls></playground-controls>
+</playground>

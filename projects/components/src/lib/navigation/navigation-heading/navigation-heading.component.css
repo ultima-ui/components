@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  text-transform: var(--ult-navigation-heading-text-transform);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--ult-navigation-heading-color);
+  font-size: var(--ult-navigation-heading-font-size);
+  font-weight: var(--ult-navigation-heading-font-weight);
+  padding: var(--ult-navigation-heading-padding);
+  margin-bottom: var(--ult-navigation-heading-margin-bottom);
+}

@@ -1,0 +1,8 @@
+:host {
+  animation: var(--ult-skeleton-item-animation);
+  display: block;
+  width: 100%;
+  flex: none;
+  height: var(--ult-skeleton-block-height);
+  border-radius: var(--ult-skeleton-item-border-radius);
+}

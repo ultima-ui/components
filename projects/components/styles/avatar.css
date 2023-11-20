@@ -1,0 +1,19 @@
+:root {
+  --ult-avatar-font-weight: theme('fontWeight.medium');
+  --ult-avatar-size: theme('width.10');
+  --ult-avatar-border-radius: theme('borderRadius.full');
+  --ult-avatar-bg: theme('colors.neutral.200');
+  --ult-avatar-color: theme('colors.neutral.500');
+  --ult-avatar-presence-indicator-size: 20%;
+  --ult-avatar-presence-indicator-position-top: 5%;
+  --ult-avatar-presence-indicator-position-end: 5%;
+  --ult-avatar-presence-indicator-online-bg: theme('colors.positive.500');
+  --ult-avatar-presence-indicator-offline-bg: theme('colors.neutral.300');
+  --ult-avatar-counter-font-size: theme('fontSize.tiny');
+  --ult-avatar-counter-font-weight: theme('fontWeight.medium');
+  --ult-avatar-counter-color: theme('colors.white');
+  --ult-avatar-counter-bg: theme('colors.neutral.700');
+  --ult-avatar-counter-hover-bg: theme('colors.neutral.600');
+  --ult-avatar-group-item-offset: theme('spacing.4');
+  --ult-avatar-group-item-border: 0.125rem solid theme('colors.white');
+}

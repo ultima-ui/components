@@ -1,0 +1,7 @@
+:root {
+  --ult-icon-svg-size: theme('width.6');
+  --ult-icon-min-size: theme('width.6');
+  --ult-icon-placeholder-bg: theme('colors.neutral.200');
+  --ult-icon-placeholder-size: theme('width.6');
+  --ult-icon-placeholder-border-radius: theme('borderRadius.full');
+}

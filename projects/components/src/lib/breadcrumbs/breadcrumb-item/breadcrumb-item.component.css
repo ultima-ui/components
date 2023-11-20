@@ -1,0 +1,17 @@
+:host {
+  font-size: var(--ult-breadcrumbs-item-font-size);
+  font-weight: var(--ult-breadcrumbs-item-font-weight);
+  color: var(--ult-breadcrumbs-item-color);
+  cursor: pointer;
+}
+
+:host(:hover) {
+  color: var(--ult-breadcrumbs-item-hover-color);
+  text-decoration: underline;
+  text-underline-offset: 0.1875rem;
+}
+
+:host(:focus-visible) {
+  outline: var(--ult-outline-size) solid var(--ult-outline-color);
+  outline-offset: var(--ult-outline-offset);
+}

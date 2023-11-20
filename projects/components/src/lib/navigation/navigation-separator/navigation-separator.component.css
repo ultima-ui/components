@@ -1,0 +1,6 @@
+:host {
+  display: block;
+  height: var(--ult-navigation-separator-height);
+  background-color: var(--ult-navigation-separator-bg);
+  margin: var(--ult-navigation-separator-margin);
+}

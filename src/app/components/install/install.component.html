@@ -1,0 +1,39 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <h2 class="text-2xl font-bold mt-0">Install</h2>
+    <div>
+      <div class="mb-4">Install components</div>
+      <code-block [code]="installNpm"></code-block>
+    </div>
+
+    <div>
+      <div class="mb-4">Add a file <code inlineCode>tailwind.config.js</code> with content:</div>
+      <code-block [code]="tailwindContent"></code-block>
+    </div>
+
+    <div>
+      <div class="mb-4">Add a file <code inlineCode>postcss.config.js</code> with content:</div>
+      <code-block [code]="postcssContent"></code-block>
+    </div>
+
+    <div>
+      <div class="mb-4">Install Font</div>
+      <code-block [code]="installFont"></code-block>
+    </div>
+
+    <div>
+      <div class="mb-4">Add tailwind styles and font to <code inlineCode>styles.css</code></div>
+      <code-block [code]="tailwindStyles"></code-block>
+    </div>
+
+    <div>
+      <div class="mb-4">Install <a href="https://phosphoricons.com/" target="_blank">Phosphor icon library</a></div>
+      <code-block [code]="installIcons"></code-block>
+    </div>
+
+    <div>
+      <div class="mb-4">Run dev application</div>
+      <code-block [code]="runApp"></code-block>
+    </div>
+  </div>
+</div>

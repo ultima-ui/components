@@ -1,0 +1,9 @@
+<div class="prefix">
+  <ng-content select="[ultInputPrefix]"></ng-content>
+  <ng-container [ngTemplateOutlet]="prefixRef.templateRef" *ngIf="prefixRef"></ng-container>
+</div>
+<ng-content></ng-content>
+<div class="suffix">
+  <ng-content select="[ultInputSuffix]"></ng-content>
+  <ng-container [ngTemplateOutlet]="suffixRef.templateRef" *ngIf="suffixRef"></ng-container>
+</div>

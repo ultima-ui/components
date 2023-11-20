@@ -1,0 +1,11 @@
+:root {
+  --ult-breadcrumbs-gap: theme('gap.2');
+  --ult-breadcrumbs-item-font-size: theme('fontSize.md');
+  --ult-breadcrumbs-item-color: theme('colors.neutral.500');
+  --ult-breadcrumbs-item-hover-color: theme('colors.primary.500');
+  --ult-breadcrumbs-active-item-color: theme('colors.neutral.800');
+  --ult-breadcrumbs-item-font-weight: theme('fontWeight.normal');
+  --ult-breadcrumbs-separator-color: theme('colors.neutral.400');
+  --ult-breadcrumbs-separator-font-size: theme('fontSize.tiny');
+  --ult-breadcrumbs-separator-position-top: calc(theme('spacing.px') * -1);
+}

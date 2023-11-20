@@ -1,0 +1,5 @@
+:host {
+  display: block;
+  font-size: var(--ult-forms-error-font-size);
+  color: var(--ult-forms-error-color);
+}

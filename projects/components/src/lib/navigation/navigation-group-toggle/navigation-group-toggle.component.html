@@ -1,0 +1,7 @@
+<div class="flex items-center h-full w-full whitespace-nowrap overflow-hidden overflow-ellipsis">
+  <ng-content></ng-content>
+</div>
+<div class="toggle">
+  <ng-content select="[ultNavigationGroupToggleIcon]"></ng-content>
+  <ng-container [ngTemplateOutlet]="iconRef.templateRef" *ngIf="iconRef"></ng-container>
+</div>

@@ -1,0 +1,5 @@
+:host {
+  display: block;
+  font-size: var(--ult-incident-details-font-size);
+  color: var(--ult-incident-details-color);
+}

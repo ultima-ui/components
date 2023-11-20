@@ -1,0 +1,21 @@
+:root {
+  --ult-checkbox-indicator-font-size: theme('fontSize.sm');
+  --ult-checkbox-indicator-font-weight: theme('fontWeight.bold');
+  --ult-checkbox-indicator-color: theme('colors.white');
+  --ult-checkbox-control-bg: theme('colors.transparent');
+  --ult-checkbox-checked-control-bg: theme('colors.primary.500');
+  --ult-checkbox-checked-control-border-color: theme('colors.primary.500');
+  --ult-checkbox-control-size: 1.1875rem;
+  --ult-checkbox-control-border-color: theme('colors.neutral.200');
+  --ult-checkbox-control-border-width: theme('width.px');
+  --ult-checkbox-hover-control-border-color: theme('colors.neutral.300');
+  --ult-checkbox-control-shadow: theme('boxShadow.sm');
+  --ult-checkbox-control-border-radius: theme('borderRadius.DEFAULT');
+  --ult-checkbox-label-font-size: theme('fontSize.sm');
+  --ult-checkbox-label-color: theme('colors.neutral.900');
+  --ult-checkbox-gap: theme('gap[2.5]');
+  --ult-checkbox-content-margin: theme('margin.2') 0 0 calc(var(--ult-checkbox-control-size) + var(--ult-radio-gap));
+  --ult-checkbox-group-vgap: theme('gap.5');
+  --ult-checkbox-group-hgap: theme('gap.8');
+  --ult-checkbox-group-padding: theme('padding.2') 0;
+}

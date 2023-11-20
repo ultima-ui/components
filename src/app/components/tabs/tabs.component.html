@@ -1,0 +1,118 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Tabs</h1>
+    </div>
+
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-tabs>
+          <ult-tab label="Dashboard">Dashboard</ult-tab>
+          <ult-tab label="Payment">Payment</ult-tab>
+          <ult-tab label="Shipping">Shipping</ult-tab>
+        </ult-tabs>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Align</h3>
+    <playground>
+      <playground-content>
+        <div class="w-full">
+          <ult-tabs [align]="align">
+            <ult-tab label="Dashboard">Dashboard</ult-tab>
+            <ult-tab label="Payment">Payment</ult-tab>
+            <ult-tab label="Shipping">Shipping</ult-tab>
+          </ult-tabs>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-label>Align</ult-label>
+          <ult-radio-group>
+            <ult-radio name="align" [(ngModel)]="align" value="start">Start</ult-radio>
+            <ult-radio name="align" [(ngModel)]="align" value="center">Center</ult-radio>
+            <ult-radio name="align" [(ngModel)]="align" value="end">End</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Stretch</h3>
+    <playground>
+      <playground-content>
+        <div class="w-full">
+          <ult-tabs [stretch]="true">
+            <ult-tab label="Dashboard">Dashboard</ult-tab>
+            <ult-tab label="Payment">Payment</ult-tab>
+            <ult-tab label="Shipping">Shipping</ult-tab>
+          </ult-tabs>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Icons</h3>
+    <playground>
+      <playground-content>
+        <ult-tabs [stretch]="true">
+          <ult-tab>
+            <ng-template ult-tab-label>
+              <ult-icon name="ph:house"></ult-icon>Dashboard
+            </ng-template>
+            Dashboard
+          </ult-tab>
+          <ult-tab>
+            <ng-template ult-tab-label>
+              <ult-icon name="ph:credit-card"></ult-icon>Payment
+            </ng-template>
+            Payment
+          </ult-tab>
+          <ult-tab>
+            <ng-template ult-tab-label>
+              <ult-icon name="ph:package"></ult-icon>Shipping
+            </ng-template>
+            Shipping
+          </ult-tab>
+        </ult-tabs>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Badge</h3>
+    <playground>
+      <playground-content>
+        <div>
+          <ult-tabs [stretch]="true">
+            <ult-tab>
+              <ng-template ult-tab-label>
+                Dashboard <ult-badge class="ml-0.5 bg-purple-500 text-white">3+</ult-badge>
+              </ng-template>
+              Dashboard
+            </ult-tab>
+            <ult-tab>
+              <ng-template ult-tab-label>
+                Payment <ult-badge class="ml-0.5 border">3+</ult-badge>
+              </ng-template>
+              Payment
+            </ult-tab>
+            <ult-tab>
+              <ng-template ult-tab-label>
+                Shipping <ult-badge class="ml-0.5 bg-sky-500 text-white">3+</ult-badge>
+              </ng-template>
+              Shipping
+            </ult-tab>
+          </ult-tabs>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

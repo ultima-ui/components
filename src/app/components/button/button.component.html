@@ -1,0 +1,156 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h2 class="text-3xl font-bold mt-0">Button</h2>
+    </div>
+    <div class="space-y-4">
+      <div>Import module:</div>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h3 class="text-xl font-bold">Basic button</h3>
+    <playground>
+      <playground-content>
+        <button ultButton [variant]="basicExample.variant"
+                [disabled]="basicExample.disabled"
+                [loading]="basicExample.loading"
+                [active]="basicExample.active">Button</button>
+      </playground-content>
+      <playground-properties>
+        <div class="space-y-5">
+          <ult-form-field>
+            <ult-label>Variant</ult-label>
+            <div class="flex flex-wrap gap-3 mt-3">
+              <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="primary">primary</ult-custom-radio>
+              <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="secondary">secondary</ult-custom-radio>
+              <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="tertiary">tertiary</ult-custom-radio>
+              <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="positive">positive</ult-custom-radio>
+              <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="negative">negative</ult-custom-radio>
+              <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="accent">accent</ult-custom-radio>
+              <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="link">link</ult-custom-radio>
+            </div>
+          </ult-form-field>
+          <hr>
+          <ult-form-field>
+            <ult-label>Properties</ult-label>
+            <ult-checkbox-group>
+              <ult-checkbox name="basicExample" [(ngModel)]="basicExample.disabled">Disabled</ult-checkbox>
+              <ult-checkbox name="basicExample" [(ngModel)]="basicExample.loading">Loading</ult-checkbox>
+              <ult-checkbox name="basicExample" [(ngModel)]="basicExample.active">Active state</ult-checkbox>
+            </ult-checkbox-group>
+          </ult-form-field>
+        </div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3 class="text-xl font-bold">Loading Text</h3>
+    <playground>
+      <playground-content>
+        <button ultButton [size]="sizePlayground.size"
+                [loading]="loadingExample.isLoading"
+                [loadingText]="loadingExample.loadingText">Button</button>
+      </playground-content>
+      <playground-properties class="space-y-5">
+        <ult-form-field>
+          <input type="text" ultInput [(ngModel)]="loadingExample.loadingText">
+        </ult-form-field>
+        <ult-form-field>
+          <ult-switch [(ngModel)]="loadingExample.isLoading">Toggle Loading</ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3 class="text-xl font-bold">Button sizes</h3>
+    <playground>
+      <playground-content>
+        <button ultButton [size]="sizePlayground.size">Button</button>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-radio-group>
+            <ult-radio name="sizePlayground" [(ngModel)]="sizePlayground.size" value="sm">Small</ult-radio>
+            <ult-radio name="sizePlayground" [(ngModel)]="sizePlayground.size" value="default">Default</ult-radio>
+            <ult-radio name="sizePlayground" [(ngModel)]="sizePlayground.size" value="lg">Large</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3 class="text-xl font-bold">Button icons</h3>
+    <playground>
+      <playground-content>
+        <div class="space-y-6">
+          <div>
+            <button ult-button [size]="iconsPlayground.size">
+              <ult-icon name="ph:gear-six-fill" ultButtonPrefix ultButtonIcon></ult-icon>
+              Prefix Icon
+            </button>
+          </div>
+          <div>
+            <button ultButton [size]="iconsPlayground.size">
+              Suffix Icon
+              <ult-icon name="ph:gear-six-fill" ultButtonSuffix ultButtonIcon></ult-icon>
+            </button>
+          </div>
+          <div>
+            <button ultButton [size]="iconsPlayground.size" class="rounded-full">
+              <ult-icon name="ph:house-fill" ultButtonPrefix ultButtonIcon></ult-icon>
+              Prefix and suffix Icon
+              <ult-icon name="ph:gear-six-fill" ultButtonSuffix ultButtonIcon></ult-icon>
+            </button>
+          </div>
+          <div>
+            <div class="mb-3">Icon only:</div>
+            <div>
+              <button ultButton [size]="iconsPlayground.size" [iconOnly]="true">
+                <ult-icon name="ph:house-fill" ultButtonIcon></ult-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-radio-group>
+            <ult-radio name="iconsPlayground" [(ngModel)]="iconsPlayground.size" value="sm" name="icons">Small</ult-radio>
+            <ult-radio name="iconsPlayground" [(ngModel)]="iconsPlayground.size" value="default" name="icons">Default</ult-radio>
+            <ult-radio name="iconsPlayground" [(ngModel)]="iconsPlayground.size" value="lg" name="icons">Large</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3 class="text-xl font-bold">Button Prefix &amp; Suffix</h3>
+    <playground>
+      <playground-content>
+        <div class="space-y-6">
+          <button ultButton variant="secondary" [size]="prefixSuffixExample.size">
+            <img src="assets/demo/heart.svg" alt="heart" ultButtonPrefix>
+            Button
+          </button>
+          <button ultButton variant="accent" [size]="prefixSuffixExample.size">
+            Button
+            <img src="assets/demo/like.svg" alt="like" ultButtonSuffix>
+          </button>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-radio-group>
+            <ult-radio name="prefixSuffixExample" [(ngModel)]="prefixSuffixExample.size" value="sm" name="sizes">Small</ult-radio>
+            <ult-radio name="prefixSuffixExample" [(ngModel)]="prefixSuffixExample.size" value="default" name="sizes">Default</ult-radio>
+            <ult-radio name="prefixSuffixExample" [(ngModel)]="prefixSuffixExample.size" value="lg" name="sizes">Large</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+  <div class="col-span-4">
+    afas
+  </div>
+</div>

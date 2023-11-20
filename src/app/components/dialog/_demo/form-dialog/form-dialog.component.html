@@ -1,0 +1,19 @@
+<ult-dialog>
+  <ult-dialog-header>
+    <div class="text-lg font-bold">Create New</div>
+  </ult-dialog-header>
+  <ult-dialog-body class="space-y-5">
+    <ult-form-field>
+      <ult-label>Full Name</ult-label>
+      <input ultInput placeholder="Enter your full name">
+    </ult-form-field>
+    <ult-form-field>
+      <ult-label>Work</ult-label>
+      <input ultInput placeholder="Enter your full name">
+    </ult-form-field>
+  </ult-dialog-body>
+  <ult-dialog-footer class="bg-gray-100 justify-end gap-3">
+    <button ult-button variant="tertiary" (click)="close()" class="w-20">Cancel</button>
+    <button ult-button class="w-20">Create</button>
+  </ult-dialog-footer>
+</ult-dialog>

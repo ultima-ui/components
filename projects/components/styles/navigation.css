@@ -1,0 +1,62 @@
+:root {
+  --ult-navigation-item-space-y: theme('spacing.2');
+  --ult-navigation-item-bg: theme('colors.transparent');
+  --ult-navigation-item-height: theme('height.10');
+  --ult-navigation-item-padding: theme('padding.1') theme('padding[3.5]');
+  --ult-navigation-item-font-size: theme('fontSize.sm');
+  --ult-navigation-item-border-radius: theme('borderRadius.md');
+  --ult-navigation-item-font-weight: theme('fontWeight.medium');
+  --ult-navigation-item-color: theme('textColor.gray.700');
+  --ult-navigation-item-hover-bg: theme('colors.primary.50');
+  --ult-navigation-item-active-bg: theme('colors.primary.50');
+  --ult-navigation-item-hover-color: theme('textColor.gray.700');
+  --ult-navigation-item-active-color: theme('colors.primary.500');
+  --ult-navigation-item-icon-font-size: theme('fontSize.2xl');
+  --ult-navigation-item-icon-color: theme('colors.neutral.300');
+  --ult-navigation-item-hover-icon-color: var(--ult-navigation-item-color);
+  --ult-navigation-item-active-icon-color: var(--ult-navigation-item-active-color);
+  --ult-navigation-item-icon-size: theme('width.6');
+  --ult-navigation-item-gap: theme('gap[2.5]');
+  --ult-navigation-heading-color: theme('colors.neutral.400');
+  --ult-navigation-heading-font-size: theme('fontSize.2xs');
+  --ult-navigation-heading-font-weight: theme('fontWeight.medium');
+  --ult-navigation-heading-padding: 0 theme('padding.4');
+  --ult-navigation-heading-margin-bottom: theme('spacing.3');
+  --ult-navigation-heading-after-margin: theme('spacing.8');
+  --ult-navigation-heading-text-transform: uppercase;
+  --ult-navigation-separator-height: theme('height.px');
+  --ult-navigation-separator-bg: theme('colors.neutral.100');
+  --ult-navigation-separator-margin: theme('margin.6') 0;
+  --ult-navigation-group-toggle-has-icon-padding-end: theme('padding.2');
+  --ult-navigation-item-has-icon-padding-start: theme('padding[2.5]');
+  --ult-navigation-group-toggle-icon-color: theme('colors.neutral.400');
+  --ult-navigation-group-toggle-icon-position-end: theme('spacing.3');
+  --ult-navigation-group-toggle-icon-size: theme('width.4');
+  --ult-navigation-group-menu-padding-start: theme('padding.7');
+  --ult-navigation-nested-item-bg: theme('colors.transparent');
+  --ult-navigation-nested-item-height: theme('height.10');
+  --ult-navigation-nested-item-padding: theme('padding.1') theme('padding[3.5]');
+  --ult-navigation-nested-item-border-radius: theme('borderRadius.md');
+  --ult-navigation-nested-item-color: theme('textColor.gray.400');
+  --ult-navigation-nested-item-hover-bg: theme('colors.transparent');
+  --ult-navigation-nested-item-active-bg: theme('colors.transparent');
+  --ult-navigation-nested-item-hover-color: theme('textColor.gray.700');
+  --ult-navigation-nested-item-active-color: theme('colors.primary.500');
+  --ult-navigation-nested-item-indicator-width: theme('width[3.5]');
+  --ult-navigation-nested-item-indicator-height: theme('height[0.5]');
+  --ult-navigation-nested-item-indicator-bg: theme('colors.primary.500');
+  --ult-navigation-nested-item-indicator-position-start: calc(theme('spacing[2.5]') * -1);
+}
+
+.ult-navigation-item + *:not(.ult-navigation-separator),
+.ult-navigation-group + .ult-navigation-item {
+  margin-top: var(--ult-navigation-item-space-y);
+}
+
+.ult-navigation > * + .ult-navigation-heading {
+  margin-top: var(--ult-navigation-heading-after-margin);
+}
+
+.ult-navigation-group-toggle-icon {
+  @apply transition;
+}

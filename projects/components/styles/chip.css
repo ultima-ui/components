@@ -1,0 +1,25 @@
+:root {
+  --ult-chip-gap: theme('gap[0.5]');
+  --ult-chip-font-size: theme('fontSize.xs');
+  --ult-chip-font-weight: theme('fontWeight.medium');
+  --ult-chip-height: theme('height.7');
+  --ult-chip-padding: 0 theme('padding[3.5]');
+  --ult-chip-has-close-icon-padding: 0 theme('padding[1.5]') 0 theme('padding[3.5]');
+  --ult-chip-border-radius: theme('borderRadius.full');
+  --ult-chip-bg: theme('colors.neutral.200');
+  --ult-chip-color: theme('colors.neutral.700');
+  --ult-chip-close-hover-opacity: .65;
+  --ult-chip-close-icon-margin-end: theme('spacing[1.5]');
+}
+
+[ult-chip-size="sm"] {
+  --ult-chip-height: theme('height.5');
+  --ult-chip-padding: theme('padding[2.5]');
+  --ult-chip-font-size: theme('fontSize.3xs');
+}
+
+[ult-chip-size="lg"] {
+  --ult-chip-height: theme('height.9');
+  --ult-chip-padding: theme('padding.4');
+  --ult-chip-font-size: theme('fontSize.tiny');
+}

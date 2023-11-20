@@ -1,0 +1,20 @@
+:root {
+  --ult-notification-container-gap: theme('gap.3');
+  --ult-notification-container-padding: theme('padding.4');
+  --ult-notification-gap: theme('gap[2.5]');
+  --ult-notification-border-radius: theme('borderRadius.lg');
+  --ult-notification-bg: theme('colors.neutral.800');
+  --ult-notification-color: theme('colors.neutral.50');
+  --ult-notification-font-size: theme('fontSize.sm');
+  --ult-notification-box-shadow: theme('boxShadow.lg');
+  --ult-notification-padding: theme('padding.1') theme('padding.4');
+  --ult-notification-min-height: 2.5rem;
+  --ult-notification-has-close-padding-end: theme('padding.3');
+  --ult-notification-has-icon-padding-start: theme('padding.3');
+  --ult-notification-close-color: theme('colors.neutral.300');
+  --ult-notification-close-hover-color: theme('colors.white');
+}
+
+[ult-notification-appearance="negative"] {
+  --ult-notification-bg: theme('colors.negative.500');
+}

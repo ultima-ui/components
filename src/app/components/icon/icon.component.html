@@ -1,0 +1,57 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-8">
+    <div class="space-y-8">
+      <h1 class="text-2xl font-bold mt-0">Icon</h1>
+
+      <div>
+        <div class="mb-4">Install icon set library:</div>
+        <code-block [code]="iconSetLibrary"></code-block>
+      </div>
+
+      <div>
+        <div class="mb-4">Import module:</div>
+        <code-block [code]="importModule"></code-block>
+      </div>
+
+      <h2>Basic</h2>
+      <playground>
+        <playground-content>
+          <ult-icon name="ph:info"></ult-icon>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Custom Size</h2>
+      <playground>
+        <playground-content>
+          <div class="space-y-8">
+            <div class="text-center">
+              <div class="text-sm">Size: 32</div>
+              <ult-icon name="ph:info" size="32"></ult-icon>
+            </div>
+            <div class="text-center">
+              <div class="text-sm">Size: 48</div>
+              <ult-icon name="ph:info" size="48"></ult-icon>
+            </div>
+            <div class="text-center">
+              <div class="text-sm">Size: 100</div>
+              <ult-icon name="ph:info" size="100"></ult-icon>
+            </div>
+          </div>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Dynamic Change</h2>
+      <playground>
+        <playground-content>
+          <ult-icon [name]="iconName"></ult-icon>
+        </playground-content>
+        <playground-properties>
+          <button ult-button class="w-full" (click)="change()">Change</button>
+        </playground-properties>
+        <playground-controls></playground-controls>
+      </playground>
+    </div>
+  </div>
+</div>

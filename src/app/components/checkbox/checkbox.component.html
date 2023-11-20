@@ -1,0 +1,226 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Checkbox</h1>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h3>Basic</h3>
+    <playground>
+      <playground-content>
+        <ult-checkbox></ult-checkbox>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Label</h3>
+    <playground>
+      <playground-content>
+        <div>
+          <ult-checkbox-group>
+            <ult-checkbox>Some Label</ult-checkbox>
+            <ult-checkbox [ngModel]="true">Checked Some Label</ult-checkbox>
+          </ult-checkbox-group>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Indeterminate</h3>
+    <playground>
+      <playground-content>
+        <div>
+          <ult-checkbox-group [formGroup]="toppings">
+            <ult-checkbox formControlName="pepperoni" [indeterminate]="true"></ult-checkbox>
+            <ult-checkbox formControlName="pepperoni" [indeterminate]="true">Indeterminate</ult-checkbox>
+          </ult-checkbox-group>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Custom Indicators</h3>
+    <playground>
+      <playground-content>
+        <div>
+          <ult-checkbox-group [formGroup]="toppings">
+            <ult-checkbox formControlName="pepperoni" checkIconCode="&starf;">Check</ult-checkbox>
+            <ult-checkbox formControlName="pepperoni" [indeterminate]="true" intermediateIconCode="&#10005;">Indeterminate</ult-checkbox>
+          </ult-checkbox-group>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Form Control</h3>
+    <playground>
+      <playground-content>
+        <div>
+          <ult-checkbox-group [formGroup]="toppings">
+            <ult-checkbox formControlName="pepperoni">Pepperoni</ult-checkbox>
+            <ult-checkbox formControlName="extracheese">Extra Cheese</ult-checkbox>
+            <ult-checkbox formControlName="mushroom">Mushroom</ult-checkbox>
+          </ult-checkbox-group>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <h4 class="font-bold text-sm">You chose:</h4>
+        <div class="mt-1.5">
+          {{ toppings.value | json }}
+        </div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Field</h3>
+    <playground>
+      <playground-content>
+        <form [formGroup]="toppings">
+          <ult-form-field>
+            <ult-label>Check Value</ult-label>
+            <ult-checkbox-group>
+              <ult-checkbox formControlName="pepperoni">Pepperoni</ult-checkbox>
+              <ult-checkbox formControlName="extracheese">Extra Cheese</ult-checkbox>
+              <ult-checkbox formControlName="mushroom">Mushroom</ult-checkbox>
+            </ult-checkbox-group>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Field Required</h3>
+    <playground>
+      <playground-content>
+        <form [formGroup]="toppings">
+          <ult-form-field>
+            <ult-label [required]="true">Check Value</ult-label>
+            <ult-checkbox-group>
+              <ult-checkbox formControlName="pepperoni">Pepperoni</ult-checkbox>
+              <ult-checkbox formControlName="extracheese">Extra Cheese</ult-checkbox>
+              <ult-checkbox formControlName="mushroom">Mushroom</ult-checkbox>
+            </ult-checkbox-group>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Field Helper Text</h3>
+    <playground>
+      <playground-content>
+        <form [formGroup]="toppings">
+          <ult-form-field>
+            <ult-label>Check Value</ult-label>
+            <ult-checkbox-group>
+              <ult-checkbox formControlName="pepperoni">Pepperoni</ult-checkbox>
+              <ult-checkbox formControlName="extracheese">Extra Cheese</ult-checkbox>
+              <ult-checkbox formControlName="mushroom">Mushroom</ult-checkbox>
+            </ult-checkbox-group>
+            <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry</ult-helper-text>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Field Invalid</h3>
+    <playground>
+      <playground-content>
+        <div class="space-y-8">
+          <form [formGroup]="toppings">
+            <ult-form-field>
+              <ult-label [required]="true">Check Value</ult-label>
+              <ult-checkbox-group>
+                <ult-checkbox formControlName="pepperoni">Pepperoni</ult-checkbox>
+                <ult-checkbox formControlName="extracheese">Extra Cheese</ult-checkbox>
+                <ult-checkbox formControlName="mushroom">Mushroom</ult-checkbox>
+              </ult-checkbox-group>
+              <ult-errors>
+                <ult-error>This field is required</ult-error>
+              </ult-errors>
+            </ult-form-field>
+          </form>
+          <div>
+            <div class="text-sm mb-3">Field invalid with helper text:</div>
+            <form [formGroup]="toppings">
+              <ult-form-field>
+                <ult-label [required]="true">Check Value</ult-label>
+                <ult-checkbox-group>
+                  <ult-checkbox formControlName="pepperoni">Pepperoni</ult-checkbox>
+                  <ult-checkbox formControlName="extracheese">Extra Cheese</ult-checkbox>
+                  <ult-checkbox formControlName="mushroom">Mushroom</ult-checkbox>
+                </ult-checkbox-group>
+                <ult-helper-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry</ult-helper-text>
+                <ult-errors>
+                  <ult-error>This field is required</ult-error>
+                </ult-errors>
+              </ult-form-field>
+            </form>
+          </div>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Content</h2>
+    <playground>
+      <playground-content>
+        <form [formGroup]="toppings">
+          <ult-form-field>
+            <ult-label class="mb-3">Select Value</ult-label>
+            <ult-checkbox-group>
+              <ult-checkbox formControlName="pepperoni">
+                Checkbox 1
+                <ult-checkbox-content>asasfasasfasf</ult-checkbox-content>
+              </ult-checkbox>
+              <ult-checkbox formControlName="extracheese">
+                Checkbox 2
+                <ult-checkbox-content>asasfasasfasf</ult-checkbox-content>
+              </ult-checkbox>
+              <ult-checkbox formControlName="mushroom">
+                Checkbox 3
+                <ult-checkbox-content>asasfasasfasf</ult-checkbox-content>
+              </ult-checkbox>
+            </ult-checkbox-group>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Blocks</h3>
+    <playground>
+      <playground-content [centeredY]="true">
+        <form [formGroup]="blocksGroup" class="w-full">
+          <ult-form-field>
+            <div class="space-y-5 mt-2">
+              <ult-checkbox block="true" formControlName="anyone" class="border rounded-xl p-4 hover:border-gray-300">
+                <div class="ms-1">
+                  <div>Anyone can signup</div>
+                  <div class="text-xs text-gray-400 mt-1">All visitors will be able to register and sign in</div>
+                </div>
+              </ult-checkbox>
+              <ult-checkbox block="true" formControlName="invite" class="border rounded-xl p-4 hover:border-gray-300">
+                <div class="ms-1">
+                  <div>Only people I invite</div>
+                  <div class="text-xs text-gray-400 mt-1">People can sign in from your site but won't be able to register</div>
+                </div>
+              </ult-checkbox>
+              <ult-checkbox block="true" formControlName="nobody" class="border rounded-xl p-4 hover:border-gray-300">
+                <div class="ms-1">
+                  <div>Nobody</div>
+                  <div class="text-xs text-gray-400 mt-1">Disable all member features, including newsletters</div>
+                </div>
+              </ult-checkbox>
+            </div>
+          </ult-form-field>
+        </form>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

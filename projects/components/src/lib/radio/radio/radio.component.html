@@ -1,0 +1,9 @@
+<div class="flex items-center">
+  <input type="radio" [value]="value" [name]="formControlName || name"
+         [disabled]="disabled" (focusin)="_focused = true" (focusout)="_focused = false">
+  <div class="control">
+    <div class="indicator"></div>
+  </div>
+  <div class="label"><ng-content></ng-content></div>
+</div>
+<ng-content select="ult-radio-content"></ng-content>

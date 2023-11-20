@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+:host .nav {
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: var(--ult-tabs-nav-height);
+  gap: var(--ult-tabs-nav-gap);
+}
+
+:host(.is-bordered) .nav {
+  border-bottom: var(--ult-tabs-nav-border);
+}
+
+:host(.is-align-start) .nav {
+  justify-content: start;
+}
+
+:host(.is-align-center) .nav {
+  justify-content: center;
+}
+
+:host(.is-align-end) .nav {
+  justify-content: end;
+}
+
+:host .content {
+  display: block;
+}

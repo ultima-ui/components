@@ -1,0 +1,16 @@
+:root {
+  --ult-tabs-nav-height: theme('height.12');
+  --ult-tabs-nav-gap: theme('gap.3');
+  --ult-tabs-nav-border-height: theme('height.px');
+  --ult-tabs-nav-border: var(--ult-tabs-nav-border-height) solid theme('colors.neutral.200');
+  --ult-tab-padding: 0 theme('padding.5');
+  --ult-tab-gap: theme('gap[1.5]');
+  --ult-tab-font-size: theme('fontSize.sm');
+  --ult-tab-color: theme('colors.neutral.500');
+  --ult-tab-hover-color: theme('colors.neutral.900');
+  --ult-tab-active-color: theme('colors.primary.500');
+  --ult-tab-hl-height: 2px;
+  --ult-tab-hl-hover-color: theme('colors.neutral.400');
+  --ult-tab-hl-active-color: theme('colors.primary.500');
+  --ult-tab-hl-border-radius: theme('borderRadius.md') theme('borderRadius.md') 0 0;
+}

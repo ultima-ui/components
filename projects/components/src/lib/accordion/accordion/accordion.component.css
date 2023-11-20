@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+
+:host ::ng-deep .ult-accordion-item + .ult-accordion-item {
+  margin-top: var(--ult-accordion-space-y);
+}

@@ -1,0 +1,8 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--ult-sidebar-nav-padding);
+  gap: var(--ult-sidebar-nav-gap);
+}

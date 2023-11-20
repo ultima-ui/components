@@ -1,0 +1,6 @@
+<ng-container *ngIf="type === 'range-of-items'">
+  {{ ((currentPage - 1) * pageSize) + 1 }} &ndash; {{ currentPage * pageSize }} of {{ totalPages * pageSize }}
+</ng-container>
+<ng-container *ngIf="type === 'range-of-pages'">
+  {{ currentPage }} of {{ totalPages }}
+</ng-container>

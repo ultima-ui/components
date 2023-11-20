@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--ult-forms-errors-margin-top);
+  gap: var(--ult-forms-errors-gap);
+}
+
+:host(:empty) {
+  display: none;
+}

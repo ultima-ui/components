@@ -1,0 +1,20 @@
+:host {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  flex: none;
+  font-size: var(--ult-avatar-counter-font-size);
+  font-weight: var(--ult-avatar-counter-font-weight);
+  width: var(--ult-avatar-size);
+  height: var(--ult-avatar-size);
+  border-radius: var(--ult-avatar-border-radius);
+  background: var(--ult-avatar-counter-bg);
+  color: var(--ult-avatar-counter-color);
+}
+
+:host(:hover) {
+  background: var(--ult-avatar-counter-hover-bg);
+}

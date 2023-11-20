@@ -1,0 +1,16 @@
+<pre class="p-0 m-0 bg-transparent not-prose h-full"
+     [class.hidden]="['css', 'ts'].includes(currentView)"><code class="!p-0 bg-transparent text-sm"
+                                                 lang="html"
+                                                 [languages]="['html']"
+                                                 [highlight]="htmlCodeUrl | codeFromUrl | async"></code></pre>
+<pre class="p-0 m-0 bg-transparent not-prose h-full"
+     [class.hidden]="['html', 'css'].includes(currentView)"><code class="!p-0 !bg-transparent text-sm"
+                                                 lang="typescript"
+                                                 [languages]="['typescript']"
+                                                 [highlight]="tsCodeUrl | codeFromUrl | async"></code></pre>
+<pre class="p-0 m-0 bg-transparent not-prose h-full"
+     [class.hidden]="['ts', 'html'].includes(currentView)"><code class="!p-0 !bg-transparent text-sm"
+                                                lang="typescript"
+                                                [languages]="['css']"
+                                                [highlight]="cssCodeUrl | codeFromUrl | async"></code></pre>
+<ng-content></ng-content>

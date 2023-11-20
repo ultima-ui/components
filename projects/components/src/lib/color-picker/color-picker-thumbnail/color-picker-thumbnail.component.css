@@ -1,0 +1,36 @@
+:host {
+  display: inline-block;
+  position: relative;
+  border-radius: var(--ult-color-picker-thumbnail-border-radius);
+  width: var(--ult-color-picker-thumbnail-size);
+  height: var(--ult-color-picker-thumbnail-size);
+  flex: none;
+  border: var(--ult-color-picker-thumbnail-border);
+}
+
+:host::before {
+  display: block;
+  content: '';
+  border-radius: inherit;
+  z-index: 0;
+  inset: 0;
+  position: absolute;
+  background-position: 0 0, 4px 4px;
+  background-size: 8px 8px;
+  background-image: repeating-linear-gradient(45deg,#dbdbdb 25%,transparent 25%,transparent 75%,#dbdbdb 75%,#dbdbdb),repeating-linear-gradient(45deg,#dbdbdb 25%,#fff 25%,#fff 75%,#dbdbdb 75%,#dbdbdb);
+}
+
+:host::after {
+  display: block;
+  content: '';
+  border-radius: inherit;
+  z-index: 1;
+  inset: 0;
+  position: absolute;
+  background: var(--ult-color-picker-thumbnail-bg);
+}
+
+:host(:active) {
+  transition: var(--ult-transition-transform);
+  transform: scale(.97);
+}

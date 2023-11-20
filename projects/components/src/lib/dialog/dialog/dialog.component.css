@@ -1,0 +1,13 @@
+:host {
+  position: relative;
+  background: var(--ult-dialog-bg);
+  width: var(--ult-dialog-width);
+  height: var(--ult-dialog-height);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ult-dialog-border-radius);
+  max-height: var(--ult-dialog-max-height);
+  max-width: var(--ult-dialog-max-width);
+  box-shadow: var(--ult-dialog-shadow);
+  flex: none;
+}

@@ -1,0 +1,159 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h2 class="text-2xl font-bold">Alert</h2>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importExample"></code-block>
+    </div>
+
+    <h3>Basic</h3>
+    <playground>
+      <playground-content class="px-20">
+        <ult-alert [variant]="basicExample.variant"
+                   [bordered]="basicExample.bordered">This is a Ultima UI Alert — check it out!</ult-alert>
+      </playground-content>
+      <playground-properties class="space-y-5">
+        <ult-form-field>
+          <ult-label>Variant</ult-label>
+          <div class="flex flex-wrap gap-3">
+            <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="primary">primary</ult-custom-radio>
+            <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="secondary">secondary</ult-custom-radio>
+            <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="informative">informative</ult-custom-radio>
+            <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="positive">positive</ult-custom-radio>
+            <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="negative">negative</ult-custom-radio>
+            <ult-custom-radio name="basicExample" [(ngModel)]="basicExample.variant" value="notice">notice</ult-custom-radio>
+          </div>
+        </ult-form-field>
+        <hr>
+        <ult-form-field>
+          <ult-label>Bordered</ult-label>
+          <ult-switch [(ngModel)]="basicExample.bordered">
+            <ng-container *ngIf="basicExample.bordered">Yes</ng-container>
+            <ng-container *ngIf="!basicExample.bordered">No</ng-container>
+          </ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>With Title</h3>
+    <playground>
+      <playground-content class="px-20">
+        <ult-alert [variant]="titleExample.variant"
+                   [bordered]="titleExample.bordered">
+          <div ultAlertTitle>Whoops, something went wrong:</div>
+          This is a Ultima UI Alert — check it out!
+        </ult-alert>
+      </playground-content>
+      <playground-properties class="space-y-5">
+        <ult-form-field>
+          <ult-label>Variant</ult-label>
+          <div class="flex flex-wrap gap-3">
+            <ult-custom-radio name="titleExample" [(ngModel)]="titleExample.variant" value="primary">primary</ult-custom-radio>
+            <ult-custom-radio name="titleExample" [(ngModel)]="titleExample.variant" value="secondary">secondary</ult-custom-radio>
+            <ult-custom-radio name="titleExample" [(ngModel)]="titleExample.variant" value="informative">informative</ult-custom-radio>
+            <ult-custom-radio name="titleExample" [(ngModel)]="titleExample.variant" value="positive">positive</ult-custom-radio>
+            <ult-custom-radio name="titleExample" [(ngModel)]="titleExample.variant" value="negative">negative</ult-custom-radio>
+            <ult-custom-radio name="titleExample" [(ngModel)]="titleExample.variant" value="notice">notice</ult-custom-radio>
+          </div>
+        </ult-form-field>
+        <hr>
+        <ult-form-field>
+          <ult-label>Bordered</ult-label>
+          <ult-switch [(ngModel)]="titleExample.bordered">
+            <ng-container *ngIf="titleExample.bordered">Yes</ng-container>
+            <ng-container *ngIf="!titleExample.bordered">No</ng-container>
+          </ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Icon</h3>
+    <playground>
+      <playground-content class="px-10">
+        <div class="w-full space-y-5">
+          <ult-alert [variant]="iconExample.variant"
+                     [bordered]="iconExample.bordered">
+            <ult-icon name="ph:warning-fill" ultAlertIcon></ult-icon>
+            This is a Ultima UI Alert — check it out!
+          </ult-alert>
+          <ult-alert [variant]="iconExample.variant"
+                     [bordered]="iconExample.bordered">
+            <ult-icon name="ph:warning-circle-fill" ultAlertIcon></ult-icon>
+            <div ultAlertTitle>Whoops, something went wrong:</div>
+            <ul class="list-disc space-y-1 ps-3.5">
+              <li>A negative message</li>
+              <li>This field is required</li>
+            </ul>
+          </ult-alert>
+        </div>
+      </playground-content>
+      <playground-properties class="space-y-5">
+        <ult-form-field>
+          <ult-label>Variant</ult-label>
+          <div class="flex flex-wrap gap-3">
+            <ult-custom-radio name="iconExample" [(ngModel)]="iconExample.variant" value="primary">primary</ult-custom-radio>
+            <ult-custom-radio name="iconExample" [(ngModel)]="iconExample.variant" value="secondary">secondary</ult-custom-radio>
+            <ult-custom-radio name="iconExample" [(ngModel)]="iconExample.variant" value="informative">informative</ult-custom-radio>
+            <ult-custom-radio name="iconExample" [(ngModel)]="iconExample.variant" value="positive">positive</ult-custom-radio>
+            <ult-custom-radio name="iconExample" [(ngModel)]="iconExample.variant" value="negative">negative</ult-custom-radio>
+            <ult-custom-radio name="iconExample" [(ngModel)]="iconExample.variant" value="notice">notice</ult-custom-radio>
+          </div>
+        </ult-form-field>
+        <hr>
+        <ult-form-field>
+          <ult-label>Bordered</ult-label>
+          <ult-switch [(ngModel)]="iconExample.bordered">
+            <ng-container *ngIf="iconExample.bordered">Yes</ng-container>
+            <ng-container *ngIf="!iconExample.bordered">No</ng-container>
+          </ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h3>Close</h3>
+    <playground>
+      <playground-content>
+        <div class="w-full space-y-5">
+          <ult-alert [variant]="closeExample.variant" [bordered]="closeExample.bordered">
+            <ult-icon name="ph:x" size="20" ultAlertClose></ult-icon>
+            This is a Ultima UI Alert — check it out!
+          </ult-alert>
+          <ult-alert [variant]="closeExample.variant" [bordered]="closeExample.bordered">
+            <ng-template ultAlertIcon>
+              <ult-icon name="ph:question-fill"></ult-icon>
+            </ng-template>
+            <ult-icon name="ph:x" size="20" ultAlertClose></ult-icon>
+            This is a Ultima UI Alert — check it out!
+          </ult-alert>
+        </div>
+      </playground-content>
+      <playground-properties class="space-y-5">
+        <ult-form-field>
+          <ult-label>Variant</ult-label>
+          <div class="flex flex-wrap gap-3">
+            <ult-custom-radio name="closeExample" [(ngModel)]="closeExample.variant" value="primary">primary</ult-custom-radio>
+            <ult-custom-radio name="closeExample" [(ngModel)]="closeExample.variant" value="secondary">secondary</ult-custom-radio>
+            <ult-custom-radio name="closeExample" [(ngModel)]="closeExample.variant" value="informative">informative</ult-custom-radio>
+            <ult-custom-radio name="closeExample" [(ngModel)]="closeExample.variant" value="positive">positive</ult-custom-radio>
+            <ult-custom-radio name="closeExample" [(ngModel)]="closeExample.variant" value="negative">negative</ult-custom-radio>
+            <ult-custom-radio name="closeExample" [(ngModel)]="closeExample.variant" value="notice">notice</ult-custom-radio>
+          </div>
+        </ult-form-field>
+        <hr>
+        <ult-form-field>
+          <ult-label>Bordered</ult-label>
+          <ult-switch [(ngModel)]="closeExample.bordered">
+            <ng-container *ngIf="closeExample.bordered">Yes</ng-container>
+            <ng-container *ngIf="!closeExample.bordered">No</ng-container>
+          </ult-switch>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

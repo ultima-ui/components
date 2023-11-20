@@ -1,0 +1,18 @@
+:host {
+  flex-grow: 1;
+  display: block;
+  padding: var(--ult-dialog-body-padding);
+  overflow: auto;
+  border-radius: var(--ult-dialog-border-radius);
+}
+
+:host-context(.ult-dialog:has(.ult-dialog-header)) {
+  padding-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+:host-context(.ult-dialog:has(.ult-dialog-footer)) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

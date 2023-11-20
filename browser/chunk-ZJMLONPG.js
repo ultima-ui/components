@@ -1,0 +1,1 @@
+import{ca as e}from"./chunk-Z37IT2PE.js";var c=(()=>{let t=class t{constructor(){}};t.\u0275fac=function(i){return new(i||t)},t.\u0275dir=e({type:t,selectors:[["","inlineCode",""]],hostAttrs:[1,"text-sm","text-primary-500"],standalone:!0});let r=t;return r})();export{c as a};

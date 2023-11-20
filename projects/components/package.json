@@ -1,6 +1,6 @@
 {
   "name": "@ultima-ui/components",
-  "version": "0.0.246",
+  "version": "0.0.247",
   "keywords": [
     "angular",
     "angular ui",
@@ -10,11 +10,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@angular/common": "^16.2.0",
-    "@angular/core": "^16.2.0",
-    "@angular/cdk": "^16.2.0",
-    "@angular/forms": "^16.2.0",
-    "tailwindcss": "^3.3.3",
+    "@angular/common": "^17.0.3",
+    "@angular/core": "^17.0.3",
+    "@angular/cdk": "^17.0.1",
+    "@angular/forms": "^17.0.3",
+    "tailwindcss": "^3.3.5",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.9",

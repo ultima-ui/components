@@ -1,9 +1,9 @@
 {
   "name": "@ultima-ui/monaco-editor",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "peerDependencies": {
-    "@angular/common": "^16.2.0",
-    "@angular/core": "^16.2.0",
+    "@angular/common": "^17.0.3",
+    "@angular/core": "^17.0.3",
     "monaco-editor": "^0.44.0"
   },
   "dependencies": {

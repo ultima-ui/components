@@ -84,8 +84,8 @@ export class RadioComponent implements ControlValueAccessor, OnInit {
   private _injector = inject(Injector);
   private _registry = inject(RadioControlRegistry);
 
-  @Input() name!: string;
-  @Input() formControlName!: string;
+  @Input() name: string;
+  @Input() formControlName: string;
   @Input() value: any;
   @Input({ transform: booleanAttribute }) disabled!: boolean;
   @Input({ transform: booleanAttribute }) block = false;

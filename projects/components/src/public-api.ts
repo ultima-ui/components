@@ -36,3 +36,4 @@ export * from './lib/paginator/public-api';
 export * from './lib/safe-html.pipe';
 export * from './lib/safe-resource-url.pipe';
 export * from './lib/order-by.pipe';
+export * from './lib/monaco-editor/public-api';

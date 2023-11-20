@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UltMonacoEditorModule } from '@ultima-ui/monaco-editor';
 import { PlaygroundModule } from '../../_libraries/playground/playground.module';
 import { CodeBlockComponent } from '../../_libraries/code-block/code-block.component';
 import { InlineCodeDirective } from '../../_libraries/inline-code.directive';
+import { UltMonacoEditorModule } from "../../../../projects/components";
 
 @Component({
   standalone: true,

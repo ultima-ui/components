@@ -1,21 +1,23 @@
 {
   "name": "ultima-ui",
   "version": "0.0.0",
+  "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm run components:build && npm run monaco-editor:build && ng build --configuration production --base-href 'https://ultima-ui.github.io/components/' && npx angular-cli-ghpages --dir=dist/ultima-ui/browser",
-    "components:dev": "ng build components --watch --configuration development",
-    "components:build": "ng build components --configuration production",
-    "components:publish": "ng build components --configuration production && npm publish --access public ./dist/components",
-    "monaco-editor:dev": "ng build monaco-editor --watch --configuration development",
-    "monaco-editor:build": "ng build monaco-editor --configuration production",
-    "monaco-editor:publish": "ng build monaco-editor --configuration production && npm publish --access public ./dist/monaco-editor"
+    "lib:dev": "ng build components --watch --configuration development",
+    "lib:build": "ng build components --configuration production",
+    "lib:publish": "ng build components --configuration production && npm publish --access public ./dist/components",
+    "deploy": "npm run lib:build && ng build --configuration production --base-href 'https://ultima-ui.github.io/components/' && npx angular-cli-ghpages --dir=dist/ultima-ui/browser"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ultima-ui/components.git"
+  },
+  "private": false,
   "dependencies": {
     "@angular/cdk": "^17.0.1",
     "@angular/animations": "^17.0.0",

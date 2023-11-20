@@ -1,13 +1,12 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
       "@ultima-ui/components": [
-        "./dist/components"
+        "./projects/components/src/public-api"
       ],
-      "@ultima-ui/monaco-editor": [
-        "./dist/monaco-editor"
+      "@ultima-ui/components/*": [
+        "./projects/components/src/lib/*/public-api"
       ]
     },
     "outDir": "./dist/out-tsc",
@@ -33,6 +32,10 @@
       "dom"
     ]
   },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

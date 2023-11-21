@@ -1,6 +1,6 @@
 {
   "name": "@ultima-ui/components",
-  "version": "0.0.248",
+  "version": "0.0.249",
   "keywords": [
     "angular",
     "angular ui",
@@ -18,7 +18,8 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.9",
-    "iconify-icon": "^1.0.8"
+    "iconify-icon": "^1.0.8",
+    "monaco-editor": "^0.44.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

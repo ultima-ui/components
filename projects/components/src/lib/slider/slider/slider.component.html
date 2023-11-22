@@ -1,5 +1,5 @@
 <div #slider class="track">
-  <div class="steps" *ngIf="showSteps">
+  <div class="steps" *ngIf="showStepPoints">
     <div class="step" [style.max-width.%]="stepPoint"
          *ngFor="let stepPoint of _stepsPoints; let first = first; let last = last">
       <div class="step-dot" *ngIf="!last"></div>

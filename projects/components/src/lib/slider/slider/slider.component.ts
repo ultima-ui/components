@@ -14,7 +14,7 @@ import { DOCUMENT } from '@angular/common';
 import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FORM_FIELD } from '../../forms/properties';
+import { FORM_FIELD } from '../../forms';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
@@ -44,7 +44,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   @Input({ transform: numberAttribute, required: true }) min: number;
   @Input({ transform: numberAttribute }) step: number;
   @Input({ transform: numberAttribute }) value: number;
-  @Input({ transform: booleanAttribute }) showSteps = true;
+  @Input({ transform: booleanAttribute }) showStepPoints = false;
   @Input({ transform: booleanAttribute }) disabled = false;
 
   @ViewChild('slider', { static: true }) private _slider: ElementRef<HTMLElement>;

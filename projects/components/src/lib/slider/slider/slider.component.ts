@@ -44,7 +44,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   @Input({ transform: numberAttribute, required: true }) min: number;
   @Input({ transform: numberAttribute }) step: number;
   @Input({ transform: numberAttribute }) value: number;
-  @Input({ transform: booleanAttribute }) showStepPoints = false;
+  @Input({ transform: booleanAttribute }) showTickMarks = false;
   @Input({ transform: booleanAttribute }) disabled = false;
 
   @ViewChild('slider', { static: true }) private _slider: ElementRef<HTMLElement>;
@@ -52,7 +52,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   @Output() readonly changed = new EventEmitter();
 
-  _stepsPoints: number[] = [];
+  _tickMarks: number[] = [];
 
   private _sliderWidth = 0;
   private _thumbWidth = 0;
@@ -70,11 +70,11 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   ngOnInit() {
     if (this.step > 0) {
-      const pointsCount = Math.ceil((this.max - this.min) / this.step);
+      const tickMarksCount = Math.ceil((this.max - this.min) / this.step);
 
-      for (let i = 1; i <= pointsCount; i++) {
-        const width = 100 / pointsCount * i;
-        this._stepsPoints.push(width);
+      for (let i = 1; i <= tickMarksCount; i++) {
+        const width = 100 / tickMarksCount * i;
+        this._tickMarks.push(width);
       }
     }
 
@@ -93,13 +93,14 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe((event: any) => {
         if (this._moving) {
-          let offset = this._offset + event.clientX - this._clientX;
+          let offset = this._offset + event.clientX - this._clientX + this._thumbWidth / 2;
 
-          if (this._stepsPoints.length > 0) {
-            const offsetPercents = Math.ceil(offset / this._sliderWidth * 100);
+          if (this._tickMarks.length > 0) {
+            const offsetPercents = Math.floor(offset / this._sliderWidth * 100);
             const stepPercents = this.step / (this.max - this.min) * 100;
             const stepWidthPx = this._sliderWidth * this.step / (this.max - this.min);
             offset = Math.round(offsetPercents / stepPercents) * stepWidthPx - this._thumbWidth / 2;
+            const value = Math.ceil((offset / this._sliderWidth) * this._tickMarks.length);
           }
 
           if (offset <= 0) {
@@ -138,7 +139,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     if (target !== this._thumb.nativeElement) {
       let offset = event.clientX - this._slider.nativeElement.getBoundingClientRect().x - this._thumbWidth / 2;
 
-      if (this._stepsPoints.length > 0) {
+      if (this._tickMarks.length > 0) {
         const offsetPercents = Math.ceil(offset / this._sliderWidth * 100);
         const stepPercents = this.step / (this.max - this.min) * 100;
         const stepWidthPx = this._sliderWidth * this.step / (this.max - this.min);
@@ -189,10 +190,17 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     }
 
     let percent = offset / sliderWidth;
-    let value = percent <= .5 ?
-      Math.ceil(percent * (this.max - this.min) + this.min) :
-      Math.floor(percent * (this.max - this.min) + this.min)
-    ;
+    let value: number;
+
+    if (this._tickMarks.length > 0) {
+      value = percent * (this.max - this.min) + this.min;
+      console.log(value);
+    } else {
+      value = percent <= .5 ?
+        Math.ceil(percent * (this.max - this.min) + this.min) :
+        Math.floor(percent * (this.max - this.min) + this.min)
+      ;
+    }
 
     if (value !== this.value) {
       this.value = value;

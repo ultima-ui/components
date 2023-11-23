@@ -1,9 +1,12 @@
 <div #slider class="track">
-  <div class="steps" *ngIf="showStepPoints">
-    <div class="step" [style.max-width.%]="stepPoint"
-         *ngFor="let stepPoint of _stepsPoints; let first = first; let last = last">
-      <div class="step-dot" *ngIf="!last"></div>
+  @if (showTickMarks) {
+    <div class="steps">
+      <div class="step" [style.max-width.%]="showTickMark"
+           *ngFor="let showTickMark of _tickMarks; let first = first; let last = last">
+        <div class="step-dot" *ngIf="!last"></div>
+      </div>
     </div>
-  </div>
+  }
 </div>
 <button #thumb class="thumb"></button>
+<ng-content></ng-content>

@@ -90,11 +90,20 @@
   border-end-end-radius: var(--ult-slider-thumb-border-radius);
 }
 
-.step-dot {
+:host .mark {
   line-height: 0.0625rem;
-  width: var(--ult-slider-step-dot-size);
-  height: var(--ult-slider-step-dot-size);
+  width: var(--ult-slider-mark-size);
+  height: var(--ult-slider-mark-size);
   flex: none;
-  background: var(--ult-slider-step-dot-bg);
+  background: var(--ult-slider-mark-bg);
   border-radius: 50%;
+}
+
+:host /deep/ input {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  opacity: 0;
 }

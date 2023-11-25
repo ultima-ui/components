@@ -16,6 +16,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FORM_FIELD } from '../../forms';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { ULT_SLIDER } from "../types";
 
 @Component({
   selector: 'ult-slider',
@@ -27,6 +28,11 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => SliderComponent),
       multi: true
+    },
+    {
+      provide: ULT_SLIDER,
+      useExisting: forwardRef(() => SliderComponent),
+      multi: false
     }
   ],
   host: {
@@ -69,97 +75,97 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   }
 
   ngOnInit() {
-    if (this.step > 0) {
-      const tickMarksCount = Math.ceil((this.max - this.min) / this.step);
-
-      for (let i = 1; i <= tickMarksCount; i++) {
-        const width = 100 / tickMarksCount * i;
-        this._tickMarks.push(width);
-      }
-    }
-
-    this._thumbWidth = this._thumb.nativeElement.getBoundingClientRect().width;
-    this._tmpOffset = this._offset;
-
-    fromEvent(this._thumb.nativeElement, 'mousedown')
-      .pipe(takeUntilDestroyed(this._destroyRef))
-      .subscribe((event: any) => {
-        this._moving = true;
-        this._sliderWidth = this._slider.nativeElement.getBoundingClientRect().width;
-        this._clientX = event.clientX;
-      })
-    ;
-    fromEvent(this._document, 'mousemove')
-      .pipe(takeUntilDestroyed(this._destroyRef))
-      .subscribe((event: any) => {
-        if (this._moving) {
-          let offset = this._offset + event.clientX - this._clientX + this._thumbWidth / 2;
-
-          if (this._tickMarks.length > 0) {
-            const offsetPercents = Math.floor(offset / this._sliderWidth * 100);
-            const stepPercents = this.step / (this.max - this.min) * 100;
-            const stepWidthPx = this._sliderWidth * this.step / (this.max - this.min);
-            offset = Math.round(offsetPercents / stepPercents) * stepWidthPx - this._thumbWidth / 2;
-            const value = Math.ceil((offset / this._sliderWidth) * this._tickMarks.length);
-          }
-
-          if (offset <= 0) {
-            offset = 0;
-          }
-
-          if (offset >= this._sliderWidth - this._thumbWidth) {
-            offset = this._sliderWidth - this._thumbWidth;
-          }
-
-          this._renderer.setStyle(this._thumb.nativeElement, 'inset-inline-start', offset + 'px');
-          this._tmpOffset = offset;
-          this._emitChangeEvent(offset);
-        }
-      })
-    ;
-    fromEvent(this._document, 'mouseup')
-      .pipe(takeUntilDestroyed(this._destroyRef))
-      .subscribe(event => {
-        if (this._moving) {
-          this._offset = this._tmpOffset;
-          this._moving = false;
-        }
-      })
-    ;
-
-    this._calcOffsetByValue();
+    // if (this.step > 0) {
+    //   const tickMarksCount = Math.ceil((this.max - this.min) / this.step);
+    //
+    //   for (let i = 1; i <= tickMarksCount; i++) {
+    //     const width = 100 / tickMarksCount * i;
+    //     this._tickMarks.push(width);
+    //   }
+    // }
+    //
+    // this._thumbWidth = this._thumb.nativeElement.getBoundingClientRect().width;
+    // this._tmpOffset = this._offset;
+    //
+    // fromEvent(this._thumb.nativeElement, 'mousedown')
+    //   .pipe(takeUntilDestroyed(this._destroyRef))
+    //   .subscribe((event: any) => {
+    //     this._moving = true;
+    //     this._sliderWidth = this._slider.nativeElement.getBoundingClientRect().width;
+    //     this._clientX = event.clientX;
+    //   })
+    // ;
+    // fromEvent(this._document, 'mousemove')
+    //   .pipe(takeUntilDestroyed(this._destroyRef))
+    //   .subscribe((event: any) => {
+    //     if (this._moving) {
+    //       let offset = this._offset + event.clientX - this._clientX + this._thumbWidth / 2;
+    //
+    //       if (this._tickMarks.length > 0) {
+    //         const offsetPercents = Math.floor(offset / this._sliderWidth * 100);
+    //         const stepPercents = this.step / (this.max - this.min) * 100;
+    //         const stepWidthPx = this._sliderWidth * this.step / (this.max - this.min);
+    //         offset = Math.round(offsetPercents / stepPercents) * stepWidthPx - this._thumbWidth / 2;
+    //         const value = Math.ceil((offset / this._sliderWidth) * this._tickMarks.length);
+    //       }
+    //
+    //       if (offset <= 0) {
+    //         offset = 0;
+    //       }
+    //
+    //       if (offset >= this._sliderWidth - this._thumbWidth) {
+    //         offset = this._sliderWidth - this._thumbWidth;
+    //       }
+    //
+    //       this._renderer.setStyle(this._thumb.nativeElement, 'inset-inline-start', offset + 'px');
+    //       this._tmpOffset = offset;
+    //       this._emitChangeEvent(offset);
+    //     }
+    //   })
+    // ;
+    // fromEvent(this._document, 'mouseup')
+    //   .pipe(takeUntilDestroyed(this._destroyRef))
+    //   .subscribe(event => {
+    //     if (this._moving) {
+    //       this._offset = this._tmpOffset;
+    //       this._moving = false;
+    //     }
+    //   })
+    // ;
+    //
+    // this._calcOffsetByValue();
   }
 
-  @HostListener('mousedown', ['$event'])
-  handleClick(event: MouseEvent) {
-    const target = event.target as HTMLElement;
-    this._sliderWidth = this._slider.nativeElement.getBoundingClientRect().width;
-    this._clientX = event.clientX;
-
-    if (target !== this._thumb.nativeElement) {
-      let offset = event.clientX - this._slider.nativeElement.getBoundingClientRect().x - this._thumbWidth / 2;
-
-      if (this._tickMarks.length > 0) {
-        const offsetPercents = Math.ceil(offset / this._sliderWidth * 100);
-        const stepPercents = this.step / (this.max - this.min) * 100;
-        const stepWidthPx = this._sliderWidth * this.step / (this.max - this.min);
-        offset = Math.round(offsetPercents / stepPercents) * stepWidthPx - this._thumbWidth / 2;
-      }
-
-      if (offset <= 0) {
-        offset = 0;
-      }
-
-      if (offset >= this._sliderWidth - this._thumbWidth) {
-        offset = this._sliderWidth - this._thumbWidth;
-      }
-
-      this._renderer.setStyle(this._thumb.nativeElement, 'inset-inline-start', offset + 'px');
-      this._offset = offset;
-      this._moving = true;
-      this._emitChangeEvent(offset);
-    }
-  }
+  // @HostListener('mousedown', ['$event'])
+  // handleClick(event: MouseEvent) {
+  //   const target = event.target as HTMLElement;
+  //   this._sliderWidth = this._slider.nativeElement.getBoundingClientRect().width;
+  //   this._clientX = event.clientX;
+  //
+  //   if (target !== this._thumb.nativeElement) {
+  //     let offset = event.clientX - this._slider.nativeElement.getBoundingClientRect().x - this._thumbWidth / 2;
+  //
+  //     if (this._tickMarks.length > 0) {
+  //       const offsetPercents = Math.ceil(offset / this._sliderWidth * 100);
+  //       const stepPercents = this.step / (this.max - this.min) * 100;
+  //       const stepWidthPx = this._sliderWidth * this.step / (this.max - this.min);
+  //       offset = Math.round(offsetPercents / stepPercents) * stepWidthPx - this._thumbWidth / 2;
+  //     }
+  //
+  //     if (offset <= 0) {
+  //       offset = 0;
+  //     }
+  //
+  //     if (offset >= this._sliderWidth - this._thumbWidth) {
+  //       offset = this._sliderWidth - this._thumbWidth;
+  //     }
+  //
+  //     this._renderer.setStyle(this._thumb.nativeElement, 'inset-inline-start', offset + 'px');
+  //     this._offset = offset;
+  //     this._moving = true;
+  //     this._emitChangeEvent(offset);
+  //   }
+  // }
 
   writeValue(value: any) {
     this.value = value;

@@ -9,6 +9,6 @@
   --ult-slider-thumb-shadow: none;
   --ult-slider-thumb-hover-shadow: theme('boxShadow.sm');
   --ult-slider-thumb-active-scale: theme('scale.110');
-  --ult-slider-step-dot-size: 3px;
-  --ult-slider-step-dot-bg: theme('colors.neutral.400');
+  --ult-slider-mark-size: 3px;
+  --ult-slider-mark-bg: theme('colors.neutral.400');
 }

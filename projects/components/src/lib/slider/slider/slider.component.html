@@ -3,7 +3,7 @@
     <div class="steps">
       <div class="step" [style.max-width.%]="showTickMark"
            *ngFor="let showTickMark of _tickMarks; let first = first; let last = last">
-        <div class="step-dot" *ngIf="!last"></div>
+        <div class="mark" *ngIf="!last"></div>
       </div>
     </div>
   }

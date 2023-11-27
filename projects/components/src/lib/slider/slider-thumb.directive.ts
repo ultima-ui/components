@@ -1,4 +1,4 @@
-import { Directive, ElementRef, inject } from '@angular/core';
+import { Directive, ElementRef, inject, Renderer2 } from '@angular/core';
 import { SliderComponent } from "./slider/slider.component";
 import { ULT_SLIDER } from "./types";
 
@@ -18,6 +18,7 @@ import { ULT_SLIDER } from "./types";
 export class SliderThumbDirective {
   private _slider = inject<SliderComponent>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
+  private _renderer = inject(Renderer2);
 
   max: number;
   min: number;
@@ -31,11 +32,13 @@ export class SliderThumbDirective {
 
   _onInput() {
     const input = this._elementRef.nativeElement as HTMLInputElement;
-    console.log(input.value);
+    const value = +input.value;
+    this._slider._setThumbPositionXByValue(value);
+    this._slider._emitChangeEvent(value);
   }
 
   _onChange() {
-    const input = this._elementRef.nativeElement as HTMLInputElement;
-    console.log(input.value);
+    // const input = this._elementRef.nativeElement as HTMLInputElement;
+    // console.log(input.value);
   }
 }

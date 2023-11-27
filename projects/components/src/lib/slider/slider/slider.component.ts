@@ -1,9 +1,9 @@
 import {
   afterNextRender,
   booleanAttribute,
-  Component, DestroyRef,
+  Component,
   ElementRef,
-  EventEmitter, forwardRef, HostListener,
+  EventEmitter, forwardRef,
   inject,
   Input,
   numberAttribute,
@@ -11,9 +11,6 @@ import {
   Output, Renderer2,
   ViewChild
 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { fromEvent } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FORM_FIELD } from '../../forms';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -43,32 +40,43 @@ import { ULT_SLIDER } from "../types";
 })
 export class SliderComponent implements OnInit, ControlValueAccessor {
   readonly _formField = inject<any>(FORM_FIELD, { optional: true });
-  private _destroyRef = inject(DestroyRef);
   private _renderer = inject(Renderer2);
-  private _document= inject(DOCUMENT);
 
-  @Input({ transform: numberAttribute, required: true }) max: number;
-  @Input({ transform: numberAttribute, required: true }) min: number;
-  @Input({ transform: numberAttribute }) step: number;
-  @Input({ transform: numberAttribute }) value: number;
-  @Input({ transform: booleanAttribute }) showTickMarks = false;
-  @Input({ transform: booleanAttribute }) disabled = false;
+  @ViewChild('slider', { static: true })
+  private _slider: ElementRef<HTMLElement>;
 
-  @ViewChild('slider', { static: true }) private _slider: ElementRef<HTMLElement>;
-  @ViewChild('thumb', { static: true }) private _thumb: ElementRef<HTMLElement>;
+  @ViewChild('thumb', { static: true })
+  private _thumb: ElementRef<HTMLElement>;
 
-  @Output() readonly changed = new EventEmitter();
-  @Output() readonly valueChange = new EventEmitter();
+  @Input({ transform: numberAttribute, required: true })
+  max: number;
+
+  @Input({ transform: numberAttribute, required: true })
+  min: number;
+
+  @Input({ transform: numberAttribute })
+  step: number;
+
+  @Input({ transform: numberAttribute })
+  value: number;
+
+  @Input({ transform: booleanAttribute })
+  showTickMarks = false;
+
+  @Input({ transform: booleanAttribute })
+  disabled = false;
+
+  @Output()
+  readonly changed = new EventEmitter();
+
+  @Output()
+  readonly valueChange = new EventEmitter();
 
   _tickMarks: number[] = [];
 
   private _sliderWidth = 0;
   private _thumbWidth = 0;
-  private _moving = false;
-  private _clientX = 0;
-  private _offset = 0;
-  private _tmpOffset = 0;
-  private _halfOfThumbWidth = 0;
+  // private _halfOfThumbWidth = 0;
   private _actualSliderWidth = 0;
 
   _onChange: any = () => {};
@@ -90,18 +98,24 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     afterNextRender(() => {
       this._sliderWidth = this._slider.nativeElement.getBoundingClientRect().width;
       this._thumbWidth = this._thumb.nativeElement.getBoundingClientRect().width;
-      this._halfOfThumbWidth = this._thumbWidth / 2;
       this._actualSliderWidth = this._sliderWidth - this._thumbWidth;
       this._setThumbPositionXByValue(this.value);
     });
   }
 
   ngOnInit() {
+    if (this.step > 1) {
+      const tickMarksCount = Math.ceil((this.max - this.min) / this.step);
+
+      for (let i = 1; i <= tickMarksCount; i++) {
+        const width = 100 / tickMarksCount * i;
+        this._tickMarks.push(width);
+      }
+    }
   }
 
   writeValue(value: any) {
     this.value = +value;
-    // this._calcOffsetByValue();
   }
 
   registerOnChange(fn: any) {
@@ -133,7 +147,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   private _calculatePositionXByValue(value: number): string {
     const actualSliderWidth = this.actualSliderWidth;
     const distance = this.max - this.min;
-    const percent = value / distance;
+    const percent = (value - this.min) / distance;
 
     return Math.ceil(actualSliderWidth * percent) + 'px';
   }

@@ -11,7 +11,7 @@
     <h2>Basic</h2>
     <playground>
       <playground-content>
-        <ult-slider min="20" max="78" [value]="value" (changed)="value = $event">
+        <ult-slider min="0" max="100" [value]="value" (changed)="value = $event">
           <input ultSliderThumb>
         </ult-slider>
       </playground-content>
@@ -21,29 +21,31 @@
       <playground-controls></playground-controls>
     </playground>
 
-<!--    <h2>Steps</h2>-->
-<!--    <playground>-->
-<!--      <playground-content>-->
-<!--        <ult-slider min="0" max="100" [value]="stepsValue" step="10" (changed)="stepsValue = $event"></ult-slider>-->
-<!--      </playground-content>-->
-<!--      <playground-properties>-->
-<!--        <div class="mt-4 text-sm">Value: {{ stepsValue | json }}</div>-->
-<!--      </playground-properties>-->
-<!--      <playground-controls></playground-controls>-->
-<!--    </playground>-->
+    <h2>Steps</h2>
+    <playground>
+      <playground-content>
+        <ult-slider min="0" max="100" [value]="stepsValue" step="10" (changed)="stepsValue = $event">
+          <input ultSliderThumb>
+        </ult-slider>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Value: {{ stepsValue | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
 
-<!--    <h2>Show Tick Marks</h2>-->
-<!--    <playground>-->
-<!--      <playground-content>-->
-<!--        <ult-slider min="0" max="100" [value]="showStepPointsValue" showTickMarks="true"-->
-<!--                    step="10" (changed)="showStepPointsValue = $event"></ult-slider>-->
-<!--      </playground-content>-->
-<!--      <playground-properties>-->
-<!--        <div class="mt-4 text-sm">Value: {{ showStepPointsValue | json }}</div>-->
-<!--      </playground-properties>-->
-<!--      <playground-controls></playground-controls>-->
-<!--    </playground>-->
+    <h2>Show Tick Marks</h2>
+    <playground>
+      <playground-content>
+        <ult-slider min="0" max="100" [value]="showStepPointsValue" showTickMarks="true"
+                    step="10" (changed)="showStepPointsValue = $event">
+          <input ultSliderThumb>
+        </ult-slider>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Value: {{ showStepPointsValue | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
   </div>
 </div>
-
-<!--<input type="range" min="0" max="100" value="22">-->

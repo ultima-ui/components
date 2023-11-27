@@ -1,4 +1,4 @@
-import { Directive, ElementRef, inject, Renderer2 } from '@angular/core';
+import { AfterContentInit, Directive, ElementRef, inject, Renderer2 } from '@angular/core';
 import { SliderComponent } from "./slider/slider.component";
 import { ULT_SLIDER } from "./types";
 
@@ -15,20 +15,13 @@ import { ULT_SLIDER } from "./types";
     '[attr.min]': 'min'
   }
 })
-export class SliderThumbDirective {
+export class SliderThumbDirective implements AfterContentInit {
   private _slider = inject<SliderComponent>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
-  private _renderer = inject(Renderer2);
 
   max: number;
   min: number;
   step: number;
-
-  constructor() {
-    this.step = this._slider.step;
-    this.min = this._slider.min;
-    this.max = this._slider.max;
-  }
 
   _onInput() {
     const input = this._elementRef.nativeElement as HTMLInputElement;
@@ -38,7 +31,11 @@ export class SliderThumbDirective {
   }
 
   _onChange() {
-    // const input = this._elementRef.nativeElement as HTMLInputElement;
-    // console.log(input.value);
+  }
+
+  ngAfterContentInit() {
+    this.step = this._slider.step;
+    this.min = this._slider.min;
+    this.max = this._slider.max;
   }
 }

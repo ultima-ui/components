@@ -48,6 +48,9 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   @ViewChild('thumb', { static: true })
   private _thumb: ElementRef<HTMLElement>;
 
+  @ViewChild('trackActive', { static: true })
+  private _trackActive: ElementRef<HTMLElement>;
+
   @Input({ transform: numberAttribute, required: true })
   max: number;
 
@@ -92,6 +95,10 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   get thumbElement(): HTMLElement {
     return this._thumb.nativeElement;
+  }
+
+  get trackActive(): HTMLElement {
+    return this._trackActive.nativeElement;
   }
 
   constructor() {
@@ -141,14 +148,15 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   _setThumbPositionXByValue(value: number) {
     const positionX = this._calculatePositionXByValue(value);
-    this._renderer.setStyle(this.thumbElement, 'left', positionX);
+    this._renderer.setStyle(this.thumbElement, 'left', positionX + 'px');
+    this._renderer.setStyle(this.trackActive, 'width', (positionX + this._thumbWidth / 2) + 'px');
   }
 
-  private _calculatePositionXByValue(value: number): string {
+  private _calculatePositionXByValue(value: number): number {
     const actualSliderWidth = this.actualSliderWidth;
     const distance = this.max - this.min;
     const percent = (value - this.min) / distance;
 
-    return Math.ceil(actualSliderWidth * percent) + 'px';
+    return Math.ceil(actualSliderWidth * percent);
   }
 }

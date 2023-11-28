@@ -11,4 +11,5 @@
   --ult-slider-thumb-active-scale: theme('scale.110');
   --ult-slider-mark-size: 3px;
   --ult-slider-mark-bg: theme('colors.neutral.400');
+  --ult-slider-track-active-bg: theme('colors.neutral.200');
 }

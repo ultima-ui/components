@@ -30,6 +30,17 @@
   transform: translateY(-50%);
 }
 
+:host .track-active {
+  position: absolute;
+  inset-inline-start: 0;
+  width: 0;
+  top: 0;
+  bottom: 0;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  background: var(--ult-slider-track-active-bg);
+}
+
 :host .thumb {
   position: absolute;
   display: inline-block;
@@ -68,8 +79,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  inset: 0;
-  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--ult-slider-thumb-size) / 2);
+  right: calc(var(--ult-slider-thumb-size) / 2);
 }
 
 :host .step {
@@ -99,7 +112,7 @@
   border-radius: 50%;
 }
 
-:host /deep/ input {
+:host ::ng-deep input {
   width: 100%;
   z-index: 1;
   position: absolute;

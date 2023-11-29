@@ -37,7 +37,7 @@ export class NotificationComponent {
 
   show(contentRef: TemplateRef<any>) {
     const notificationRef = this._notificationService.open(contentRef, {
-      duration: 200000
+      // duration: 200000
     });
   }
 

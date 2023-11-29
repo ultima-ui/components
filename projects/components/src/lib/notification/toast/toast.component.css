@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: var(--ult-toast-gap);
+  border-radius: var(--ult-toast-border-radius);
+  background: var(--ult-toast-bg);
+  color: var(--ult-toast-color);
+  font-size: var(--ult-toast-font-size);
+  box-shadow: var(--ult-toast-box-shadow);
+  padding: var(--ult-toast-padding);
+  min-height: var(--ult-toast-min-height);
+  animation: ult-notification-show-animation .15s ease-in-out;
+}
+
+:host .icon,
+:host .close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host .icon:empty {
+  display: none;
+}
+
+:host:has(.icon:not(:empty)) {
+  padding-inline-start: var(--ult-toast-has-icon-padding-start);
+}
+
+:host .close {
+  cursor: pointer;
+}
+
+:host .close:empty {
+  display: none;
+}
+
+:host:has(.close:not(:empty)) {
+  padding-inline-end: var(--ult-toast-has-close-padding-end);
+}
+
+:host.closed {
+  animation: ult-notification-close-animation .4s ease-out;
+}

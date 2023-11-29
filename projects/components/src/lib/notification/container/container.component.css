@@ -3,6 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--ult-notification-container-gap);
-  padding: var(--ult-notification-container-padding);
+  gap: var(--ult-toast-container-gap);
+  padding: var(--ult-toast-container-padding);
 }

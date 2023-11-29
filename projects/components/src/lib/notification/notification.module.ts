@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PortalModule } from '@angular/cdk/portal';
+
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationService } from './notification.service';
 import { ContainerComponent } from './container/container.component';
-import { PortalModule } from '@angular/cdk/portal';
+import { ToastCloseDirective } from './toast-close.directive';
+import { ToastIconDirective } from './toast-icon.directive';
+import { ToastComponent } from './toast/toast.component';
 import { NotificationCloseDirective } from './notification-close.directive';
-import { NotificationIconDirective } from './notification-icon.directive';
 
 @NgModule({
   declarations: [
     NotificationComponent,
+    ToastComponent,
     ContainerComponent,
-    NotificationIconDirective,
-    NotificationCloseDirective,
+    ToastIconDirective,
+    ToastCloseDirective,
+    NotificationCloseDirective
   ],
   imports: [
     CommonModule,
@@ -20,7 +25,9 @@ import { NotificationIconDirective } from './notification-icon.directive';
   ],
   exports: [
     NotificationComponent,
-    NotificationIconDirective,
+    ToastComponent,
+    ToastIconDirective,
+    ToastCloseDirective,
     NotificationCloseDirective
   ],
   providers: [

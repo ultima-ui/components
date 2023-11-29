@@ -6,7 +6,7 @@ import {
   NotificationService,
   UltFormsModule,
   UltRadioModule,
-  UltIconModule
+  UltIconModule, UltAvatarModule
 } from '@ultima-ui/components';
 import { InlineCodeDirective } from '../../_libraries/inline-code.directive';
 import { CodeBlockComponent } from '../../_libraries/code-block/code-block.component';
@@ -25,7 +25,8 @@ import { PlaygroundModule } from '../../_libraries/playground/playground.module'
     InlineCodeDirective,
     CodeBlockComponent,
     CodeExampleModule,
-    PlaygroundModule
+    PlaygroundModule,
+    UltAvatarModule
   ],
   templateUrl: './notification.component.html'
 })
@@ -36,7 +37,7 @@ export class NotificationComponent {
 
   show(contentRef: TemplateRef<any>) {
     const notificationRef = this._notificationService.open(contentRef, {
-      // duration: 200000
+      duration: 200000
     });
   }
 

@@ -8,4 +8,5 @@ export interface NotificationOptions {
   position?: NotificationPosition;
   duration?: number | any;
 }
-export const NOTIFICATION_REF = new InjectionToken('Notification Ref');
+export const NOTIFICATION_REF = new InjectionToken('NOTIFICATION_REF');
+export const ULT_NOTIFICATION_COMPONENT_REF = new InjectionToken('ULT_NOTIFICATION_COMPONENT_REF');

@@ -5,7 +5,7 @@ import {
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
-import { NOTIFICATION_REF, NotificationContentRef, NotificationPosition } from '../properties';
+import { NOTIFICATION_REF, NotificationContentRef, NotificationPosition } from '../types';
 import { NotificationRef } from '../notification-ref';
 import { ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
 
@@ -60,13 +60,14 @@ export class ContainerComponent {
       this.notifications.unshift(notifyRef);
     }
 
-    notificationRef
+    const subscription = notificationRef
       .closed
       .subscribe(() => {
         const index = this.notifications.findIndex(
           notification => notification.notificationRef.id === notificationRef.id
         );
         this.notifications.splice(index, 1);
+        subscription.unsubscribe();
       })
     ;
     nextId++;

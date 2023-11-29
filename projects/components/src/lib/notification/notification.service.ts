@@ -3,7 +3,7 @@ import {
   Injectable,
   Injector
 } from '@angular/core';
-import { NotificationContentRef, NotificationOptions, NotificationPosition } from './properties';
+import { NotificationContentRef, NotificationOptions, NotificationPosition } from './types';
 import { NotificationRef } from './notification-ref';
 import { ContainerComponent } from './container/container.component';
 import { Overlay, OverlayConfig, PositionStrategy } from '@angular/cdk/overlay';
@@ -48,7 +48,6 @@ export class NotificationService {
   }
 
   closeAll() {
-
     // containerRefs.forEach((containerRef, index) => {
     //   containerRef.instance.closeAll();
     //   containerRef.destroy();

@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core';
-import { NotificationPosition } from './properties';
+import { NotificationPosition } from './types';
 
 export class NotificationRef {
   readonly closed = new EventEmitter<any>();

@@ -28,7 +28,9 @@
             <ult-label>Font size ({{ fontSize }}px)</ult-label>
             <div>
               <ult-slider min="10" max="40" class="mt-2"
-                          [(ngModel)]="fontSize" (ngModelChange)="changeFontSize()"></ult-slider>
+                          [(ngModel)]="fontSize" (ngModelChange)="changeFontSize()">
+                <input ultSliderThumb>
+              </ult-slider>
             </div>
           </ult-form-field>
           <div class="grid grid-cols-2 gap-6">
@@ -62,12 +64,16 @@
             <ult-form-field class="col-span-1">
               <ult-label>Border radius ({{ borderRadius }}px)</ult-label>
               <ult-slider min="0" max="16" class="mt-2"
-                          [(ngModel)]="borderRadius" (ngModelChange)="changeBorderRadius()"></ult-slider>
+                          [(ngModel)]="borderRadius" (ngModelChange)="changeBorderRadius()">
+                <input ultSliderThumb>
+              </ult-slider>
             </ult-form-field>
             <ult-form-field class="col-span-1">
               <ult-label>Border width ({{ borderWidth }}px)</ult-label>
               <ult-slider min="0" max="28" class="mt-2"
-                          [(ngModel)]="borderWidth" (ngModelChange)="changeBorderWidth()"></ult-slider>
+                          [(ngModel)]="borderWidth" (ngModelChange)="changeBorderWidth()">
+                <input ultSliderThumb>
+              </ult-slider>
             </ult-form-field>
           </div>
         </div>

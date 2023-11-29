@@ -122,7 +122,12 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(value: any) {
+    if (+value === this.value) {
+      return;
+    }
+
     this.value = +value;
+    this._setThumbPositionXByValue(this.value);
   }
 
   registerOnChange(fn: any) {
@@ -138,12 +143,9 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   }
 
   _emitChangeEvent(value: number) {
-    if (value === this.value) {
-      return;
-    }
-
     this.valueChange.emit(value);
     this.changed.emit(value);
+    this._onChange(value);
   }
 
   _setThumbPositionXByValue(value: number) {

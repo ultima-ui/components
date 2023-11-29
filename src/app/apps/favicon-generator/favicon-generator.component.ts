@@ -109,6 +109,7 @@ export class FaviconGeneratorComponent implements OnInit {
   }
 
   changeBorderWidth() {
+    console.log(this.borderWidth);
     this._background.strokeWidth(this.borderWidth);
     this._background.x(this.borderWidth / 2);
     this._background.y(this.borderWidth / 2);

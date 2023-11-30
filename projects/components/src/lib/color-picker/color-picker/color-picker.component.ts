@@ -35,7 +35,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   }
 })
 export class ColorPickerComponent implements OnInit, ControlValueAccessor {
-  @Input({ required: true })
+  @Input()
   color: string;
 
   @Input()

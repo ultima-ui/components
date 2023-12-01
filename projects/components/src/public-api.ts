@@ -16,7 +16,6 @@ export * from './lib/chip/public-api';
 export * from './lib/popover/public-api';
 export * from './lib/dialog/public-api';
 export * from './lib/alert/public-api';
-export * from './lib/contenteditable/public-api';
 export * from './lib/accordion/public-api';
 export * from './lib/select/public-api';
 export * from './lib/upload/public-api';

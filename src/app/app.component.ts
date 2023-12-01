@@ -128,11 +128,6 @@ export class AppComponent {
       link: '/components/select'
     },
     {
-      type: 'link',
-      name: 'Content Editable',
-      link: '/components/contenteditable'
-    },
-    {
       type: 'heading',
       name: 'Components'
     },

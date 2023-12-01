@@ -82,13 +82,6 @@ const routes: Routes = [
         loadComponent: () => import('./select/select.component').then(c => c.SelectComponent)
       },
       {
-        path: 'contenteditable',
-        data: {
-          breadcrumb: 'Content Editable'
-        },
-        loadComponent: () => import('./contenteditable/contenteditable.component').then(c => c.ContenteditableComponent)
-      },
-      {
         path: 'icon',
         data: {
           breadcrumb: 'Icon'

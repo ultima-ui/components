@@ -1,0 +1,85 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold mt-0">Tab Panel</h1>
+    </div>
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-tab-panel activeItemId="home" class="h-[500px] border-t border-b border-s">
+          <ult-tab-panel-nav>
+            <ult-tab-panel-item for="home">
+              <ult-icon name="ph:house" ultTabPanelItemIcon></ult-icon>
+              <ult-tab-panel-item-text>Home</ult-tab-panel-item-text>
+            </ult-tab-panel-item>
+            <ult-tab-panel-item for="code">
+              <ult-icon name="ph:code" ultTabPanelItemIcon></ult-icon>
+              <ult-tab-panel-item-text>Code</ult-tab-panel-item-text>
+            </ult-tab-panel-item>
+          </ult-tab-panel-nav>
+          <ult-tab-panel-aside>
+            <ng-template ultTabPanelAsideContent="home">
+              <ult-panel>
+                <ult-panel-header class="border-b flex items-center px-4">Home Header</ult-panel-header>
+                <ult-panel-body class="p-4">
+                  <div class="h-[1000px]">Home Body</div>
+                </ult-panel-body>
+              </ult-panel>
+            </ng-template>
+            <ng-template ultTabPanelAsideContent="code">
+              <ult-panel>
+                <ult-panel-header class="border-b flex items-center px-4">Code Header</ult-panel-header>
+                <ult-panel-body class="p-4">
+                  <div class="h-[1000px]">Code Body</div>
+                </ult-panel-body>
+              </ult-panel>
+            </ng-template>
+          </ult-tab-panel-aside>
+        </ult-tab-panel>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Hide Content If Item Not Selected</h2>
+    <playground>
+      <playground-content>
+        <ult-tab-panel hideContentIfNotSelected="true" class="h-[500px] border-t border-b border-s">
+          <ult-tab-panel-nav>
+            <ult-tab-panel-item for="home">
+              <ult-icon name="ph:house" ultTabPanelItemIcon></ult-icon>
+              <ult-tab-panel-item-text>Home</ult-tab-panel-item-text>
+            </ult-tab-panel-item>
+            <ult-tab-panel-item for="code">
+              <ult-icon name="ph:code" ultTabPanelItemIcon></ult-icon>
+              <ult-tab-panel-item-text>Code</ult-tab-panel-item-text>
+            </ult-tab-panel-item>
+          </ult-tab-panel-nav>
+          <ult-tab-panel-aside>
+            <ng-template ultTabPanelAsideContent="home">
+              <ult-panel>
+                <ult-panel-header class="border-b flex items-center px-4">Home Header</ult-panel-header>
+                <ult-panel-body class="p-4">
+                  <div class="h-[1000px]">Home Body</div>
+                </ult-panel-body>
+              </ult-panel>
+            </ng-template>
+            <ng-template ultTabPanelAsideContent="code">
+              <ult-panel>
+                <ult-panel-header class="border-b flex items-center px-4">Code Header</ult-panel-header>
+                <ult-panel-body class="p-4">
+                  <div class="h-[1000px]">Code Body</div>
+                </ult-panel-body>
+              </ult-panel>
+            </ng-template>
+          </ult-tab-panel-aside>
+        </ult-tab-panel>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

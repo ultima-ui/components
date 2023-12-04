@@ -10,7 +10,7 @@ import { TAB_PANEL_NAV } from '../types';
   styleUrls: ['tab-panel-item.component.css'],
   host: {
     'class': 'ult-tab-panel-item',
-    '[class.is-active]': 'api.isActive(this.id)',
+    '[class.is-active]': 'api.isActive(this.for)',
   }
 })
 export class TabPanelItemComponent {
@@ -18,10 +18,10 @@ export class TabPanelItemComponent {
   private _nav = inject<TabPanelNavComponent>(TAB_PANEL_NAV, { optional: true });
 
   @Input()
-  id: any = this._nav ? this._nav.nextId++ : null;
+  for: any = this._nav ? this._nav.nextId++ : null;
 
   @HostListener('click')
   private _handleClick() {
-    this.api.activate(this.id);
+    this.api.activate(this.for);
   }
 }

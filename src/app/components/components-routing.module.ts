@@ -124,11 +124,11 @@ const routes: Routes = [
         loadComponent: () => import('./breadcrumbs/breadcrumbs.component').then(c => c.BreadcrumbsComponent)
       },
       {
-        path: 'sidebar',
+        path: 'tab-panel',
         data: {
-          breadcrumb: 'Sidebar'
+          breadcrumb: 'Tab Panel'
         },
-        loadComponent: () => import('./sidebar/sidebar.component').then(c => c.SidebarComponent)
+        loadComponent: () => import('./tab-panel/tab-panel.component').then(c => c.TabPanelComponent)
       },
       {
         path: 'avatar',

@@ -85,8 +85,8 @@ export class AppComponent {
     },
     {
       type: 'link',
-      name: 'Sidebar',
-      link: '/components/sidebar'
+      name: 'Tab Panel',
+      link: '/components/tab-panel'
     },
     {
       type: 'heading',

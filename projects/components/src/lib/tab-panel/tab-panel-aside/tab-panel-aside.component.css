@@ -5,6 +5,6 @@
   width: var(--ult-tab-panel-aside-width);
 }
 
-:host-context(.ult-tab-panel.is-hide-aside-if-empty):empty {
+:host-context(.ult-tab-panel.is-hide-content-if-not-selected):empty {
   display: none;
 }

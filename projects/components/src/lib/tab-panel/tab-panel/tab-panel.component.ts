@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { booleanAttribute, Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { TabPanelApiService } from '../tab-panel-api.service';
 
 @Component({
@@ -11,14 +11,14 @@ import { TabPanelApiService } from '../tab-panel-api.service';
   ],
   host: {
     'class': 'ult-tab-panel',
-    '[class.is-hide-aside-if-empty]': 'hideAsideIfEmpty'
+    '[class.is-hide-content-if-not-selected]': 'hideContentIfNotSelected'
   }
 })
 export class TabPanelComponent {
   readonly api = inject(TabPanelApiService);
 
-  @Input()
-  hideAsideIfEmpty = true;
+  @Input({ transform: booleanAttribute })
+  hideContentIfNotSelected = false;
 
   @Input()
   set activeItemId(id: any) {

@@ -1,0 +1,19 @@
+:root {
+  --ult-tab-panel-width: 5rem;
+  --ult-tab-panel-item-width: 3.75rem;
+  --ult-tab-panel-item-height: 3.75rem;
+  --ult-tab-panel-item-padding: theme('padding.2');
+  --ult-tab-panel-item-color: theme('colors.neutral.500');
+  --ult-tab-panel-item-gap: theme('gap.1');
+  --ult-tab-panel-item-hover-bg: theme('colors.primary.50');
+  --ult-tab-panel-item-hover-color: theme('colors.primary.500');
+  --ult-tab-panel-item-active-bg: theme('colors.primary.500');
+  --ult-tab-panel-item-active-color: theme('colors.white');
+  --ult-tab-panel-item-border-radius: theme('borderRadius.lg');
+  --ult-tab-panel-aside-width: 18.75rem;
+  --ult-tab-panel-border-end: 1px solid theme('colors.neutral.200');
+  --ult-tab-panel-nav-padding: theme('padding[2.5]');
+  --ult-tab-panel-nav-gap: theme('gap.3');
+  --ult-tab-panel-item-text-font-size: theme('fontSize.xs');
+  --ult-tab-panel-item-icon-font-size: theme('fontSize.2xl');
+}

@@ -9,6 +9,14 @@
     "nodejs",
     "typescript"
   ],
+  "scripts": {
+    "build": "tsc -p tsconfig.schematics.json",
+    "postbuild": "copyfiles schematics/collection.json ../../dist/components"
+  },
+  "ng-add": {
+    "save": "true"
+  },
+  "schematics": "./schematics/collection.json",
   "peerDependencies": {
     "@angular/common": "^17.0.3",
     "@angular/core": "^17.0.3",
@@ -24,7 +32,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "postcss-import": "^15.1.0"
+    "postcss-import": "^15.1.0",
+    "copyfiles": "^2.4.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"

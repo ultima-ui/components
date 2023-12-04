@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  user-select: none;
+  width: var(--ult-tab-panel-item-width);
+  height: var(--ult-tab-panel-item-height);
+  padding: var(--ult-tab-panel-item-padding);
+  border-radius: var(--ult-tab-panel-item-border-radius);
+  color: var(--ult-tab-panel-item-color);
+  gap: var(--ult-tab-panel-item-gap);
+}
+
+:host(:not(.is-active):hover) {
+  background: var(--ult-tab-panel-item-hover-bg);
+  color: var(--ult-tab-panel-item-hover-color);
+}
+
+:host(.is-active) {
+  background: var(--ult-tab-panel-item-active-bg);
+  color: var(--ult-tab-panel-item-active-color);
+}
+
+:host .icon {
+  line-height: 0;
+  display: inline-block;
+}
+
+:host .icon:empty {
+  display: none;
+}

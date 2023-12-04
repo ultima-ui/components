@@ -27,7 +27,7 @@ export * from './lib/skeleton/public-api';
 export * from './lib/resizable-container/public-api';
 export * from './lib/tooltip/public-api';
 export * from './lib/slider/public-api';
-export * from './lib/sidebar/public-api';
+export * from './lib/tab-panel/public-api';
 export * from './lib/gauge/public-api';
 export * from './lib/incidents/public-api';
 export * from './lib/icon/public-api';

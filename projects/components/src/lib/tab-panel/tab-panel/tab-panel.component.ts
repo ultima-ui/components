@@ -11,14 +11,14 @@ import { TabPanelApiService } from '../tab-panel-api.service';
   ],
   host: {
     'class': 'ult-tab-panel',
-    '[class.is-hide-content-if-not-selected]': 'hideContentIfNotSelected'
+    '[class.is-hide-content-if-tab-not-selected]': 'hideContentIfTabNotSelected'
   }
 })
 export class TabPanelComponent {
   readonly api = inject(TabPanelApiService);
 
   @Input({ transform: booleanAttribute })
-  hideContentIfNotSelected = false;
+  hideContentIfTabNotSelected = false;
 
   @Input()
   set activeItemId(id: any) {

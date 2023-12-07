@@ -138,6 +138,13 @@ const routes: Routes = [
         loadComponent: () => import('./avatar/avatar.component').then(c => c.AvatarComponent)
       },
       {
+        path: 'expand',
+        data: {
+          breadcrumb: 'Expand'
+        },
+        loadComponent: () => import('./expand/expand.component').then(c => c.ExpandComponent)
+      },
+      {
         path: 'accordion',
         data: {
           breadcrumb: 'Accordion'

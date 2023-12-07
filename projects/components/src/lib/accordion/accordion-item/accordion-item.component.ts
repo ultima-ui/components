@@ -69,10 +69,17 @@ export class AccordionItemComponent {
 
   private _removeUniqueSelectionListener: UniqueSelectionDispatcherListener;
 
-  @Output() readonly closed = new EventEmitter<void>();
-  @Output() readonly opened = new EventEmitter<void>();
-  @Output() readonly destroyed = new EventEmitter<void>();
-  @Output() readonly expandedChange = new EventEmitter<boolean>();
+  @Output()
+  readonly closed = new EventEmitter<void>();
+
+  @Output()
+  readonly opened = new EventEmitter<void>();
+
+  @Output()
+  readonly destroyed = new EventEmitter<void>();
+
+  @Output()
+  readonly expandedChange = new EventEmitter<boolean>();
 
   get api() {
     return {

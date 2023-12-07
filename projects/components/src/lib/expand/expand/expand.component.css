@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+:host .content {
+  /*will-change: opacity;*/
+  /*height: 0;*/
+  /*visibility: hidden;*/
+}
+
+:host(.is-expanded) .content {
+
+}

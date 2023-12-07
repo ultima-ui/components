@@ -1,0 +1,29 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-8">
+    <div class="space-y-8">
+      <h1 class="text-2xl font-bold mt-0">Expand</h1>
+      <div>
+        <div class="mb-4">Import module:</div>
+        <code-block [code]="importModule"></code-block>
+      </div>
+
+      <h2>Basic</h2>
+      <playground>
+        <playground-content [centered]="false">
+          <div class="w-full">
+            <button ult-button (click)="toggle()">Toggle</button>
+            <ult-expand [expanded]="expanded" class="mt-3">
+              <div class="border rounded-lg p-5">
+                If you were hoping I had a magical, complete solution to this problem, <br>
+                I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              </div>
+            </ult-expand>
+          </div>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+    </div>
+  </div>
+</div>
+
+

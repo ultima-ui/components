@@ -148,6 +148,11 @@ export class AppComponent {
     },
     {
       type: 'link',
+      name: 'Expand',
+      link: '/components/expand'
+    },
+    {
+      type: 'link',
       name: 'Icon',
       link: '/components/icon'
     },

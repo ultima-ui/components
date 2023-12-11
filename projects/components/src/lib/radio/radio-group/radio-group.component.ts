@@ -11,5 +11,6 @@ import { booleanAttribute, Component, Input } from '@angular/core';
   }
 })
 export class RadioGroupComponent {
-  @Input({ transform: booleanAttribute }) inline = false;
+  @Input({ transform: booleanAttribute })
+  inline = false;
 }

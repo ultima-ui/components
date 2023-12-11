@@ -145,6 +145,13 @@ const routes: Routes = [
         loadComponent: () => import('./expand/expand.component').then(c => c.ExpandComponent)
       },
       {
+        path: 'segmented',
+        data: {
+          breadcrumb: 'Segmented Control'
+        },
+        loadComponent: () => import('./segmented/segmented.component').then(c => c.SegmentedComponent)
+      },
+      {
         path: 'accordion',
         data: {
           breadcrumb: 'Accordion'

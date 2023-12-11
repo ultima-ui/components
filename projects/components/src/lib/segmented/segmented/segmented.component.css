@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  align-items: center;
+  background: var(--ult-segmented-bg);
+  padding: var(--ult-segmented-padding);
+  border-radius: var(--ult-segmented-border-radius);
+  gap: var(--ult-segmented-gap);
+}

@@ -1,0 +1,13 @@
+:root {
+  --ult-segmented-control-height: theme('height.9');
+  --ult-segmented-bg: theme('colors.neutral.100');
+  --ult-segmented-control-hover-bg: theme('colors.neutral.200');
+  --ult-segmented-control-selected-bg: theme('colors.white');
+  --ult-segmented-control-selected-shadow: theme('boxShadow.sm');
+  --ult-segmented-padding: theme('padding.1');
+  --ult-segmented-border-radius: theme('borderRadius.md');
+  --ult-segmented-control-border-radius: theme('borderRadius.md');
+  --ult-segmented-control-padding: 0 theme('padding.3');
+  --ult-segmented-control-font-size: theme('fontSize.sm');
+  --ult-segmented-gap: theme('gap[0.5]');
+}

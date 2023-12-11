@@ -21,5 +21,6 @@ let nextId = 0;
 export class AccordionComponent {
   readonly id = 'ult-accordion-' + nextId++;
 
-  @Input() multiple = false;
+  @Input()
+  multiple = false;
 }

@@ -1,0 +1,24 @@
+<div class="grid grid-cols-12 gap-10">
+  <div class="col-span-8 space-y-8">
+    <div class="space-y-6">
+      <h1 class="text-2xl font-bold !mt-0">Segmented Control</h1>
+    </div>
+
+    <div class="space-y-6">
+      <p>Import module:</p>
+      <code-block [code]="importModule"></code-block>
+    </div>
+
+    <h2>Basic</h2>
+    <playground>
+      <playground-content>
+        <ult-segmented selectedValue="daily">
+          <ult-segmented-control value="daily">Daily</ult-segmented-control>
+          <ult-segmented-control value="weekly">Weekly</ult-segmented-control>
+          <ult-segmented-control value="monthly">Monthly</ult-segmented-control>
+        </ult-segmented>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+  </div>
+</div>

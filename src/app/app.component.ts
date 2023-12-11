@@ -153,6 +153,11 @@ export class AppComponent {
     },
     {
       type: 'link',
+      name: 'Segmented Control',
+      link: '/components/segmented'
+    },
+    {
+      type: 'link',
       name: 'Icon',
       link: '/components/icon'
     },

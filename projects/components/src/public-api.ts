@@ -37,3 +37,4 @@ export * from './lib/safe-resource-url.pipe';
 export * from './lib/order-by.pipe';
 export * from './lib/monaco-editor/public-api';
 export * from './lib/expand/public-api';
+export * from './lib/segmented/public-api';

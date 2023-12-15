@@ -22,8 +22,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         overflow: 'hidden',
         height: '0px'
       })),
-      transition('open => closed', animate('250ms ease-in')),
-      transition('closed => open', animate('250ms ease-out'))
+      transition('open => closed', animate('150ms cubic-bezier(0.65,0,0.35,1)')),
+      transition('closed => open', animate('300ms cubic-bezier(0.65,0,0.35,1)'))
     ])
   ]
 })

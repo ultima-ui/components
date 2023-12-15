@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SegmentedComponent } from './segmented/segmented.component';
-import { SegmentedControlComponent } from './segmented-control/segmented-control.component';
+import { SegmentedButtonComponent } from './segmented-button/segmented-button.component';
 
 @NgModule({
   declarations: [
     SegmentedComponent,
-    SegmentedControlComponent
+    SegmentedButtonComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     SegmentedComponent,
-    SegmentedControlComponent
+    SegmentedButtonComponent
   ]
 })
 export class UltSegmentedModule { }

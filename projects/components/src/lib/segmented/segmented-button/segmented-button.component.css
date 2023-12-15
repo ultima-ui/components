@@ -1,0 +1,18 @@
+:host {
+  height: var(--ult-segmented-button-height);
+  padding: var(--ult-segmented-button-padding);
+  font-size: var(--ult-segmented-button-font-size);
+  border-radius: var(--ult-segmented-button-border-radius);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+:host(:hover) {
+  background: var(--ult-segmented-button-hover-bg);
+}
+
+:host(.is-selected) {
+  background: var(--ult-segmented-button-selected-bg);
+  box-shadow: var(--ult-segmented-button-selected-shadow);
+}

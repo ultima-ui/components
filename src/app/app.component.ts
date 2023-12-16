@@ -124,6 +124,11 @@ export class AppComponent {
     },
     {
       type: 'link',
+      name: 'Segmented',
+      link: '/components/segmented'
+    },
+    {
+      type: 'link',
       name: 'Select',
       link: '/components/select'
     },
@@ -150,11 +155,6 @@ export class AppComponent {
       type: 'link',
       name: 'Expand',
       link: '/components/expand'
-    },
-    {
-      type: 'link',
-      name: 'Segmented Control',
-      link: '/components/segmented'
     },
     {
       type: 'link',

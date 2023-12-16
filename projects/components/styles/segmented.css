@@ -1,7 +1,10 @@
 :root {
-  --ult-segmented-button-height: theme('height.9');
+  --ult-segmented-button-height: calc(theme('spacing.control-default') - theme('padding.2'));
   --ult-segmented-bg: theme('colors.neutral.100');
   --ult-segmented-button-hover-bg: theme('colors.neutral.200');
+  --ult-segmented-button-color: theme('colors.neutral.600');
+  --ult-segmented-button-hover-color: theme('colors.neutral.800');
+  --ult-segmented-button-selected-color: theme('colors.neutral.900');
   --ult-segmented-button-selected-bg: theme('colors.white');
   --ult-segmented-button-selected-shadow: theme('boxShadow.sm');
   --ult-segmented-padding: theme('padding.1');
@@ -10,4 +13,20 @@
   --ult-segmented-button-padding: 0 theme('padding.3');
   --ult-segmented-button-font-size: theme('fontSize.sm');
   --ult-segmented-gap: theme('gap[0.5]');
+  --ult-segmented-button-gap: theme('gap.1');
+  --ult-segmented-button-icon-offset-margin: -6px;
+}
+
+[ult-segmented-size="sm"] {
+  --ult-segmented-button-height: calc(theme('spacing.control-sm') - theme('padding.2'));
+  --ult-segmented-button-font-size: theme('fontSize.tiny');
+  --ult-segmented-button-padding: 0 theme('padding.2');
+  --ult-segmented-button-gap: theme('gap[0.5]');
+}
+
+[ult-segmented-size="lg"] {
+  --ult-segmented-button-height: calc(theme('spacing.control-lg') - theme('padding.2'));
+  --ult-segmented-button-font-size: theme('fontSize.md');
+  --ult-segmented-button-padding: 0 theme('padding.4');
+  --ult-segmented-button-gap: theme('gap[1.5]');
 }

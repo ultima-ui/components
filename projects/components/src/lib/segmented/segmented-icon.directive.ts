@@ -2,10 +2,10 @@ import { Directive } from '@angular/core';
 
 @Directive({
   selector: '[ultSegmentedIcon]',
-  standalone: true
+  exportAs: 'ultSegmentedIcon',
+  host: {
+    'class': 'ult-segmented-icon'
+  }
 })
 export class SegmentedIconDirective {
-
-  constructor() { }
-
 }

@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, Input } from '@angular/core';
+import { booleanAttribute, Component, HostListener, inject, Input } from '@angular/core';
 import { ULT_SEGMENTED } from '../types';
 import { SegmentedComponent } from '../segmented/segmented.component';
 
@@ -10,6 +10,7 @@ import { SegmentedComponent } from '../segmented/segmented.component';
   host: {
     'class': 'ult-segmented-button',
     '[class.is-selected]': '_isSelected',
+    '[class.is-disabled]': 'disabled'
   }
 })
 export class SegmentedButtonComponent {
@@ -17,6 +18,9 @@ export class SegmentedButtonComponent {
 
   @Input({ required: true })
   value: any;
+
+  @Input({ transform: booleanAttribute })
+  disabled = false;
 
   get _isSelected() {
     return this._segmented.api.isSelected(this.value);

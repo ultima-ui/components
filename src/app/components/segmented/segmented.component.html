@@ -20,5 +20,75 @@
       </playground-content>
       <playground-controls></playground-controls>
     </playground>
+
+    <h2>Sizes</h2>
+    <playground>
+      <playground-content>
+        <ult-segmented selectedValue="monthly" [size]="size">
+          <ult-segmented-button value="daily">Daily</ult-segmented-button>
+          <ult-segmented-button value="weekly">Weekly</ult-segmented-button>
+          <ult-segmented-button value="monthly">Monthly</ult-segmented-button>
+        </ult-segmented>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-radio-group>
+            <ult-radio name="size" [(ngModel)]="size" value="sm">Small</ult-radio>
+            <ult-radio name="size" [(ngModel)]="size" value="default">Default</ult-radio>
+            <ult-radio name="size" [(ngModel)]="size" value="lg">Large</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Disabled</h2>
+    <playground>
+      <playground-content>
+        <div class="space-y-8">
+          <ult-segmented selectedValue="daily">
+            <ult-segmented-button value="daily" disabled>Daily</ult-segmented-button>
+            <ult-segmented-button value="weekly" disabled>Weekly</ult-segmented-button>
+            <ult-segmented-button value="monthly" disabled>Monthly</ult-segmented-button>
+          </ult-segmented>
+          <ult-segmented selectedValue="daily">
+            <ult-segmented-button value="daily" disabled>Daily</ult-segmented-button>
+            <ult-segmented-button value="weekly">Weekly</ult-segmented-button>
+            <ult-segmented-button value="monthly">Monthly</ult-segmented-button>
+          </ult-segmented>
+        </div>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Icons</h2>
+    <playground>
+      <playground-content>
+        <ult-segmented selectedValue="monthly" [size]="size">
+          <ult-segmented-button value="daily">
+            <ult-icon name="ph:calendar-blank" [size]="iconSizeMap[size]" ultSegmentedIcon></ult-icon>
+            Daily
+          </ult-segmented-button>
+          <ult-segmented-button value="weekly">
+            <ult-icon name="ph:calendar" [size]="iconSizeMap[size]" ultSegmentedIcon></ult-icon>
+            Weekly
+          </ult-segmented-button>
+          <ult-segmented-button value="monthly">
+            <ult-icon name="ph:calendar-check" [size]="iconSizeMap[size]" ultSegmentedIcon></ult-icon>
+            Monthly
+          </ult-segmented-button>
+        </ult-segmented>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-radio-group>
+            <ult-radio name="size" [(ngModel)]="size" value="sm">Small</ult-radio>
+            <ult-radio name="size" [(ngModel)]="size" value="default">Default</ult-radio>
+            <ult-radio name="size" [(ngModel)]="size" value="lg">Large</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
   </div>
 </div>

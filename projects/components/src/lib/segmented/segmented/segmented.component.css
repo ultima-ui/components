@@ -5,4 +5,5 @@
   padding: var(--ult-segmented-padding);
   border-radius: var(--ult-segmented-border-radius);
   gap: var(--ult-segmented-gap);
+  user-select: none;
 }

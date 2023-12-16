@@ -3,16 +3,39 @@
   padding: var(--ult-segmented-button-padding);
   font-size: var(--ult-segmented-button-font-size);
   border-radius: var(--ult-segmented-button-border-radius);
+  gap: var(--ult-segmented-button-gap);
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: var(--ult-segmented-button-color);
 }
 
 :host(:hover) {
   background: var(--ult-segmented-button-hover-bg);
+  color: var(--ult-segmented-button-hover-color);
 }
 
 :host(.is-selected) {
   background: var(--ult-segmented-button-selected-bg);
   box-shadow: var(--ult-segmented-button-selected-shadow);
+  color: var(--ult-segmented-button-selected-color);
+}
+
+:host(:active) {
+  scale: .97;
+}
+
+:host .icon {
+  line-height: 0;
+  margin-left: var(--ult-segmented-button-icon-offset-margin);
+}
+
+:host .icon:empty {
+  display: none;
+}
+
+:host:disabled,
+:host.is-disabled {
+  pointer-events: none;
+  opacity: var(--ult-disabled-opacity);
 }

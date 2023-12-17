@@ -1,0 +1,6 @@
+:host {
+  display: block;
+  width: var(--ult-command-bar-separator-width);
+  height: var(--ult-command-bar-separator-height);
+  background: var(--ult-command-bar-separator-bg);
+}

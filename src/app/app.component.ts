@@ -243,6 +243,11 @@ export class AppComponent {
     },
     {
       type: 'link',
+      name: 'Command Bar',
+      link: '/components/command-bar'
+    },
+    {
+      type: 'link',
       name: 'Date Picker',
       link: '/components/date-picker'
     },

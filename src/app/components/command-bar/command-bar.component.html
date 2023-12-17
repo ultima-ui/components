@@ -1,0 +1,34 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-8">
+    <div class="space-y-8">
+      <h1 class="text-2xl font-bold mt-0">Command Bar</h1>
+      <div>
+        <div class="mb-4">Import module:</div>
+        <code-block [code]="importModule"></code-block>
+      </div>
+      <h2>Basic</h2>
+      <playground>
+        <playground-content>
+          <ult-checkbox [(ngModel)]="open">Show command bar</ult-checkbox>
+          <ult-command-bar [open]="open" [position]="position">
+            <ult-command-bar-value>2 selected</ult-command-bar-value>
+            <ult-command-bar-separator></ult-command-bar-separator>
+            <ult-command-bar-command shortcut="e">Edit</ult-command-bar-command>
+            <ult-command-bar-separator></ult-command-bar-separator>
+            <ult-command-bar-command shortcut="d">Delete</ult-command-bar-command>
+          </ult-command-bar>
+        </playground-content>
+        <playground-properties>
+          <ult-form-field>
+            <ult-label>Position:</ult-label>
+            <ult-radio-group>
+              <ult-radio name="position" [(ngModel)]="position" value="top">Top</ult-radio>
+              <ult-radio name="position" [(ngModel)]="position" value="bottom">Bottom</ult-radio>
+            </ult-radio-group>
+          </ult-form-field>
+        </playground-properties>
+        <playground-controls></playground-controls>
+      </playground>
+    </div>
+  </div>
+</div>

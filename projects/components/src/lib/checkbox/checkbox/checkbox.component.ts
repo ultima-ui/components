@@ -32,16 +32,31 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
   }
 })
 export class CheckboxComponent implements ControlValueAccessor {
-  @Input({ transform: booleanAttribute }) checked: boolean;
-  @Input({ transform: booleanAttribute }) indeterminate!: boolean;
-  @Input({ transform: booleanAttribute }) disabled!: boolean;
-  @Input({ transform: booleanAttribute }) block = false;
-  @Input() checkIconCode = '&check;';
-  @Input() intermediateIconCode = '&#8212;';
-  @Input() name!: string;
-  @Input() formControlName!: string;
+  @Input({ transform: booleanAttribute })
+  checked: boolean;
 
-  @Output() readonly valueChange = new EventEmitter<boolean>();
+  @Input({ transform: booleanAttribute })
+  indeterminate!: boolean;
+
+  @Input({ transform: booleanAttribute })
+  disabled!: boolean;
+
+  @Input({ transform: booleanAttribute }) block = false;
+
+  @Input()
+  checkIconCode = '&check;';
+
+  @Input()
+  intermediateIconCode = '&#8212;';
+
+  @Input()
+  name!: string;
+
+  @Input()
+  formControlName!: string;
+
+  @Output()
+  readonly valueChange = new EventEmitter<boolean>();
 
   _focused = false;
   _active = false;

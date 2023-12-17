@@ -1,0 +1,9 @@
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: var(--ult-command-bar-value-padding);
+  font-size: var(--ult-command-bar-value-font-size);
+  color: var(--ult-command-bar-value-color);
+}

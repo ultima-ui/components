@@ -147,7 +147,7 @@ const routes: Routes = [
       {
         path: 'segmented',
         data: {
-          breadcrumb: 'Segmented Control'
+          breadcrumb: 'Segmented'
         },
         loadComponent: () => import('./segmented/segmented.component').then(c => c.SegmentedComponent)
       },
@@ -248,6 +248,13 @@ const routes: Routes = [
           breadcrumb: 'Notification'
         },
         loadComponent: () => import('./notification/notification.component').then(c => c.NotificationComponent)
+      },
+      {
+        path: 'command-bar',
+        data: {
+          breadcrumb: 'Command Bar'
+        },
+        loadComponent: () => import('./command-bar/command-bar.component').then(c => c.CommandBarComponent)
       },
       {
         path: 'date-picker',

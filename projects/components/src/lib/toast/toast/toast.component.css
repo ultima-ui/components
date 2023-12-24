@@ -10,7 +10,7 @@
   box-shadow: var(--ult-toast-box-shadow);
   padding: var(--ult-toast-padding);
   min-height: var(--ult-toast-min-height);
-  animation: ult-notification-show-animation .15s ease-in-out;
+  animation: ult-toast-show-animation .15s ease-in-out;
 }
 
 :host .icon,
@@ -41,5 +41,5 @@
 }
 
 :host.closed {
-  animation: ult-notification-close-animation .4s ease-out;
+  animation: ult-toast-close-animation .4s ease-out;
 }

@@ -20,7 +20,7 @@ export * from './lib/accordion/public-api';
 export * from './lib/select/public-api';
 export * from './lib/upload/public-api';
 export * from './lib/panel/public-api';
-export * from './lib/notification/public-api';
+export * from './lib/toast/public-api';
 export * from './lib/date-picker/public-api';
 export * from './lib/color-picker/public-api';
 export * from './lib/skeleton/public-api';

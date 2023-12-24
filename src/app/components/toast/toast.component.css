@@ -1,0 +1,8 @@
+[ult-toast-appearance="negative"] {
+  --ult-toast-bg: theme('colors.negative.500');
+}
+
+[ult-toast-appearance="comment"] {
+  --ult-toast-bg: theme('colors.white');
+  border: 1px solid theme('colors.neutral.200');
+}

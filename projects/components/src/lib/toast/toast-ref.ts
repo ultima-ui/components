@@ -1,7 +1,7 @@
 import { EventEmitter } from '@angular/core';
-import { NotificationPosition } from './types';
+import { ToastPosition } from './types';
 
-export class NotificationRef {
+export class ToastRef {
   readonly closed = new EventEmitter<any>();
   private _timeout!: any;
 
@@ -13,13 +13,13 @@ export class NotificationRef {
     return this._duration;
   }
 
-  get position(): NotificationPosition {
+  get position(): ToastPosition {
     return this._position;
   }
 
   constructor(
     private _id: number,
-    private _position: NotificationPosition,
+    private _position: ToastPosition,
     private _duration: any
   ) { }
 

@@ -1,0 +1,3 @@
+<div *ngFor="let toastDef of toasts; let index = index, trackBy: trackBy">
+  <ng-template [cdkPortalOutlet]="toastDef.content"></ng-template>
+</div>

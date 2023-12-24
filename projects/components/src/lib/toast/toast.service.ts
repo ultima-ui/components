@@ -3,24 +3,24 @@ import {
   Injectable,
   Injector
 } from '@angular/core';
-import { NotificationContentRef, NotificationOptions, NotificationPosition } from './types';
-import { NotificationRef } from './notification-ref';
+import { ToastRef } from './toast-ref';
 import { ContainerComponent } from './container/container.component';
 import { Overlay, OverlayConfig, PositionStrategy } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { ToastContentRef, ToastOptions, ToastPosition } from './types';
 
 const containerRefs = new Map();
 
 @Injectable()
-export class NotificationService {
+export class ToastService {
   private _injector = inject(Injector);
   private _overlay = inject(Overlay);
-  private _position!: NotificationPosition;
+  private _position!: ToastPosition;
 
   open(
-    contentRef: NotificationContentRef,
-    options?: NotificationOptions
-  ): NotificationRef {
+    contentRef: ToastContentRef,
+    options?: ToastOptions
+  ): ToastRef {
     options = {
       stack: false,
       duration: 3000,
@@ -41,10 +41,10 @@ export class NotificationService {
     }
 
     const containerRef = containerRefs.get(this._position);
-    const notificationRef = <NotificationRef>containerRef.instance.add(contentRef, options.position, options.duration);
+    const toastRef = <ToastRef>containerRef.instance.add(contentRef, options.position, options.duration);
     containerRef.changeDetectorRef.detectChanges();
 
-    return notificationRef;
+    return toastRef;
   }
 
   closeAll() {

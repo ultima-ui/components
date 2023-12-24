@@ -5,37 +5,37 @@ import {
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
-import { NOTIFICATION_REF, NotificationContentRef, NotificationPosition } from '../types';
-import { NotificationRef } from '../notification-ref';
+import { ToastRef } from '../toast-ref';
 import { ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
+import { TOAST_REF, ToastContentRef, ToastPosition } from '../types';
 
 let nextId = 0;
 
-interface NotificationDef {
+interface ToastDef {
   id: number,
   content: TemplatePortal | ComponentPortal<any>,
-  notificationRef: NotificationRef
+  toastRef: ToastRef
 }
 
 @Component({
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css'],
   host: {
-    'class': 'ult-notification-container'
+    'class': 'ult-toast-container'
   }
 })
 export class ContainerComponent {
   private _viewContainerRef = inject(ViewContainerRef);
   private _injector = inject(Injector);
-  readonly notifications: NotificationDef[] = [];
+  readonly toasts: ToastDef[] = [];
 
-  add(contentRef: NotificationContentRef, position: NotificationPosition, duration: number | null): NotificationRef {
-    const notificationRef = new NotificationRef(nextId, position, duration);
+  add(contentRef: ToastContentRef, position: ToastPosition, duration: number | null): ToastRef {
+    const toastRef = new ToastRef(nextId, position, duration);
     const injector = Injector.create({
       providers: [
         {
-          provide: NOTIFICATION_REF,
-          useValue: notificationRef
+          provide: TOAST_REF,
+          useValue: toastRef
         }
       ],
       parent: this._injector
@@ -43,7 +43,7 @@ export class ContainerComponent {
     const portal = contentRef instanceof TemplateRef ?
       new TemplatePortal(
         contentRef, this._viewContainerRef,
-        { $implicit: notificationRef },
+        { $implicit: toastRef },
         injector
       ) : new ComponentPortal(contentRef, null, injector)
     ;
@@ -51,33 +51,33 @@ export class ContainerComponent {
     const notifyRef = {
       id: nextId,
       content: portal,
-      notificationRef
+      toastRef
     };
 
     if (['top-start', 'top-center', 'top-end'].includes(position)) {
-      this.notifications.push(notifyRef);
+      this.toasts.push(notifyRef);
     } else if (['bottom-start', 'bottom-center', 'bottom-end'].includes(position)) {
-      this.notifications.unshift(notifyRef);
+      this.toasts.unshift(notifyRef);
     }
 
-    const subscription = notificationRef
+    const subscription = toastRef
       .closed
       .subscribe(() => {
-        const index = this.notifications.findIndex(
-          notification => notification.notificationRef.id === notificationRef.id
+        const index = this.toasts.findIndex(
+          toast => toast.toastRef.id === toastRef.id
         );
-        this.notifications.splice(index, 1);
+        this.toasts.splice(index, 1);
         subscription.unsubscribe();
       })
     ;
     nextId++;
 
-    return notificationRef;
+    return toastRef;
   }
 
   closeAll() {
-    this.notifications.forEach(notification => {
-      notification.notificationRef.close();
+    this.toasts.forEach(toastDef => {
+      toastDef.toastRef.close();
     });
   }
 

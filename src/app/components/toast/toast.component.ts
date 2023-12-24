@@ -2,11 +2,12 @@ import { Component, inject, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   UltButtonModule,
-  UltNotificationModule,
-  NotificationService,
+  UltToastModule,
   UltFormsModule,
   UltRadioModule,
-  UltIconModule, UltAvatarModule
+  UltIconModule,
+  UltAvatarModule,
+  ToastService
 } from '@ultima-ui/components';
 import { InlineCodeDirective } from '../../_libraries/inline-code.directive';
 import { CodeBlockComponent } from '../../_libraries/code-block/code-block.component';
@@ -17,7 +18,7 @@ import { PlaygroundModule } from '../../_libraries/playground/playground.module'
   standalone: true,
   imports: [
     CommonModule,
-    UltNotificationModule,
+    UltToastModule,
     UltButtonModule,
     UltFormsModule,
     UltRadioModule,
@@ -28,37 +29,38 @@ import { PlaygroundModule } from '../../_libraries/playground/playground.module'
     PlaygroundModule,
     UltAvatarModule
   ],
-  templateUrl: './notification.component.html'
+  templateUrl: './toast.component.html',
+  styleUrl: './toast.component.css'
 })
-export class NotificationComponent {
-  private _notificationService = inject(NotificationService);
-  importModule = `import { UltNotificationModule } from '@ultima-ui/components';`;
+export class ToastComponent {
+  private _toastService = inject(ToastService);
+  importModule = `import { UltToastModule } from '@ultima-ui/components';`;
   position = 'top-center';
 
   show(contentRef: TemplateRef<any>) {
-    const notificationRef = this._notificationService.open(contentRef, {
-      // duration: 200000
+    const toastRef = this._toastService.open(contentRef, {
+      duration: 200000
     });
   }
 
   showStack(contentRef: TemplateRef<any>) {
-    const notificationRef = this._notificationService.open(contentRef, {
+    const toastRef = this._toastService.open(contentRef, {
       stack: true
     });
   }
 
   noDuration(contentRef: TemplateRef<any>) {
-    const notificationRef = this._notificationService.open(contentRef, {
+    const toastRef = this._toastService.open(contentRef, {
       // duration: null
     });
   }
 
   closeAll() {
-    this._notificationService.closeAll();
+    // this._toastService.closeAll();
   }
 
   showByPosition(contentRef: TemplateRef<any>) {
-    const notificationRef = this._notificationService.open(contentRef, {
+    const toastRef = this._toastService.open(contentRef, {
       position: this.position
     });
   }

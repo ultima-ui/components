@@ -1,11 +1,11 @@
 import { DestroyRef, ElementRef, inject, Renderer2 } from '@angular/core';
 import { filter, fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { NOTIFICATION_REF } from './types';
-import { NotificationRef } from './notification-ref';
+import { TOAST_REF } from './types';
+import { ToastRef } from './toast-ref';
 
-export class BaseNotification {
-  private _notificationRef = inject<NotificationRef>(NOTIFICATION_REF);
+export class BaseToast {
+  private _toastRef = inject<ToastRef>(TOAST_REF);
   private _destroyRef = inject(DestroyRef);
   private _closeTimeout: number;
   protected _renderer = inject(Renderer2);
@@ -20,25 +20,25 @@ export class BaseNotification {
   }
 
   protected _ngOnInit() {
-    const position = this._notificationRef.position;
-    this._renderer.setAttribute(this._elementRef.nativeElement, 'ult-notification-position', position);
+    const position = this._toastRef.position;
+    this._renderer.setAttribute(this._elementRef.nativeElement, 'ult-toast-position', position);
     this._closeTimeout = setTimeout(() => {
       this._close();
-    }, this._notificationRef.duration);
+    }, this._toastRef.duration);
     fromEvent(this._elementRef.nativeElement, 'animationend')
       .pipe(
         takeUntilDestroyed(this._destroyRef),
         filter(() => this.closed)
       )
       .subscribe(() => {
-        this._notificationRef?.close();
+        this._toastRef?.close();
       })
     ;
   }
 
   protected _ngOnDestroy() {
     clearTimeout(this._closeTimeout);
-    this._notificationRef?.close();
+    this._toastRef?.close();
   }
 
   private _close() {

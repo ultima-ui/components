@@ -238,8 +238,8 @@ export class AppComponent {
     },
     {
       type: 'link',
-      name: 'Notification',
-      link: '/components/notification'
+      name: 'Toast',
+      link: '/components/toast'
     },
     {
       type: 'link',

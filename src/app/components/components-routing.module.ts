@@ -243,11 +243,11 @@ const routes: Routes = [
         loadComponent: () => import('./panel/panel.component').then(c => c.PanelComponent)
       },
       {
-        path: 'notification',
+        path: 'toast',
         data: {
-          breadcrumb: 'Notification'
+          breadcrumb: 'Toast'
         },
-        loadComponent: () => import('./notification/notification.component').then(c => c.NotificationComponent)
+        loadComponent: () => import('./toast/toast.component').then(c => c.ToastComponent)
       },
       {
         path: 'command-bar',

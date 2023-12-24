@@ -21,7 +21,7 @@
   color: var(--ult-segmented-button-selected-color);
 }
 
-:host(:active) {
+:host:not(.is-selected):active {
   scale: .97;
 }
 

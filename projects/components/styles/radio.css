@@ -4,7 +4,7 @@
   --ult-radio-control-border-color: theme('colors.neutral.200');
   --ult-radio-control-border-width: theme('width.px');
   --ult-radio-hover-control-border-color: theme('colors.neutral.300');
-  --ult-radio-indicator-size: theme('width.2');
+  --ult-radio-indicator-size: 0.5625rem;
   --ult-radio-indicator-bg: theme('colors.transparent');
   --ult-radio-checked-control-bg: theme('colors.primary.500');
   --ult-radio-checked-control-border-color: theme('colors.primary.500');

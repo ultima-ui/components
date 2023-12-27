@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+:host:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: var(--ult-content-fade-width);
+  background: linear-gradient(to left, transparent, var(--ult-content-fade-color));
+}
+
+:host:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: var(--ult-content-fade-width);
+  background: linear-gradient(to right, transparent, var(--ult-content-fade-color));
+}

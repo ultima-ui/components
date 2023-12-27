@@ -1,0 +1,34 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-8">
+    <div class="space-y-8">
+      <h1 class="text-2xl font-bold mt-0">Command Bar</h1>
+      <div>
+        <div class="mb-4">Import module:</div>
+        <code-block [code]="importModule"></code-block>
+      </div>
+      <h2>Basic</h2>
+      <playground>
+        <playground-content>
+          <ult-content-fade>Lorem ipsum dolor sit amet, consectetur adipiscing elit</ult-content-fade>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Custom Color</h2>
+      <playground>
+        <playground-content class="bg-[#666] text-white">
+          <ult-content-fade color="#666">Lorem ipsum dolor sit amet, consectetur adipiscing elit</ult-content-fade>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Custom Width</h2>
+      <playground>
+        <playground-content>
+          <ult-content-fade width="40%">Lorem ipsum dolor sit amet, consectetur adipiscing elit</ult-content-fade>
+        </playground-content>
+        <playground-controls></playground-controls>
+      </playground>
+    </div>
+  </div>
+</div>

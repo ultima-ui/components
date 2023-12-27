@@ -145,6 +145,13 @@ const routes: Routes = [
         loadComponent: () => import('./expand/expand.component').then(c => c.ExpandComponent)
       },
       {
+        path: 'content-fade',
+        data: {
+          breadcrumb: 'Content Fade'
+        },
+        loadComponent: () => import('./content-fade/content-fade.component').then(c => c.ContentFadeComponent)
+      },
+      {
         path: 'segmented',
         data: {
           breadcrumb: 'Segmented'

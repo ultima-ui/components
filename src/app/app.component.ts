@@ -158,6 +158,11 @@ export class AppComponent {
     },
     {
       type: 'link',
+      name: 'Content Fade',
+      link: '/components/content-fade'
+    },
+    {
+      type: 'link',
       name: 'Icon',
       link: '/components/icon'
     },

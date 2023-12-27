@@ -39,7 +39,7 @@ export class ToastComponent {
 
   show(contentRef: TemplateRef<any>) {
     const toastRef = this._toastService.open(contentRef, {
-      duration: 200000
+      // duration: 200000
     });
   }
 

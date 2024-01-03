@@ -1,5 +1,5 @@
 :root {
-  --ult-checkbox-indicator-font-size: theme('fontSize.sm');
+  --ult-checkbox-indicator-font-size: 0.9375rem;
   --ult-checkbox-indicator-font-weight: theme('fontWeight.bold');
   --ult-checkbox-indicator-color: theme('colors.white');
   --ult-checkbox-control-bg: theme('colors.transparent');

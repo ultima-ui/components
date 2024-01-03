@@ -26,6 +26,7 @@ import { FORM_FIELD } from '../../forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { OptionCheckIconDirective } from '../option-check-icon.directive';
 import { DOCUMENT } from '@angular/common';
+import { SelectValueRendererDirective } from '../select-value-renderer.directive';
 
 @Component({
   selector: 'ult-select',
@@ -68,6 +69,9 @@ export class SelectComponent implements ControlValueAccessor, OnInit, AfterConte
   private _mousePressed = false;
   private _isOpen = false;
   private _selectionModel!: SelectionModel<any>;
+
+  @ContentChild(SelectValueRendererDirective, { read: TemplateRef })
+  readonly _valueRendererRef: TemplateRef<any>;
 
   @ViewChild('trigger', { read: ElementRef, static: true })
   private _triggerElement!: ElementRef;

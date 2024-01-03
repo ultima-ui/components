@@ -8,6 +8,7 @@ import { OptionsComponent } from './options/options.component';
 import { SelectToggleIconDirective } from './select-toggle-icon.directive';
 import { SelectClearIconDirective } from './select-clear-icon.directive';
 import { OptionCheckIconDirective } from './option-check-icon.directive';
+import { SelectValueRendererDirective } from './select-value-renderer.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { OptionCheckIconDirective } from './option-check-icon.directive';
     OptionsComponent,
     SelectToggleIconDirective,
     SelectClearIconDirective,
-    OptionCheckIconDirective
+    OptionCheckIconDirective,
+    SelectValueRendererDirective
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { OptionCheckIconDirective } from './option-check-icon.directive';
     OptgroupComponent,
     SelectToggleIconDirective,
     SelectClearIconDirective,
-    OptionCheckIconDirective
+    OptionCheckIconDirective,
+    SelectValueRendererDirective
   ]
 })
 export class UltSelectModule { }

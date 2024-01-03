@@ -33,6 +33,8 @@ export class SelectComponent {
   value5 = '1';
   value6 = '1';
 
+  visibility = 'anyone';
+
   options: any = [];
   size = 'default';
 

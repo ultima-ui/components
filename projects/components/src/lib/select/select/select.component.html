@@ -3,8 +3,11 @@
      (mousedown)="_mousedown()" (click)="_toggleTrigger()"
      [class.is-focused]="api.isOpen() || _focused">
   <div class="grow overflow-hidden min-w-0 rounded-inherit">
-    <div class="value rounded-inherit">{{ _triggerValue }}</div>
-    <div class="placeholder grow rounded-inherit" *ngIf="!_triggerValue">{{ placeholder }}</div>
+    <div class="value rounded-inherit" *ngIf="_valueRendererRef">
+      <ng-container [ngTemplateOutlet]="_valueRendererRef"></ng-container>
+    </div>
+    <div class="value rounded-inherit" *ngIf="!_valueRendererRef">{{ _triggerValue }}</div>
+    <div class="placeholder grow rounded-inherit" *ngIf="!_triggerValue && !_valueRendererRef">{{ placeholder }}</div>
   </div>
   <div class="clear">
     <ng-content select="[ultSelectClearIcon]"></ng-content>

@@ -142,5 +142,50 @@
       </playground-content>
       <playground-controls></playground-controls>
     </playground>
+
+    <h2>Custom</h2>
+    <playground>
+      <playground-content>
+        <div class="w-8/12">
+          <ult-select [(ngModel)]="visibility" placeholder="Select Value">
+            <ng-template ultSelectValueRenderer let-api>
+              @if(visibility === 'anyone') {
+                <div class="flex items-center gap-2 -ms-0.5">
+                  <ult-icon name="ph:globe"></ult-icon>
+                  <div>Anyone</div>
+                </div>
+              } @else if(visibility === 'only-you') {
+                <div class="flex items-center gap-2 -ms-0.5">
+                  <ult-icon name="ph:lock"></ult-icon>
+                  <div>Only You</div>
+                </div>
+              }
+            </ng-template>
+            <ult-option value="anyone">
+              <div class="py-2 w-full">
+                <div class="flex items-center gap-2">
+                  <ult-icon name="ph:globe"></ult-icon>
+                  <div class="font-semibold text-gray-800 dark:text-gray-200">Anyone</div>
+                </div>
+                <div class="mt-1 ms-0.5 text-sm text-gray-400">Visible to anyone who want to view your content</div>
+              </div>
+            </ult-option>
+            <ult-option value="only-you">
+              <div class="py-2 w-full">
+                <div class="flex items-center gap-2">
+                  <ult-icon name="ph:lock"></ult-icon>
+                  <div class="font-semibold text-gray-800 dark:text-gray-200">Only You</div>
+                </div>
+                <div class="mt-1 ms-0.5 text-sm text-gray-400">Only visible to you</div>
+              </div>
+            </ult-option>
+          </ult-select>
+        </div>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Selected Value: {{ visibility | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
   </div>
 </div>

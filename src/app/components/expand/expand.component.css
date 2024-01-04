@@ -1,0 +1,4 @@
+.custom-expand {
+  --ult-expand-button-bg: theme('colors.white');
+  --ult-expand-button-color: theme('colors.neutral.900');
+}

@@ -1,0 +1,11 @@
+:root {
+  --ult-expand-fade-color: theme('colors.white');
+  --ult-expand-button-bg: theme('colors.neutral.950');
+  --ult-expand-button-color: theme('colors.white');
+  --ult-expand-button-font-size: theme('fontSize.xs');
+  --ult-expand-button-box-shadow: theme('boxShadow.md');
+  --ult-expand-button-border-radius: theme('borderRadius.full');
+  --ult-expand-button-padding: theme('padding[1.5]') theme('padding.4');
+  --ult-expand-button-hover-opacity: theme('opacity.90');
+  --ult-expand-expanded-button-boottom-position: 10px;
+}

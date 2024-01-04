@@ -1,5 +1,4 @@
-import { booleanAttribute, Component, Input } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { booleanAttribute, Component, ElementRef, EventEmitter, inject, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'ult-expand',
@@ -8,26 +7,49 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   styleUrl: './expand.component.css',
   host: {
     'class': 'ult-expand',
-    '[class.is-expanded]': 'expanded',
-  },
-  animations: [
-    trigger('openClose', [
-      state('open', style({
-        opacity: 1,
-        overflow: 'none',
-        height: '*'
-      })),
-      state('closed', style({
-        opacity: '0',
-        overflow: 'hidden',
-        height: '0px'
-      })),
-      transition('open => closed', animate('150ms cubic-bezier(0.65,0,0.35,1)')),
-      transition('closed => open', animate('300ms cubic-bezier(0.65,0,0.35,1)'))
-    ])
-  ]
+    '[class.is-expanded]': 'expanded'
+  }
 })
 export class ExpandComponent {
+  private _elementRef = inject(ElementRef);
+
   @Input({ transform: booleanAttribute })
   expanded = false;
+
+  @Input()
+  set color(color: string) {
+    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--ult-expand-fade-color', color, 'important');
+  }
+
+  @Input()
+  expandLabel = 'Expand';
+
+  @Input()
+  collapseLabel = 'Collapse';
+
+  @Output()
+  expandedChange = new EventEmitter<boolean>();
+
+  get api() {
+    return {
+      expand: () => this._expand(),
+      collapse: () => this._collapse(),
+      toggle: () => this._toggle()
+    };
+  }
+
+  private _toggle() {
+    this.expanded = !this.expanded;
+    this.expandedChange.emit(this.expanded);
+  }
+
+  private _expand() {
+    this.expanded = true;
+    this.expandedChange.emit(this.expanded);
+  }
+
+  private _collapse() {
+    this.expanded = false;
+    this.expandedChange.emit(this.expanded);
+  }
 }

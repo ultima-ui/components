@@ -25,7 +25,6 @@ import { OptionComponent } from '../option/option.component';
 import { FORM_FIELD } from '../../forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { OptionCheckIconDirective } from '../option-check-icon.directive';
-import { DOCUMENT } from '@angular/common';
 import { SelectValueRendererDirective } from '../select-value-renderer.directive';
 
 @Component({

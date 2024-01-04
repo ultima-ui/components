@@ -15,13 +15,19 @@ import { UltButtonModule, UltColorPickerModule, UltExpandModule } from '@ultima-
     UltColorPickerModule,
     UltButtonModule
   ],
-  templateUrl: './expand.component.html'
+  templateUrl: './expand.component.html',
+  styleUrl: './expand.component.css'
 })
 export class ExpandComponent {
   importModule = `import { UltExpandModule } from '@ultima-ui/components';`;
-  expanded = false;
+  expandedBasic = false;
+  expandedCustom = false;
 
-  toggle() {
-    this.expanded = !this.expanded;
+  toggleBasic() {
+    this.expandedBasic = !this.expandedBasic;
+  }
+
+  toggleCustom() {
+    this.expandedCustom = !this.expandedCustom;
   }
 }

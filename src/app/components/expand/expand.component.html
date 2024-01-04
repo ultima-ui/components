@@ -11,15 +11,69 @@
       <playground>
         <playground-content [centered]="false">
           <div class="w-full">
-            <button ult-button (click)="toggle()">Toggle</button>
-            <ult-expand [expanded]="expanded" class="mt-3">
-              <div class="border rounded-lg p-5">
-                If you were hoping I had a magical, complete solution to this problem, <br>
-                I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
-              </div>
+            <ult-expand [expanded]="expandedBasic" class="border rounded-lg p-5 text-sm leading-relaxed">
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
             </ult-expand>
           </div>
         </playground-content>
+        <playground-properties>
+          <button ult-button (click)="toggleBasic()">Toggle</button>
+        </playground-properties>
+        <playground-controls></playground-controls>
+      </playground>
+
+      <h2>Custom Color</h2>
+      <playground>
+        <playground-content [centered]="false">
+          <div class="w-full">
+            <ult-expand [expanded]="expandedCustom" color="rgb(64, 64, 64)" class="bg-neutral-700 text-white border rounded-lg p-5 text-sm leading-relaxed custom-expand">
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+              If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.If you were hoping I had a magical, complete solution to this problem, <br>
+              I’m sorry to disappoint you. There’s no one solution that achieves the desired effect without downsides.
+            </ult-expand>
+          </div>
+        </playground-content>
+        <playground-properties>
+          <button ult-button (click)="toggleCustom()">Toggle</button>
+        </playground-properties>
         <playground-controls></playground-controls>
       </playground>
     </div>

@@ -25,13 +25,13 @@ export class SliderThumbDirective implements AfterContentInit {
 
   @HostListener('mousedown')
   private _handleMouseDown() {
-    this._slider._thumbActivated = true;
+    this._slider._thumbFocused = true;
     this._slider.cdr.markForCheck();
   }
 
   @HostListener('mouseup')
   private _handleMouseUp() {
-    this._slider._thumbActivated = false;
+    this._slider._thumbFocused = false;
     this._slider.cdr.markForCheck();
   }
 

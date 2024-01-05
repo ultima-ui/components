@@ -151,6 +151,7 @@
   display: flex;
 }
 
-:host.has-label[ult-slider-label-display="hover"].hover .label {
+:host.has-label[ult-slider-label-display="hover"] .thumb-control:hover .label,
+:host.has-label[ult-slider-label-display="hover"].thumb-focused .label {
   display: flex;
 }

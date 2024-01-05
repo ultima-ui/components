@@ -37,7 +37,7 @@ import { LABEL_DISPLAY, ULT_SLIDER } from "../types";
     'class': 'ult-slider',
     '[class.is-disabled]': 'disabled',
     '[class.has-label]': 'showLabel',
-    '[class.hover]': '_hovered || _thumbActivated',
+    '[class.thumb-focused]': '_thumbFocused',
   }
 })
 export class SliderComponent implements OnInit, ControlValueAccessor {
@@ -90,8 +90,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   readonly valueChange = new EventEmitter();
 
   _tickMarks: number[] = [];
-  _hovered = false;
-  _thumbActivated = false;
+  _thumbFocused = false;
 
   private _sliderWidth = 0;
   private _thumbWidth = 0;
@@ -178,17 +177,5 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     const percent = (value - this.min) / distance;
 
     return Math.ceil(actualSliderWidth * percent);
-  }
-
-  _thumbMouseEnter() {
-    this._hovered = true;
-  }
-
-  _thumbMouseLeave() {
-    if (this._thumbActivated) {
-      return;
-    }
-
-    this._hovered = false;
   }
 }

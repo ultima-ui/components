@@ -11,9 +11,7 @@
     <h2>Basic</h2>
     <playground>
       <playground-content>
-        <ult-slider min="20" max="40" [(ngModel)]="value" (changed)="value = $event">
-          <input ultSliderThumb>
-        </ult-slider>
+        <ult-slider min="20" max="40" [(ngModel)]="value" (changed)="value = $event"></ult-slider>
       </playground-content>
       <playground-properties>
         <div class="mt-4 text-sm">Value: {{ value | json }}</div>
@@ -24,9 +22,7 @@
     <h2>Steps</h2>
     <playground>
       <playground-content>
-        <ult-slider min="0" max="100" [value]="stepsValue" step="10" (changed)="stepsValue = $event">
-          <input ultSliderThumb>
-        </ult-slider>
+        <ult-slider min="0" max="100" [value]="stepsValue" step="10" (changed)="stepsValue = $event"></ult-slider>
       </playground-content>
       <playground-properties>
         <div class="mt-4 text-sm">Value: {{ stepsValue | json }}</div>
@@ -39,7 +35,6 @@
       <playground-content>
         <ult-slider min="0" max="100" [value]="showStepPointsValue" showTickMarks="true"
                     step="10" (changed)="showStepPointsValue = $event">
-          <input ultSliderThumb>
         </ult-slider>
       </playground-content>
       <playground-properties>
@@ -51,9 +46,8 @@
     <h2>Value Label</h2>
     <playground>
       <playground-content>
-        <ult-slider min="0" max="52" [showLabel]="true" labelDisplay="always"
+        <ult-slider min="0" max="52" [showLabel]="true" labelDisplay="hover"
                     [(ngModel)]="tooltipValue" (changed)="value = $event">
-          <input ultSliderThumb>
         </ult-slider>
       </playground-content>
       <playground-properties>

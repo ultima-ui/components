@@ -1,10 +1,10 @@
 import { AfterContentInit, Directive, ElementRef, HostListener, inject } from '@angular/core';
-import { SliderComponent } from "./slider/slider.component";
+import { SliderComponent } from './slider/slider.component';
 import { ULT_SLIDER } from "./types";
 
 @Directive({
-  selector: 'input[ultSliderThumb]',
-  exportAs: 'ultSliderThumb',
+  selector: 'input[ultSliderInput]',
+  exportAs: 'ultSliderInput',
   host: {
     'class': 'ult-slider-input',
     'type': 'range',
@@ -12,16 +12,18 @@ import { ULT_SLIDER } from "./types";
     '(input)': '_onInput()',
     '[attr.step]': 'step',
     '[attr.max]': 'max',
-    '[attr.min]': 'min'
+    '[attr.min]': 'min',
+    '[attr.value]': 'value'
   }
 })
-export class SliderThumbDirective implements AfterContentInit {
+export class SliderInputDirective implements AfterContentInit {
   private _slider = inject<SliderComponent>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
 
   max: number;
   min: number;
   step: number;
+  value: any;
 
   @HostListener('mousedown')
   private _handleMouseDown() {
@@ -49,5 +51,6 @@ export class SliderThumbDirective implements AfterContentInit {
     this.step = this._slider.step;
     this.min = this._slider.min;
     this.max = this._slider.max;
+    this.value = this._slider.value;
   }
 }

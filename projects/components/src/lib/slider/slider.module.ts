@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from './slider/slider.component';
-import { SliderThumbDirective } from "./slider-thumb.directive";
-import { SliderThumbRangeDirective } from "./slider-thumb-range.directive";
+import { SliderInputDirective } from './slider-input.directive';
 
 @NgModule({
   declarations: [
     SliderComponent,
-    SliderThumbDirective,
-    SliderThumbRangeDirective
+    SliderInputDirective
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SliderComponent,
-    SliderThumbDirective,
-    SliderThumbRangeDirective
+    SliderComponent
   ]
 })
 export class UltSliderModule { }

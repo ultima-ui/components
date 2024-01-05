@@ -42,11 +42,15 @@
   background: var(--ult-slider-track-active-bg);
 }
 
-:host .thumb {
+:host .thumb-control {
   position: absolute;
   display: inline-block;
   inset-inline-start: 0;
   top: 0;
+}
+
+:host .thumb {
+  position: relative;
   border: none;
   cursor: pointer;
   border-radius: var(--ult-slider-thumb-border-radius);
@@ -55,7 +59,7 @@
   height: var(--ult-slider-thumb-size);
   background: var(--ult-slider-thumb-bg);
   box-shadow: var(--ult-slider-thumb-shadow);
-  z-index: 9;
+  z-index: 3;
 }
 
 :host .thumb:focus-within,
@@ -131,7 +135,7 @@
   justify-content: center;
   position: absolute;
   top: var(--ult-slider-label-offset);
-  left: var(--ult-slider-label-position);
+  left: 50%;
   transform: translate(-50%,-100%);
   background: var(--ult-slider-label-bg);
   color: var(--ult-slider-label-color);

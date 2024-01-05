@@ -170,7 +170,6 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     const positionX = this._calculatePositionXByValue(value);
     this._renderer.setStyle(this.thumbElement, 'left', positionX + 'px');
     this._renderer.setStyle(this.trackActive, 'width', (positionX + this._thumbWidth / 2) + 'px');
-    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--ult-slider-label-position', (positionX + this._thumbWidth / 2) + 'px');
   }
 
   private _calculatePositionXByValue(value: number): number {

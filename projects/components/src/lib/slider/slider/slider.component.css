@@ -6,6 +6,7 @@
   width: 100%;
   flex: none;
   height: var(--ult-slider-height);
+  --ult-slider-label-position: 0;
 }
 
 :host(:focus-visible) {
@@ -54,7 +55,7 @@
   height: var(--ult-slider-thumb-size);
   background: var(--ult-slider-thumb-bg);
   box-shadow: var(--ult-slider-thumb-shadow);
-  z-index: 1;
+  z-index: 9;
 }
 
 :host .thumb:focus-within,
@@ -119,4 +120,33 @@
   inset: 0;
   cursor: pointer;
   opacity: 0;
+}
+
+:host .label {
+  display: none;
+}
+
+:host.has-label .label {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: var(--ult-slider-label-offset);
+  left: var(--ult-slider-label-position);
+  transform: translate(-50%,-100%);
+  background: var(--ult-slider-label-bg);
+  color: var(--ult-slider-label-color);
+  font-size: var(--ult-slider-label-font-size);
+  border-radius: var(--ult-slider-label-border-radius);
+  box-shadow: var(--ult-slider-label-shadow);
+  padding: var(--ult-slider-label-padding);
+  font-weight: var(--ult-slider-label-font-weight);
+  min-width: var(--ult-slider-label-min-width);
+}
+
+:host.has-label[ult-slider-label-display="always"] .label {
+  display: flex;
+}
+
+:host.has-label[ult-slider-label-display="hover"].hover .label {
+  display: flex;
 }

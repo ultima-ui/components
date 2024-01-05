@@ -1,4 +1,4 @@
-import { AfterContentInit, Directive, ElementRef, inject, Renderer2 } from '@angular/core';
+import { AfterContentInit, Directive, ElementRef, HostListener, inject } from '@angular/core';
 import { SliderComponent } from "./slider/slider.component";
 import { ULT_SLIDER } from "./types";
 
@@ -22,6 +22,18 @@ export class SliderThumbDirective implements AfterContentInit {
   max: number;
   min: number;
   step: number;
+
+  @HostListener('mousedown')
+  private _handleMouseDown() {
+    this._slider._thumbActivated = true;
+    this._slider.cdr.markForCheck();
+  }
+
+  @HostListener('mouseup')
+  private _handleMouseUp() {
+    this._slider._thumbActivated = false;
+    this._slider.cdr.markForCheck();
+  }
 
   _onInput() {
     const input = this._elementRef.nativeElement as HTMLInputElement;

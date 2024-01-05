@@ -1,6 +1,6 @@
 import {
   afterNextRender,
-  booleanAttribute,
+  booleanAttribute, ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter, forwardRef,
@@ -14,7 +14,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FORM_FIELD } from '../../forms';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
-import { ULT_SLIDER } from "../types";
+import { LABEL_DISPLAY, ULT_SLIDER } from "../types";
 
 @Component({
   selector: 'ult-slider',
@@ -36,11 +36,15 @@ import { ULT_SLIDER } from "../types";
   host: {
     'class': 'ult-slider',
     '[class.is-disabled]': 'disabled',
+    '[class.has-label]': 'showLabel',
+    '[class.hover]': '_hovered || _thumbActivated',
   }
 })
 export class SliderComponent implements OnInit, ControlValueAccessor {
   readonly _formField = inject<any>(FORM_FIELD, { optional: true });
   private _renderer = inject(Renderer2);
+  private _elementRef = inject(ElementRef);
+  readonly cdr = inject(ChangeDetectorRef);
 
   @ViewChild('slider', { static: true })
   private _slider: ElementRef<HTMLElement>;
@@ -50,6 +54,16 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   @ViewChild('trackActive', { static: true })
   private _trackActive: ElementRef<HTMLElement>;
+
+  @Input({ transform: booleanAttribute })
+  showLabel = false;
+
+  @Input()
+  set labelDisplay(labelDisplay: LABEL_DISPLAY) {
+    this._labelDisplay = labelDisplay;
+    this._renderer.setAttribute(this._elementRef.nativeElement, 'ult-slider-label-display', labelDisplay);
+  }
+  _labelDisplay: LABEL_DISPLAY = 'hover';
 
   @Input({ transform: numberAttribute, required: true })
   max: number;
@@ -76,10 +90,11 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   readonly valueChange = new EventEmitter();
 
   _tickMarks: number[] = [];
+  _hovered = false;
+  _thumbActivated = false;
 
   private _sliderWidth = 0;
   private _thumbWidth = 0;
-  // private _halfOfThumbWidth = 0;
   private _actualSliderWidth = 0;
 
   _onChange: any = () => {};
@@ -111,6 +126,8 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   }
 
   ngOnInit() {
+    this._renderer.setAttribute(this._elementRef.nativeElement, 'ult-slider-label-display', this._labelDisplay);
+
     if (this.step > 1) {
       const tickMarksCount = Math.ceil((this.max - this.min) / this.step);
 
@@ -143,6 +160,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   }
 
   _emitChangeEvent(value: number) {
+    this.value = value;
     this.valueChange.emit(value);
     this.changed.emit(value);
     this._onChange(value);
@@ -152,6 +170,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     const positionX = this._calculatePositionXByValue(value);
     this._renderer.setStyle(this.thumbElement, 'left', positionX + 'px');
     this._renderer.setStyle(this.trackActive, 'width', (positionX + this._thumbWidth / 2) + 'px');
+    (this._elementRef.nativeElement as HTMLElement).style.setProperty('--ult-slider-label-position', (positionX + this._thumbWidth / 2) + 'px');
   }
 
   private _calculatePositionXByValue(value: number): number {
@@ -160,5 +179,17 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     const percent = (value - this.min) / distance;
 
     return Math.ceil(actualSliderWidth * percent);
+  }
+
+  _thumbMouseEnter() {
+    this._hovered = true;
+  }
+
+  _thumbMouseLeave() {
+    if (this._thumbActivated) {
+      return;
+    }
+
+    this._hovered = false;
   }
 }

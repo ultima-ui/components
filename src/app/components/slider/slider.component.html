@@ -47,5 +47,19 @@
       </playground-properties>
       <playground-controls></playground-controls>
     </playground>
+
+    <h2>Value Label</h2>
+    <playground>
+      <playground-content>
+        <ult-slider min="0" max="52" [showLabel]="true" labelDisplay="always"
+                    [(ngModel)]="tooltipValue" (changed)="value = $event">
+          <input ultSliderThumb>
+        </ult-slider>
+      </playground-content>
+      <playground-properties>
+        <div class="mt-4 text-sm">Value: {{ tooltipValue | json }}</div>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
   </div>
 </div>

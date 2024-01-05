@@ -12,4 +12,13 @@
   --ult-slider-mark-size: 3px;
   --ult-slider-mark-bg: theme('colors.neutral.400');
   --ult-slider-track-active-bg: theme('colors.neutral.200');
+  --ult-slider-label-offset: -4px;
+  --ult-slider-label-bg: theme('colors.neutral.800');
+  --ult-slider-label-color: theme('colors.white');
+  --ult-slider-label-font-size: theme('fontSize.3xs');
+  --ult-slider-label-border-radius: theme('borderRadius.md');
+  --ult-slider-label-shadow: theme('boxShadow.md');
+  --ult-slider-label-padding: theme('padding.1') theme('padding[1.5]');
+  --ult-slider-label-font-weight: theme('fontWeight.semibold');
+  --ult-slider-label-min-width: theme('width.6');
 }

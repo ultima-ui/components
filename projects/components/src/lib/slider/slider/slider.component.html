@@ -9,5 +9,6 @@
     </div>
   }
 </div>
-<button #thumb class="thumb"></button>
+<button #thumb class="thumb" (mouseenter)="_thumbMouseEnter()" (mouseleave)="_thumbMouseLeave()"></button>
 <ng-content></ng-content>
+<div class="label">{{ value }}</div>

@@ -117,7 +117,7 @@
   border-radius: 50%;
 }
 
-:host ::ng-deep input {
+:host input {
   width: 100%;
   z-index: 1;
   position: absolute;
@@ -154,4 +154,9 @@
 :host.has-label[ult-slider-label-display="hover"] .knob:hover + .label,
 :host.has-label[ult-slider-label-display="hover"].thumb-focused .label {
   display: flex;
+}
+
+:host .right {
+  flex: 1;
+  height: 2px;
 }

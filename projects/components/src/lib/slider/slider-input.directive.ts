@@ -25,13 +25,13 @@ export class SliderInputDirective implements AfterContentInit {
   step: number;
   value: any;
 
-  @HostListener('mousedown')
+  @HostListener('pointerdown')
   private _handleMouseDown() {
     this._slider._thumbFocused = true;
     this._slider.cdr.markForCheck();
   }
 
-  @HostListener('mouseup')
+  @HostListener('pointerup')
   private _handleMouseUp() {
     this._slider._thumbFocused = false;
     this._slider.cdr.markForCheck();

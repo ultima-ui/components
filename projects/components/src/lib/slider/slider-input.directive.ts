@@ -1,4 +1,4 @@
-import { AfterContentInit, Directive, ElementRef, HostListener, inject } from '@angular/core';
+import { AfterContentInit, Directive, ElementRef, HostListener, inject, Input, numberAttribute } from '@angular/core';
 import { SliderComponent } from './slider/slider.component';
 import { ULT_SLIDER } from "./types";
 
@@ -9,21 +9,20 @@ import { ULT_SLIDER } from "./types";
     'class': 'ult-slider-input',
     'type': 'range',
     '(change)': '_onChange()',
-    '(input)': '_onInput()',
-    '[attr.step]': 'step',
-    '[attr.max]': 'max',
-    '[attr.min]': 'min',
-    '[attr.value]': 'value'
+    '(input)': '_onInput()'
   }
 })
-export class SliderInputDirective implements AfterContentInit {
+export class SliderInputDirective {
   private _slider = inject<SliderComponent>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
 
   max: number;
   min: number;
   step: number;
-  value: any;
+
+  get nativeElement(): HTMLInputElement {
+    return this._elementRef.nativeElement;
+  }
 
   @HostListener('pointerdown')
   private _handleMouseDown() {
@@ -38,19 +37,12 @@ export class SliderInputDirective implements AfterContentInit {
   }
 
   _onInput() {
-    const input = this._elementRef.nativeElement as HTMLInputElement;
+    const input = this.nativeElement;
     const value = +input.value;
     this._slider._setThumbPositionXByValue(value);
     this._slider._emitChangeEvent(value);
   }
 
   _onChange() {
-  }
-
-  ngAfterContentInit() {
-    this.step = this._slider.step;
-    this.min = this._slider.min;
-    this.max = this._slider.max;
-    this.value = this._slider.value;
   }
 }

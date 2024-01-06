@@ -47,19 +47,19 @@
   display: inline-block;
   inset-inline-start: 0;
   top: 0;
+  line-height: var(--ult-slider-knob-size);
+  z-index: 2;
 }
 
 :host .knob {
-  position: relative;
   border: none;
   cursor: pointer;
-  border-radius: var(--ult-slider-thumb-border-radius);
+  border-radius: var(--ult-slider-knob-border-radius);
   flex: none;
-  width: var(--ult-slider-thumb-size);
-  height: var(--ult-slider-thumb-size);
-  background: var(--ult-slider-thumb-bg);
-  box-shadow: var(--ult-slider-thumb-shadow);
-  z-index: 3;
+  width: var(--ult-slider-knob-size);
+  height: var(--ult-slider-knob-size);
+  background: var(--ult-slider-knob-bg);
+  box-shadow: var(--ult-slider-knob-shadow);
 }
 
 :host .knob:focus-within,
@@ -67,13 +67,13 @@
   outline: none;
 }
 
-:host(:hover) .knob {
-  box-shadow: var(--ult-slider-thumb-hover-shadow);
+:host .knob:hover {
+  box-shadow: var(--ult-slider-knob-hover-shadow);
 }
 
-:host(:active) .knob {
-  scale: var(--ult-slider-thumb-active-scale);
-  box-shadow: var(--ult-slider-thumb-hover-shadow);
+:host .knob:active {
+  scale: var(--ult-slider-knob-active-scale);
+  box-shadow: var(--ult-slider-knob-hover-shadow);
 }
 
 :host .steps {
@@ -86,8 +86,8 @@
   justify-content: space-between;
   top: 0;
   bottom: 0;
-  left: calc(var(--ult-slider-thumb-size) / 2);
-  right: calc(var(--ult-slider-thumb-size) / 2);
+  left: calc(var(--ult-slider-knob-size) / 2);
+  right: calc(var(--ult-slider-knob-size) / 2);
 }
 
 :host .step {
@@ -99,13 +99,13 @@
 }
 
 :host .step:first-child {
-  border-start-start-radius: var(--ult-slider-thumb-border-radius);
-  border-end-start-radius: var(--ult-slider-thumb-border-radius);
+  border-start-start-radius: var(--ult-slider-knob-border-radius);
+  border-end-start-radius: var(--ult-slider-knob-border-radius);
 }
 
 :host .step:last-child {
-  border-start-end-radius: var(--ult-slider-thumb-border-radius);
-  border-end-end-radius: var(--ult-slider-thumb-border-radius);
+  border-start-end-radius: var(--ult-slider-knob-border-radius);
+  border-end-end-radius: var(--ult-slider-knob-border-radius);
 }
 
 :host .mark {
@@ -134,6 +134,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
+  line-height: 0;
   top: var(--ult-slider-label-offset);
   left: 50%;
   transform: translate(-50%,-100%);
@@ -143,6 +144,7 @@
   border-radius: var(--ult-slider-label-border-radius);
   box-shadow: var(--ult-slider-label-shadow);
   padding: var(--ult-slider-label-padding);
+  height: var(--ult-slider-label-height);
   font-weight: var(--ult-slider-label-font-weight);
   min-width: var(--ult-slider-label-min-width);
 }
@@ -154,9 +156,4 @@
 :host.has-label[ult-slider-label-display="hover"] .knob:hover + .label,
 :host.has-label[ult-slider-label-display="hover"].thumb-focused .label {
   display: flex;
-}
-
-:host .right {
-  flex: 1;
-  height: 2px;
 }

@@ -65,14 +65,14 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   }
   _labelDisplay: LABEL_DISPLAY = 'hover';
 
-  @Input({ transform: numberAttribute, required: true })
-  max: number;
-
-  @Input({ transform: numberAttribute, required: true })
-  min: number;
+  @Input({ transform: numberAttribute })
+  max = 100;
 
   @Input({ transform: numberAttribute })
-  step: number;
+  min = 0;
+
+  @Input({ transform: numberAttribute })
+  step = 1;
 
   @Input({ transform: numberAttribute })
   value: number;
@@ -91,6 +91,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   _tickMarks: number[] = [];
   _thumbFocused = false;
+  _value = 0;
 
   private _sliderWidth = 0;
   private _thumbWidth = 0;
@@ -143,6 +144,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
     }
 
     this.value = +value;
+    this._value = this.value;
     this._setThumbPositionXByValue(this.value);
   }
 
@@ -159,7 +161,7 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
   }
 
   _emitChangeEvent(value: number) {
-    this.value = value;
+    this._value = value;
     this.valueChange.emit(value);
     this.changed.emit(value);
     this._onChange(value);
@@ -167,11 +169,11 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   _setThumbPositionXByValue(value: number) {
     const positionX = this._calculatePositionXByValue(value);
-    this._renderer.setStyle(this.thumbElement, 'left', positionX + 'px');
+    this._renderer.setStyle(this.thumbElement, 'transform', 'translateX('+ positionX +'px)');
     this._renderer.setStyle(this.trackActive, 'width', (positionX + this._thumbWidth / 2) + 'px');
   }
 
-  private _calculatePositionXByValue(value: number): number {
+  _calculatePositionXByValue(value: number): number {
     const actualSliderWidth = this.actualSliderWidth;
     const distance = this.max - this.min;
     const percent = (value - this.min) / distance;

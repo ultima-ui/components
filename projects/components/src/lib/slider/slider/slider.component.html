@@ -9,8 +9,8 @@
     </div>
   }
 </div>
-<input ultSliderInput>
+<input #input="ultSliderInput" ultSliderInput [attr.min]="min" [attr.max]="max" [attr.step]="step" [attr.value]="value">
 <div #thumb class="thumb">
-  <button class="knob" ultSliderKnob></button>
-  <div class="label">{{ value }}</div>
+  <button class="knob" ultSliderKnob [input]="input" [value]="value"></button>
+  <div class="label">{{ _value }}</div>
 </div>

@@ -3,14 +3,11 @@ import {
   Directive,
   ElementRef, HostListener,
   inject,
-  Input, NgZone,
   OnInit
 } from '@angular/core';
-import { SliderInputDirective } from './slider-input.directive';
 import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ULT_SLIDER } from './types';
-import { SliderComponent } from './slider/slider.component';
 import { DOCUMENT } from '@angular/common';
 
 @Directive({
@@ -18,13 +15,10 @@ import { DOCUMENT } from '@angular/common';
   exportAs: 'ultSliderKnob'
 })
 export class SliderKnobDirective implements OnInit {
-  private _slider = inject<SliderComponent>(ULT_SLIDER);
+  private _slider = inject<any>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
   private _destroyRef = inject(DestroyRef);
   private _document = inject(DOCUMENT);
-
-  @Input()
-  input: SliderInputDirective;
 
   private _x = 0;
   private _moving = false;

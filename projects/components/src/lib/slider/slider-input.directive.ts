@@ -1,5 +1,4 @@
 import { Directive, ElementRef, HostListener, inject } from '@angular/core';
-import { SliderComponent } from './slider/slider.component';
 import { ULT_SLIDER } from "./types";
 
 @Directive({
@@ -16,7 +15,7 @@ import { ULT_SLIDER } from "./types";
   }
 })
 export class SliderInputDirective {
-  private _slider = inject<SliderComponent>(ULT_SLIDER);
+  private _slider = inject<any>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
 
   max = this._slider.max;

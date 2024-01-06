@@ -1,4 +1,4 @@
-import { AfterContentInit, Directive, ElementRef, HostListener, inject, Input, numberAttribute } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 import { SliderComponent } from './slider/slider.component';
 import { ULT_SLIDER } from "./types";
 
@@ -9,16 +9,19 @@ import { ULT_SLIDER } from "./types";
     'class': 'ult-slider-input',
     'type': 'range',
     '(change)': '_onChange()',
-    '(input)': '_onInput()'
+    '(input)': '_onInput()',
+    '[attr.step]': 'step',
+    '[attr.min]': 'min',
+    '[attr.max]': 'max'
   }
 })
 export class SliderInputDirective {
   private _slider = inject<SliderComponent>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
 
-  max: number;
-  min: number;
-  step: number;
+  max = this._slider.max;
+  min = this._slider.min;
+  step = this._slider.step;
 
   get nativeElement(): HTMLInputElement {
     return this._elementRef.nativeElement;

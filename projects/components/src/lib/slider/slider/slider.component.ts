@@ -1,14 +1,18 @@
 import {
   afterNextRender,
-  booleanAttribute, ChangeDetectorRef,
+  booleanAttribute,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
-  EventEmitter, forwardRef,
+  EventEmitter,
+  forwardRef,
   inject,
   Input,
   numberAttribute,
   OnInit,
-  Output, Renderer2,
+  Output,
+  Renderer2,
   ViewChild
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -169,15 +173,11 @@ export class SliderComponent implements OnInit, ControlValueAccessor {
 
   _setThumbPositionXByValue(value: number) {
     const positionX = this._calculatePositionXByValue(value);
-    this._renderer.setStyle(this.thumbElement, 'transform', 'translateX('+ positionX +'px)');
-    this._renderer.setStyle(this.trackActive, 'width', (positionX + this._thumbWidth / 2) + 'px');
+    this.thumbElement.style.transform = 'translateX('+ positionX +'px)';
+    this.trackActive.style.width = (positionX + this._thumbWidth / 2) + 'px';
   }
 
   _calculatePositionXByValue(value: number): number {
-    const actualSliderWidth = this.actualSliderWidth;
-    const distance = this.max - this.min;
-    const percent = (value - this.min) / distance;
-
-    return Math.ceil(actualSliderWidth * percent);
+    return Math.ceil(this.actualSliderWidth * ((value - this.min) / (this.max - this.min)));
   }
 }

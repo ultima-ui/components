@@ -1,9 +1,9 @@
 import {
   DestroyRef,
   Directive,
-  ElementRef,
+  ElementRef, HostListener,
   inject,
-  Input,
+  Input, NgZone,
   OnInit
 } from '@angular/core';
 import { SliderInputDirective } from './slider-input.directive';
@@ -11,6 +11,7 @@ import { fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ULT_SLIDER } from './types';
 import { SliderComponent } from './slider/slider.component';
+import { DOCUMENT } from '@angular/common';
 
 @Directive({
   selector: '[ultSliderKnob]',
@@ -20,18 +21,24 @@ export class SliderKnobDirective implements OnInit {
   private _slider = inject<SliderComponent>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
   private _destroyRef = inject(DestroyRef);
+  private _ngZone = inject(NgZone);
+  private _document = inject(DOCUMENT);
 
   @Input()
   input: SliderInputDirective;
 
-  @Input('value')
-  _value: number;
+  private _value: number;
 
   private _x = 0;
   private _y = 0;
   private _moving = false;
+  private _timeout: number;
 
   ngOnInit() {
+    let _value: number;
+    const stepNumbers = Math.ceil((this._slider.max - this._slider.min) / this._slider.step);
+    let stepWidth = 0;
+
     fromEvent(this._elementRef.nativeElement, 'mousedown')
       .pipe(
         takeUntilDestroyed(this._destroyRef)
@@ -40,9 +47,12 @@ export class SliderKnobDirective implements OnInit {
         this._x = e.clientX;
         this._y = e.clientY;
         this._moving = true;
+        _value = this._slider._value;
+        stepWidth = this._slider.actualSliderWidth / stepNumbers;
+        this._slider._thumbFocused = true;
       })
     ;
-    fromEvent(document, 'mousemove')
+    fromEvent(this._document, 'mousemove')
       .pipe(
         takeUntilDestroyed(this._destroyRef)
       )
@@ -51,48 +61,46 @@ export class SliderKnobDirective implements OnInit {
           return;
         }
 
-        const oldValue = +this._value;
+        let value = _value;
         const thumbElement = (this._elementRef.nativeElement as HTMLElement).parentElement;
-        const thumbLeftPosition = parseInt((this._elementRef.nativeElement as HTMLElement).parentElement.style.left);
         let rect = thumbElement.parentElement.getBoundingClientRect();
         const sliderCursorPosition = e.clientX - rect.left - thumbElement.getBoundingClientRect().width;
 
-        if ((sliderCursorPosition < 0 && thumbLeftPosition <= 0) || sliderCursorPosition - thumbElement.getBoundingClientRect().width > this._slider.actualSliderWidth) {
-          return;
+        if (e.clientX > this._x) {
+          value = this._slider.min + Math.round((sliderCursorPosition - stepWidth / 2) / stepWidth);
+
+          if (value > this._slider.max) {
+            return;
+          }
+        } else {
+          value = this._slider.min + Math.round((sliderCursorPosition - stepWidth / 2) / stepWidth);
+
+          if (value < this._slider.min) {
+            return;
+          }
         }
 
-        const prevValue = this._value - this._slider.step;
-        const nextValue = this._value + this._slider.step;
-        const prevValuePosition = this._slider._calculatePositionXByValue(prevValue);
-        const nextValuePosition = this._slider._calculatePositionXByValue(nextValue);
-        const stepNumbers = Math.ceil(this._slider.max / this._slider.step);
-        const stepWidth = this._slider.actualSliderWidth / stepNumbers;
-
-        if (sliderCursorPosition > nextValuePosition - stepWidth / 2) {
-          this._value = nextValue;
-        } else if (sliderCursorPosition < prevValuePosition - stepWidth / 2) {
-          this._value = prevValue;
-        }
-
-        if (oldValue !== this._value) {
-          this._slider._setThumbPositionXByValue(nextValue);
-          this._slider._emitChangeEvent(nextValue);
+        if (_value !== value) {
+          _value = value;
+          this._slider._setThumbPositionXByValue(value);
+          this._slider._emitChangeEvent(value);
         }
       })
     ;
-    fromEvent(document, 'mouseup')
+    fromEvent(this._document, 'mouseup')
       .pipe(
         takeUntilDestroyed(this._destroyRef)
       )
       .subscribe(e => {
         this._moving = false;
+        this._slider._thumbFocused = false;
       })
     ;
   }
 
-  // @HostListener('contextmenu', ['$event'])
-  // private _handleContextMenu(e: PointerEvent) {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-  // }
+  @HostListener('contextmenu', ['$event'])
+  private _handleContextMenu(e: PointerEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
 }

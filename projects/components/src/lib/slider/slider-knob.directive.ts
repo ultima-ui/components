@@ -21,18 +21,13 @@ export class SliderKnobDirective implements OnInit {
   private _slider = inject<SliderComponent>(ULT_SLIDER);
   private _elementRef = inject(ElementRef);
   private _destroyRef = inject(DestroyRef);
-  private _ngZone = inject(NgZone);
   private _document = inject(DOCUMENT);
 
   @Input()
   input: SliderInputDirective;
 
-  private _value: number;
-
   private _x = 0;
-  private _y = 0;
   private _moving = false;
-  private _timeout: number;
 
   ngOnInit() {
     let _value: number;
@@ -45,7 +40,6 @@ export class SliderKnobDirective implements OnInit {
       )
       .subscribe((e: PointerEvent) => {
         this._x = e.clientX;
-        this._y = e.clientY;
         this._moving = true;
         _value = this._slider._value;
         stepWidth = this._slider.actualSliderWidth / stepNumbers;
@@ -70,21 +64,23 @@ export class SliderKnobDirective implements OnInit {
         if (e.clientX > this._x) {
           if (value > this._slider.max) {
             _value = this._slider.max;
+            this._slider._setThumbPositionXByValue(_value);
+            this._slider._emitChangeEvent(_value);
             return;
           }
         } else {
           if (value < this._slider.min) {
             _value = this._slider.min;
+            this._slider._setThumbPositionXByValue(_value);
+            this._slider._emitChangeEvent(_value);
             return;
           }
         }
 
-        console.log(_value, value);
-
         if (_value !== value) {
           _value = value;
-          this._slider._setThumbPositionXByValue(value);
-          this._slider._emitChangeEvent(value);
+          this._slider._setThumbPositionXByValue(_value);
+          this._slider._emitChangeEvent(_value);
         }
       })
     ;

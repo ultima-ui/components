@@ -20,5 +20,5 @@ export class SliderComponent {
   value = 22;
   stepsValue = 50;
   showStepPointsValue = 90;
-  tooltipValue = 31;
+  labelValue = 31;
 }

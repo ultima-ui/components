@@ -11,7 +11,9 @@
     <h2>Basic</h2>
     <playground>
       <playground-content>
-        <ult-slider min="20" max="40" [(ngModel)]="value"></ult-slider>
+        <div class="w-1/2">
+          <ult-slider min="20" max="40" [(ngModel)]="value"></ult-slider>
+        </div>
       </playground-content>
       <playground-properties>
         <div class="mt-4 text-sm">Value: {{ value | json }}</div>
@@ -22,7 +24,9 @@
     <h2>Steps</h2>
     <playground>
       <playground-content>
-        <ult-slider min="0" max="100" [value]="stepsValue" step="10" (changed)="stepsValue = $event"></ult-slider>
+        <div class="w-1/2">
+          <ult-slider min="0" max="100" [value]="stepsValue" step="10" (changed)="stepsValue = $event"></ult-slider>
+        </div>
       </playground-content>
       <playground-properties>
         <div class="mt-4 text-sm">Value: {{ stepsValue | json }}</div>
@@ -33,9 +37,11 @@
     <h2>Show Tick Marks</h2>
     <playground>
       <playground-content>
-        <ult-slider min="0" max="100" [value]="showStepPointsValue" showTickMarks="true"
-                    step="10" (changed)="showStepPointsValue = $event">
-        </ult-slider>
+        <div class="w-1/2">
+          <ult-slider min="0" max="100" [value]="showStepPointsValue" showTickMarks="true"
+                      step="10" (changed)="showStepPointsValue = $event">
+          </ult-slider>
+        </div>
       </playground-content>
       <playground-properties>
         <div class="mt-4 text-sm">Value: {{ showStepPointsValue | json }}</div>
@@ -46,12 +52,13 @@
     <h2>Value Label</h2>
     <playground>
       <playground-content>
-        <ult-slider min="0" max="52" [showLabel]="true" labelDisplay="hover"
-                    [(ngModel)]="tooltipValue" (changed)="value = $event">
-        </ult-slider>
+        <div class="w-1/2">
+          <ult-slider min="0" max="52" [showLabel]="true" labelDisplay="hover" [(ngModel)]="labelValue">
+          </ult-slider>
+        </div>
       </playground-content>
       <playground-properties>
-        <div class="mt-4 text-sm">Value: {{ tooltipValue | json }}</div>
+        <div class="mt-4 text-sm">Value: {{ labelValue | json }}</div>
       </playground-properties>
       <playground-controls></playground-controls>
     </playground>

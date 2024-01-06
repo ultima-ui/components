@@ -65,20 +65,21 @@ export class SliderKnobDirective implements OnInit {
         const thumbElement = (this._elementRef.nativeElement as HTMLElement).parentElement;
         let rect = thumbElement.parentElement.getBoundingClientRect();
         const sliderCursorPosition = e.clientX - rect.left - thumbElement.getBoundingClientRect().width;
+        value = this._slider.min + Math.round(sliderCursorPosition / stepWidth) * this._slider.step;
 
         if (e.clientX > this._x) {
-          value = this._slider.min + Math.round((sliderCursorPosition - stepWidth / 2) / stepWidth);
-
           if (value > this._slider.max) {
+            _value = this._slider.max;
             return;
           }
         } else {
-          value = this._slider.min + Math.round((sliderCursorPosition - stepWidth / 2) / stepWidth);
-
           if (value < this._slider.min) {
+            _value = this._slider.min;
             return;
           }
         }
+
+        console.log(_value, value);
 
         if (_value !== value) {
           _value = value;

@@ -290,6 +290,20 @@ const routes: Routes = [
           breadcrumb: 'Resizable Container'
         },
         loadComponent: () => import('./resizable-container/resizable-container.component').then(c => c.ResizableContainerComponent)
+      },
+      {
+        path: 'pin-input',
+        data: {
+          breadcrumb: 'Pin Input'
+        },
+        loadComponent: () => import('./pin-input/pin-input.component').then(c => c.PinInputComponent)
+      },
+      {
+        path: 'number-input',
+        data: {
+          breadcrumb: 'Number Input'
+        },
+        loadComponent: () => import('./number-input/number-input.component').then(c => c.NumberInputComponent)
       }
     ]
   }

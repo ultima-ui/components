@@ -133,6 +133,16 @@ export class AppComponent {
       link: '/components/select'
     },
     {
+      type: 'link',
+      name: 'Pin Input',
+      link: '/components/pin-input'
+    },
+    {
+      type: 'link',
+      name: 'Number Input',
+      link: '/components/number-input'
+    },
+    {
       type: 'heading',
       name: 'Components'
     },

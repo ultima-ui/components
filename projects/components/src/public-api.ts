@@ -40,3 +40,5 @@ export * from './lib/expand/public-api';
 export * from './lib/segmented/public-api';
 export * from './lib/command-bar/public-api';
 export * from './lib/content-fade/public-api';
+export * from './lib/number-input/public-api';
+export * from './lib/pin-input/public-api';

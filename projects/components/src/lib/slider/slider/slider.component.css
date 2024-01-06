@@ -42,14 +42,14 @@
   background: var(--ult-slider-track-active-bg);
 }
 
-:host .thumb-control {
+:host .thumb {
   position: absolute;
   display: inline-block;
   inset-inline-start: 0;
   top: 0;
 }
 
-:host .thumb {
+:host .knob {
   position: relative;
   border: none;
   cursor: pointer;
@@ -62,16 +62,16 @@
   z-index: 3;
 }
 
-:host .thumb:focus-within,
-:host .thumb:focus-visible {
+:host .knob:focus-within,
+:host .knob:focus-visible {
   outline: none;
 }
 
-:host(:hover) .thumb {
+:host(:hover) .knob {
   box-shadow: var(--ult-slider-thumb-hover-shadow);
 }
 
-:host(:active) .thumb {
+:host(:active) .knob {
   scale: var(--ult-slider-thumb-active-scale);
   box-shadow: var(--ult-slider-thumb-hover-shadow);
 }
@@ -151,7 +151,7 @@
   display: flex;
 }
 
-:host.has-label[ult-slider-label-display="hover"] .thumb:hover + .label,
+:host.has-label[ult-slider-label-display="hover"] .knob:hover + .label,
 :host.has-label[ult-slider-label-display="hover"].thumb-focused .label {
   display: flex;
 }

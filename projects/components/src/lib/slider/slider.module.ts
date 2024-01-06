@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SliderComponent } from './slider/slider.component';
 import { SliderInputDirective } from './slider-input.directive';
-import { SliderThumbDirective } from './slider-thumb.directive';
+import { SliderKnobDirective } from './slider-knob.directive';
 
 @NgModule({
   declarations: [
     SliderComponent,
     SliderInputDirective,
-    SliderThumbDirective
+    SliderKnobDirective
   ],
   imports: [
     CommonModule

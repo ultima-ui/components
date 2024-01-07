@@ -1,25 +1,28 @@
 import {
   AfterViewInit,
-  Component, ElementRef,
-  forwardRef,
+  Component,
+  DestroyRef,
+  EventEmitter,
+  forwardRef, HostListener,
   inject,
   Input,
-  numberAttribute, OnChanges,
+  numberAttribute,
   OnInit,
-  QueryList, Renderer2, SimpleChanges,
-  ViewChild,
+  QueryList,
   ViewChildren
 } from '@angular/core';
 import {
   ControlValueAccessor,
   FormArray,
-  FormBuilder,
+  FormBuilder, FormControl,
   FormGroup,
   NG_VALUE_ACCESSOR,
   Validators
 } from '@angular/forms';
 import { PinInputDirective } from '../pin-input.directive';
 import { InputSize } from '../../forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import e from 'express';
 
 @Component({
   selector: 'ult-pin-input',
@@ -37,11 +40,12 @@ import { InputSize } from '../../forms';
     'class': 'ult-pin-input'
   }
 })
-export class PinInputComponent implements ControlValueAccessor, OnInit, AfterViewInit {
+export class PinInputComponent implements ControlValueAccessor, OnInit {
   private _fb = inject(FormBuilder);
+  private _destroyRef = inject(DestroyRef);
 
   @ViewChildren(PinInputDirective)
-  private _inputs: QueryList<PinInputDirective>;
+  readonly inputs: QueryList<PinInputDirective>;
 
   @Input({ transform: numberAttribute })
   length = 4;
@@ -51,6 +55,9 @@ export class PinInputComponent implements ControlValueAccessor, OnInit, AfterVie
 
   @Input()
   placeholder = '';
+
+  @Input()
+  acceptOnly = /^[0-9]+$/;
 
   form: FormGroup;
 
@@ -70,10 +77,6 @@ export class PinInputComponent implements ControlValueAccessor, OnInit, AfterVie
     });
   }
 
-  ngAfterViewInit() {
-    // console.log(this._inputs);
-  }
-
   registerOnChange(fn: any): void {
   }
 
@@ -84,5 +87,58 @@ export class PinInputComponent implements ControlValueAccessor, OnInit, AfterVie
   }
 
   writeValue(obj: any): void {
+  }
+
+  @HostListener('keydown', ['$event'])
+  private _handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Backspace' || event.key === 'Tab') {
+      const element = event.target as HTMLInputElement;
+
+      if (event.key === 'Backspace' && !element.value) {
+        this.inputs.forEach((inputDirective, index) => {
+          const element = event.target as HTMLInputElement;
+
+          if (inputDirective.api.nativeElement === element) {
+            const prevControl = this.inputs.get(index - 1);
+
+            if (prevControl) {
+              prevControl.api.focus();
+            }
+          }
+        });
+      }
+
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  @HostListener('keyup', ['$event'])
+  private _handleKeyUp(event: KeyboardEvent) {
+    if (event.key === 'Backspace' || event.key === 'Tab') {
+      return;
+    }
+
+    if (!event.key.match(this.acceptOnly)) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
+    this.inputs.forEach((inputDirective, index) => {
+      const element = event.target as HTMLInputElement;
+
+      if (inputDirective.api.nativeElement === element) {
+        const control = this.controls[index];
+        control.setValue(event.key);
+        const nextControl = this.inputs.get(index + 1);
+
+        if (nextControl) {
+          nextControl.api.focus();
+        }
+      }
+    });
   }
 }

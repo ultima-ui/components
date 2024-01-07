@@ -42,7 +42,7 @@ export class TooltipDirective implements OnDestroy {
   @Input({ transform: booleanAttribute }) enabled = true;
   @Input() position: TooltipPosition = 'top-center';
 
-  private _timeout: number;
+  private _timeout: any;
 
   @Output() opened = new EventEmitter();
   @Output() closed = new EventEmitter();

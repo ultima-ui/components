@@ -1,4 +1,13 @@
-import { Directive, ElementRef, HostListener, inject, OnInit, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  inject,
+  Input,
+  OnInit,
+  Renderer2
+} from '@angular/core';
 
 @Directive({
   selector: '[ultPinInput]'
@@ -7,6 +16,21 @@ export class PinInputDirective implements OnInit {
   private _elementRef = inject(ElementRef);
   private _renderer = inject(Renderer2);
   private _placeholder: string;
+
+  @Input()
+  index: number;
+
+  @Input()
+  acceptOnly: RegExp;
+
+  get api() {
+    return {
+      focus: () => {
+        this._elementRef.nativeElement.focus();
+      },
+      nativeElement: this._elementRef.nativeElement
+    }
+  }
 
   ngOnInit() {
     this._placeholder = (this._elementRef.nativeElement as HTMLInputElement).getAttribute('placeholder');

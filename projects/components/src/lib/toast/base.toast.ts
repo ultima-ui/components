@@ -7,7 +7,7 @@ import { ToastRef } from './toast-ref';
 export class BaseToast {
   private _toastRef = inject<ToastRef>(TOAST_REF);
   private _destroyRef = inject(DestroyRef);
-  private _closeTimeout: number;
+  private _closeTimeout: any;
   protected _renderer = inject(Renderer2);
   protected _elementRef = inject(ElementRef);
 

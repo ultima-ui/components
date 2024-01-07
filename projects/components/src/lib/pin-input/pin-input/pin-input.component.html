@@ -1,8 +1,9 @@
 <div [formGroup]="form">
   <div formArrayName="value" class="inputs">
-    @for (control of controls; track control) {
+    @for (control of controls; track control; let index = $index) {
       <input ultInput [size]="size" [placeholder]="placeholder"
-             [formControl]="control" class="input" maxlength="1" ultPinInput>
+             [formControl]="control" class="input" maxlength="1"
+             ultPinInput [index]="index" [acceptOnly]="acceptOnly">
     }
   </div>
 </div>

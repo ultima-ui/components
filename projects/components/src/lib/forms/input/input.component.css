@@ -1,11 +1,11 @@
 :host {
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: var(--ult-input-width);
   display: flex;
   align-items: center;
   font-size: var(--ult-input-font-size);
-  min-width: 0;
+  min-width: var(--ult-input-min-width);
   background: var(--ult-input-bg);
   color: var(--ult-input-color);
   border-radius: var(--ult-input-border-radius);

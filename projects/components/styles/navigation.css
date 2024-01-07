@@ -6,7 +6,7 @@
   --ult-navigation-item-font-size: theme('fontSize.sm');
   --ult-navigation-item-border-radius: theme('borderRadius.md');
   --ult-navigation-item-font-weight: theme('fontWeight.medium');
-  --ult-navigation-item-color: theme('textColor.gray.700');
+  --ult-navigation-item-color: theme('textColor.gray.500');
   --ult-navigation-item-hover-bg: theme('colors.primary.50');
   --ult-navigation-item-active-bg: theme('colors.primary.50');
   --ult-navigation-item-hover-color: theme('textColor.gray.700');
@@ -17,9 +17,9 @@
   --ult-navigation-item-active-icon-color: var(--ult-navigation-item-active-color);
   --ult-navigation-item-icon-size: theme('width.6');
   --ult-navigation-item-gap: theme('gap[2.5]');
-  --ult-navigation-heading-color: theme('colors.neutral.400');
+  --ult-navigation-heading-color: theme('colors.neutral.900');
   --ult-navigation-heading-font-size: theme('fontSize.2xs');
-  --ult-navigation-heading-font-weight: theme('fontWeight.medium');
+  --ult-navigation-heading-font-weight: theme('fontWeight.bold');
   --ult-navigation-heading-padding: 0 theme('padding.4');
   --ult-navigation-heading-margin-bottom: theme('spacing.3');
   --ult-navigation-heading-after-margin: theme('spacing.8');

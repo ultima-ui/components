@@ -12,9 +12,32 @@
     <h2>Basic</h2>
     <playground>
       <playground-content>
-        <div class="w-1/2">
-          <ult-pin-input></ult-pin-input>
-        </div>
+        <ult-pin-input></ult-pin-input>
+      </playground-content>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Size</h2>
+    <playground>
+      <playground-content>
+        <ult-pin-input [size]="sizePlayground.size"></ult-pin-input>
+      </playground-content>
+      <playground-properties>
+        <ult-form-field class="space-y-5">
+          <ult-radio-group>
+            <ult-radio name="sizePlayground" [(ngModel)]="sizePlayground.size" value="sm">Small</ult-radio>
+            <ult-radio name="sizePlayground" [(ngModel)]="sizePlayground.size" value="default">Default</ult-radio>
+            <ult-radio name="sizePlayground" [(ngModel)]="sizePlayground.size" value="lg">Large</ult-radio>
+          </ult-radio-group>
+        </ult-form-field>
+      </playground-properties>
+      <playground-controls></playground-controls>
+    </playground>
+
+    <h2>Placeholder</h2>
+    <playground>
+      <playground-content>
+        <ult-pin-input placeholder="⚬"></ult-pin-input>
       </playground-content>
       <playground-controls></playground-controls>
     </playground>

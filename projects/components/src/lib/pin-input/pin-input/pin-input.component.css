@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  width: max-content;
+  --ult-input-width: 0;
+}
+
+:host .inputs {
+  display: flex;
+  align-items: center;
+  gap: var(--ult-pin-gap);
+}
+
+:host .input {
+  text-align: center;
+  flex: none;
+  padding: 0;
+}

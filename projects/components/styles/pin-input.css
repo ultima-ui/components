@@ -1,3 +1,4 @@
 :root {
-
+  --ult-pin-input-width: theme('width.control');
+  --ult-pin-gap: theme('gap.4');
 }

@@ -1,1 +1,8 @@
-<p>pin-input works!</p>
+<div [formGroup]="form">
+  <div formArrayName="value" class="inputs">
+    @for (control of controls; track control) {
+      <input ultInput [size]="size" [placeholder]="placeholder"
+             [formControl]="control" class="input" maxlength="1" ultPinInput>
+    }
+  </div>
+</div>

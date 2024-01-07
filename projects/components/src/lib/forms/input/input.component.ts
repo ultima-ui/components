@@ -31,12 +31,22 @@ export class InputComponent  implements OnChanges {
   private _renderer = inject(Renderer2);
   private _elementRef = inject(ElementRef);
 
-  @Input() id = '';
-  @Input({ transform: booleanAttribute }) invalid = false;
-  @Input({ transform: booleanAttribute }) roundedFull = false;
-  @Input({ transform: booleanAttribute }) disabled = false;
+  @Input()
+  id = '';
+
+  @Input({ transform: booleanAttribute })
+  invalid = false;
+
+  @Input({ transform: booleanAttribute })
+  roundedFull = false;
+
+  @Input({ transform: booleanAttribute })
+  disabled = false;
+
   @Input({ transform: booleanAttribute }) focused = false;
-  @Input() size: InputSize = 'default';
+
+  @Input()
+  size: InputSize = 'default';
 
   @ContentChild(InputPrefixDirective) prefixRef!: InputPrefixDirective;
   @ContentChild(InputSuffixDirective) suffixRef!: InputSuffixDirective;

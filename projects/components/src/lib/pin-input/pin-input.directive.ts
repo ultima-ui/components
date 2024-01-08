@@ -5,7 +5,7 @@ import {
   HostListener,
   inject,
   Input,
-  OnInit,
+  OnInit, Output,
   Renderer2
 } from '@angular/core';
 
@@ -22,6 +22,8 @@ export class PinInputDirective implements OnInit {
 
   @Input()
   acceptOnly: RegExp;
+
+  @Output() valuePaste = new EventEmitter<string>();
 
   get api() {
     return {

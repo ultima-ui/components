@@ -1,8 +1,6 @@
 import {
-  AfterViewInit,
+  booleanAttribute,
   Component,
-  DestroyRef,
-  EventEmitter,
   forwardRef, HostListener,
   inject,
   Input,
@@ -14,15 +12,14 @@ import {
 import {
   ControlValueAccessor,
   FormArray,
-  FormBuilder, FormControl,
+  FormBuilder,
   FormGroup,
   NG_VALUE_ACCESSOR,
   Validators
 } from '@angular/forms';
 import { PinInputDirective } from '../pin-input.directive';
 import { InputSize } from '../../forms';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import e from 'express';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'ult-pin-input',
@@ -37,12 +34,12 @@ import e from 'express';
     }
   ],
   host: {
-    'class': 'ult-pin-input'
+    'class': 'ult-pin-input',
+    '[class.is-disabled]': 'disabled',
   }
 })
 export class PinInputComponent implements ControlValueAccessor, OnInit {
   private _fb = inject(FormBuilder);
-  private _destroyRef = inject(DestroyRef);
 
   @ViewChildren(PinInputDirective)
   readonly inputs: QueryList<PinInputDirective>;
@@ -59,9 +56,15 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
   @Input()
   acceptOnly = /^[0-9]+$/;
 
+  @Input({ transform: booleanAttribute })
+  disabled = false;
+
   form: FormGroup;
 
-  get controls(): any {
+  onChange: any = () => {};
+  onTouched: any = () => {};
+
+  get controls(): any[] {
     return (this.form.get('value') as FormArray).controls;
   }
 
@@ -69,7 +72,9 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
     const inputs = [];
 
     for (let i = 0; i < this.length; i++) {
-      inputs.push(this._fb.control('', [Validators.required]));
+      inputs.push(
+        this._fb.control({ value: '', disabled: this.disabled }, [Validators.required])
+      );
     }
 
     this.form = this._fb.group({
@@ -78,19 +83,49 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
   }
 
   registerOnChange(fn: any): void {
+    this.onChange = fn;
   }
 
   registerOnTouched(fn: any): void {
+    this.onTouched = fn;
   }
 
   setDisabledState(isDisabled: boolean): void {
+    this.disabled = coerceBooleanProperty(isDisabled);
   }
 
-  writeValue(obj: any): void {
+  writeValue(value: any): void {
+    if (!value) {
+      this.controls.forEach(control => {
+        control.setValue('');
+      });
+
+      return;
+    }
+
+    value = String(value);
+
+    for (let i = 0; i < value.length; i++) {
+      const control = this.controls[i];
+
+      if (control && value[i].match(this.acceptOnly)) {
+        control.setValue(value[i]);
+      }
+    }
+  }
+
+  @HostListener('paste', ['$event'])
+  _valuePaste(event: ClipboardEvent) {
+      event.preventDefault();
+      event.stopPropagation();
+      const value = event.clipboardData.getData('text/plain');
+      console.log(value);
   }
 
   @HostListener('keydown', ['$event'])
   private _handleKeyDown(event: KeyboardEvent) {
+    console.log(event.key);
+
     if (event.key === 'Backspace' || event.key === 'Tab') {
       const element = event.target as HTMLInputElement;
 
@@ -118,6 +153,7 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
   @HostListener('keyup', ['$event'])
   private _handleKeyUp(event: KeyboardEvent) {
     if (event.key === 'Backspace' || event.key === 'Tab') {
+      this.onChange(this.form.value.value.join(''));
       return;
     }
 
@@ -140,5 +176,6 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
         }
       }
     });
+    this.onChange(this.form.value.value.join(''));
   }
 }

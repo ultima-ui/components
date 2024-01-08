@@ -12,8 +12,11 @@
     <h2>Basic</h2>
     <playground>
       <playground-content>
-        <ult-pin-input></ult-pin-input>
+        <ult-pin-input [(ngModel)]="basicValue"></ult-pin-input>
       </playground-content>
+      <playground-properties>
+        Value: {{ basicValue }}
+      </playground-properties>
       <playground-controls></playground-controls>
     </playground>
 

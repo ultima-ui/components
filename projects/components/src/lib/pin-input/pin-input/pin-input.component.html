@@ -2,7 +2,7 @@
   <div formArrayName="value" class="inputs">
     @for (control of controls; track control; let index = $index) {
       <input ultInput [size]="size" [placeholder]="placeholder"
-             [formControl]="control" class="input" maxlength="1"
+             [formControl]="control" class="input" maxlength="1" [attr.disabled]="disabled || null"
              ultPinInput [index]="index" [acceptOnly]="acceptOnly">
     }
   </div>

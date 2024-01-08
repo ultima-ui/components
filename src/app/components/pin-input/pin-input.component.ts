@@ -22,4 +22,5 @@ export class PinInputComponent {
   sizePlayground = {
     size: 'default'
   };
+  basicValue = '';
 }
